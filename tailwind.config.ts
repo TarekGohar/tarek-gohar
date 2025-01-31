@@ -8,11 +8,12 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        primeform: ["Primeform Pro", "sans-serif"],
+        helvetica: ["Helvetica", "sans-serif"],
       },
     },
+
   },
   plugins: [],
 } satisfies Config;

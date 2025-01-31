@@ -2,20 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Fonts */
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-ExtraLightItalic.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Heavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-HeavyItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-SemiBoldItalic.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Primeform Pro';
+    src: url('/fonts/primeform_pro/PrimeformProDemo-ThinItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  @keyframes slideOut {
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+    @keyframes slideOutLeft {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
 }
