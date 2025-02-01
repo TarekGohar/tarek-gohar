@@ -2,32 +2,11 @@
 
 import Navbar from "@/components/navbar";
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import SlotsSection from "@/components/Hero/SlotsSection";
+import AnimatedCircles from "@/components/Hero/AnimateCircles";
 
 export default function Page() {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  });
-  const [isVisible, setIsVisible] = useState(false);
-
-  // Remap the scroll range so that everything completes at 0.5
-  const adjustedScroll = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-
-  // Staggered animation with the adjusted scroll
-  const opacity1 = useTransform(adjustedScroll, [0, 1], [0, 1]);
-  const opacity2 = useTransform(adjustedScroll, [0.1, 1], [0, 1]);
-  const opacity3 = useTransform(adjustedScroll, [0.2, 1], [0, 1]);
-  const opacity4 = useTransform(adjustedScroll, [0.3, 1], [0, 1]);
-  const opacity5 = useTransform(adjustedScroll, [0.4, 1], [0, 1]);
-
-  const xOffset1 = useTransform(adjustedScroll, [0, 1], [150, 0]);
-  const xOffset2 = useTransform(adjustedScroll, [0.1, 1], [150, 0]);
-  const xOffset3 = useTransform(adjustedScroll, [0.2, 1], [150, 0]);
-  const xOffset4 = useTransform(adjustedScroll, [0.3, 1], [150, 0]);
-  const xOffset5 = useTransform(adjustedScroll, [0.4, 1], [150, 0]);
-
   const firstName = "TAREK";
   const lastName = "GOHAR";
   const [firstLetters, setFirstLetters] = useState(
@@ -97,29 +76,6 @@ export default function Page() {
     });
 
     return () => timeouts.forEach(clearInterval);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.8 } // Adjust threshold as needed
-    );
-
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
-
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
-    };
   }, []);
 
   useEffect(() => {
@@ -194,41 +150,10 @@ export default function Page() {
       </section>
       {/* Spacer - Prevents instant scrolling when fixed section disappears */}
       <section className="min-h-screen flex items-center justify-center"></section>
-      <div className="h-[40rem] flex flex-col justify-center items-center">
-        <div
-          ref={targetRef}
-          className="px-4 max-w-[80rem] mx-auto flex items-center justify-center overflow-hidden"
-        >
-          <h1 className="text-5xl md:text-8xl font-extrabold w-[60%] md:w-[75%] capitalize h-fit">
-            Full-stack apps built from the ground up.
-          </h1>
-          <div className="max-w-[80rem] mx-auto w-fit text-center flex flex-col space-y-4 md:space-y-8">
-            <motion.div
-              style={{ opacity: opacity5, x: xOffset5 }}
-              className="bg-neutral-500 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
-            ></motion.div>
-            <motion.div
-              style={{ opacity: opacity4, x: xOffset4 }}
-              className="bg-neutral-600 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
-            ></motion.div>
-            <motion.div
-              style={{ opacity: opacity3, x: xOffset3 }}
-              className="bg-neutral-700 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
-            ></motion.div>
-            <motion.div
-              style={{ opacity: opacity2, x: xOffset2 }}
-              className="bg-neutral-800 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
-            ></motion.div>
-            <motion.div
-              style={{ opacity: opacity1, x: xOffset1 }}
-              className="bg-neutral-900 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
-            ></motion.div>
-          </div>
-        </div>
-      </div>
+      <SlotsSection />
       {/* Other Sections */}
-      <section className="min-h-screen flex items-center justify-center">
-        <h1 className="typewriter text-7xl font-semibold">Tarek Gohar</h1>
+      <section className="min-h-[40rem] flex items-center justify-center">
+        <AnimatedCircles />
       </section>
       <section className="min-h-screen flex items-center justify-center">
         <h1 className="typewriter text-7xl font-semibold">Tarek Gohar</h1>
