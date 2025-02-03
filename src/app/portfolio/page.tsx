@@ -1,5 +1,9 @@
-import React from "react";
+"use client";
 
-export default function page() {
-  return <div className="min-h-screen bg-white -z-10">page</div>;
+import { motion } from "framer-motion";
+
+export default function AnimatedSection() {
+  return (
+    <section className="flex flex-col justify-center items-center h-screen px-6 md:px-16 bg-gray-900 text-black"></section>
+  );
 }

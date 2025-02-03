@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -18,85 +18,106 @@ const images = [
 ];
 
 export default function AnimatedCircles() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [circles, setCircles] = useState<
+  const [isMobile, setIsMobile] = useState<boolean>(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
+  const [initialCircles, setInitialCircles] = useState<
+    { x: number; y: number; radius: number }[]
+  >([]);
+  const [jiggledCircles, setJiggledCircles] = useState<
     { x: number; y: number; radius: number }[]
   >([]);
 
   useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => setWindowWidth(window.innerWidth);
+    const checkScreenSize = () => {
+      const newIsMobile = window.innerWidth < 768;
+      setIsMobile((prev) => (prev !== newIsMobile ? newIsMobile : prev)); // Update only if changed
+    };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  const circlePositions = useMemo(() => {
-    const isMobile = windowWidth < 768;
+  useEffect(() => {
     const baseRadius = isMobile ? 100 : 350;
 
-    // Grid layout for small screens
     const gridLayout = [
-      { count: 2, yOffset: -95 }, // Row 1
-      { count: 3, yOffset: -30 }, // Row 2
-      { count: 3, yOffset: 45 }, // Row 3
-      { count: 2, yOffset: 110 }, // Row 4
+      { count: 2, xOffset: -110 },
+      { count: 3, xOffset: -40 },
+      { count: 3, xOffset: 40 },
+      { count: 2, xOffset: 110 },
     ];
 
     let positions = [];
-    let index = 0;
 
     if (isMobile) {
+      let index = 0;
       gridLayout.forEach((row) => {
-        let startX = -((row.count - 1) * 40); // Center align row
+        let startY = -((row.count - 1) * 40);
         for (let i = 0; i < row.count; i++) {
           positions.push({
-            x: startX + i * 80,
-            y: row.yOffset,
+            x: row.xOffset,
+            y: startY + i * 80,
             radius: 70,
           });
           index++;
         }
       });
     } else {
-      // Circular layout for large screens
       const angleStep = (Math.PI * 2) / images.length;
       for (let i = 0; i < images.length; i++) {
         const angle = i * angleStep;
         positions.push({
           x: Math.cos(angle) * baseRadius,
-          y: Math.sin(angle) * baseRadius,
-          radius: Math.random() * 70 + 70,
+          y: (Math.sin(angle) * baseRadius) / 1.25,
+          radius: Math.random() * 70 + 60,
         });
       }
     }
 
-    return positions;
-  }, [windowWidth]);
+    setInitialCircles(positions); // Store initial positions
+    setJiggledCircles(positions); // Initialize jiggled positions with the same values
+  }, [isMobile]);
 
-  // Jiggling effect with small random movement
   useEffect(() => {
     const interval = setInterval(() => {
-      setCircles(
-        circlePositions.map((pos) => ({
-          ...pos,
-          x: pos.x + (Math.random() - 0.5) * 3,
-          y: pos.y + (Math.random() - 0.5) * 3,
-        }))
-      );
-    }, 300); // Adjust speed of jiggling
+      if (isMobile) {
+        setJiggledCircles((prevCircles) =>
+          prevCircles.map((pos, index) => {
+            const initialPos = initialCircles[index]; // Get corresponding initial position
+            return {
+              ...pos,
+              x: initialPos.x + (Math.random() - 0.5) * 2, // Small movement around initial x
+              y: initialPos.y + (Math.random() - 0.5) * 2, // Small movement around initial y
+            };
+          })
+        );
+      } else {
+        setJiggledCircles((prevCircles) =>
+          prevCircles.map((pos, index) => {
+            const initialPos = initialCircles[index]; // Get corresponding initial position
+            return {
+              ...pos,
+              x: initialPos.x + (Math.random() - 0.5) * 3, // Small movement around initial x
+              y: initialPos.y + (Math.random() - 0.5) * 3, // Small movement around initial y
+            };
+          })
+        );
+      }
+    }, 100);
 
     return () => clearInterval(interval);
-  }, [circlePositions]);
+  }, [initialCircles]); // Depend only on `initialCircles`
 
   return (
-    <section className="h-[60rem] w-full bg-neutral-50 flex justify-center items-center">
-      <div className="w-[30rem] h-full text-center flex justify-center items-center relative">
-        <h1 className="text-5xl font-bold absolute top-[25%] md:top-[45%]">
+    <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center">
+      <div className="h-full w-[30rem] text-center flex justify-center items-center relative">
+        <h1 className="text-5xl font-bold absolute top-[18%] md:top-[45%]">
           Using the latest tech for the best results.
         </h1>
 
-        {circles.map((pos, i) => (
+        {jiggledCircles.map((pos, i) => (
           <motion.div
             key={i}
             initial={{ scale: 1 }}
@@ -110,7 +131,7 @@ export default function AnimatedCircles() {
               background: images[i % images.length].color,
               backdropFilter: "blur(10px)",
             }}
-            className="absolute top-[50%] md:top-[45%] rounded-full flex justify-center items-center"
+            className="absolute rounded-full flex justify-center items-center top-[58%] md:top-[45%]"
           >
             <div className="relative w-3/4 h-3/4">
               <Image

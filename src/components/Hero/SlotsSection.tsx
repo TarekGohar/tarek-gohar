@@ -59,15 +59,15 @@ export default function SlotsSection() {
   }, []);
 
   return (
-    <section className="h-[40rem] md:h-[50rem] flex flex-col justify-center items-center">
+    <section className="h-[40rem] md:h-[35rem] mb-[0rem] md:mb-[10rem] px-4 flex flex-col justify-center items-center">
       <div
         ref={targetRef}
-        className="px-4 max-w-[80rem] mx-auto flex items-center justify-center overflow-hidden"
+        className="bg-neutral-50 rounded-[2rem] px-2 gap-x-6 py-[4rem] max-w-[80rem] w-fit mx-auto flex items-center justify-center md:gap-x-12 overflow-hidden"
       >
-        <h1 className="text-5xl md:text-8xl font-extrabold w-[60%] md:w-[75%] capitalize h-fit">
+        <h1 className="text-5xl md:text-7xl font-extrabold w-[65%] md:w-[70%] capitalize h-fit">
           Full-stack apps built from the ground up.
         </h1>
-        <div className="max-w-[80rem] mx-auto w-fit text-center flex flex-col space-y-4 md:space-y-8">
+        <div className="w-fit text-center flex flex-col space-y-4 md:space-y-8">
           <motion.div
             style={{ opacity: opacity5, x: springX5 }}
             className="bg-neutral-500 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"

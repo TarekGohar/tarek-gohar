@@ -4,7 +4,9 @@ import Navbar from "@/components/navbar";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import SlotsSection from "@/components/Hero/SlotsSection";
-import AnimatedCircles from "@/components/Hero/AnimateCircles";
+import AnimatedCirclesSection from "@/components/Hero/AnimateCircles";
+import MovingLinesBackground from "@/components/MovingLines";
+import SpeedyDevelopmentSection from "@/components/Hero/SpeedyDevelopmentSection";
 
 export default function Page() {
   const firstName = "TAREK";
@@ -105,11 +107,11 @@ export default function Page() {
       <Navbar light={!bgBlack} />
       {/* First Section (Locks scroll initially) */}
       <section
-        className={`h-screen flex items-center justify-center transition-all duration-700 ${
+        className={`h-screen min-h-[55rem] flex items-center justify-center transition-all duration-700 ${
           bgBlack ? "bg-white text-black" : "bg-black text-white"
         } ${isLocked ? "fixed inset-0 z-10" : "absolute top-0 w-full"}`}
       >
-        <div className="max-w-[80rem] mx-auto w-fit text-center grid grid-cols-2 md:gap-y-8 md:grid-cols-1">
+        <div className="border-[1.5rem] border-black border-opacity-5 p-10 max-w-[80rem] mx-auto w-fit text-center grid grid-cols-2 md:gap-y-8 md:grid-cols-1">
           <h1 className="w-fit grid grid-cols-1 md:grid-cols-5 text-[7rem] leading-[7rem] md:text-[13rem] md:leading-[11rem] font-extrabold">
             {firstLetters.map((letter, index) => (
               <span
@@ -151,10 +153,9 @@ export default function Page() {
       {/* Spacer - Prevents instant scrolling when fixed section disappears */}
       <section className="min-h-screen flex items-center justify-center"></section>
       <SlotsSection />
-      {/* Other Sections */}
-      <section className="min-h-[40rem] flex items-center justify-center">
-        <AnimatedCircles />
-      </section>
+      <AnimatedCirclesSection />
+      <SpeedyDevelopmentSection />
+
       <section className="min-h-screen flex items-center justify-center">
         <h1 className="typewriter text-7xl font-semibold">Tarek Gohar</h1>
       </section>
