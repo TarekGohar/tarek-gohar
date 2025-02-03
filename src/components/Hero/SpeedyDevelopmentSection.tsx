@@ -44,7 +44,7 @@ export default function SquigglyPathSection() {
     },
     {
       title: "Seamless UX",
-      src: "/icons/user.svg",
+      src: "/icons/ux.svg",
       content:
         "Intuitive interfaces that provide smooth navigation and engaging user experiences.",
     },
@@ -56,7 +56,7 @@ export default function SquigglyPathSection() {
     },
     {
       title: "Maintenance",
-      src: "/icons/maintenance.svg",
+      src: "/icons/gear.svg",
       content:
         "Regular updates, bug fixes, and optimizations to keep your app performing at its best.",
     },
@@ -97,7 +97,7 @@ export default function SquigglyPathSection() {
     },
     {
       title: "Cross-Platform",
-      src: "/icons/devices.svg",
+      src: "/icons/cross.svg",
       content:
         "Web apps designed to perform flawlessly across all devices and platforms.",
     },
@@ -107,10 +107,12 @@ export default function SquigglyPathSection() {
   const sectionGroups = chunkSections(sections);
 
   return (
-    <section className="pt-[8rem] min-h-[120rem] bg-neutral-100 text-white">
-      <div className="h-full max-w-[100rem] mx-auto flex flex-col items-start justify-center space-y-12 px-4">
-        <h2 className="text-5xl font-bold text-[#012A4A]">Why choose us?</h2>
-        <div className=" w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-[100rem] md:h-[120rem]">
+    <section className="py-[10rem] bg-neutral-100 text-white">
+      <div className="w-full h-full max-w-[80rem] mx-auto flex flex-col items-start justify-center space-y-12 px-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-[#012A4A] capitalize">
+          Why choose us?
+        </h2>
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-[100rem] md:h-[70rem]">
           {sectionGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="grid gap-4">
               {group.map((section, index) => {

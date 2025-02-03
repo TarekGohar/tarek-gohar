@@ -12,7 +12,7 @@ export default function SlotsSection() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Remap the scroll range so that everything completes at 0.5
-  const adjustedScroll = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const adjustedScroll = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
 
   // Staggered animation with the adjusted scroll
   const opacity1 = useTransform(adjustedScroll, [0.5, 1], [0, 1]);
@@ -59,7 +59,7 @@ export default function SlotsSection() {
   }, []);
 
   return (
-    <section className="h-[40rem] md:h-[35rem] mb-[0rem] md:mb-[10rem] px-4 flex flex-col justify-center items-center">
+    <section className="h-[40rem] md:h-[35rem] mb-[0rem] md:mb-[0rem] px-4 flex flex-col justify-center items-center">
       <div
         ref={targetRef}
         className="bg-neutral-50 rounded-[2rem] px-2 gap-x-6 py-[4rem] max-w-[80rem] w-fit mx-auto flex items-center justify-center md:gap-x-12 overflow-hidden"
