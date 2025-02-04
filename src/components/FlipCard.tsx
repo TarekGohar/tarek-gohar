@@ -37,11 +37,11 @@ export default function FlipCard({ index, section }: SectionDataProps) {
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      if (!hovering) {
+    if (!hovering) {
+      setTimeout(() => {
         setIsFlipped(false);
-      }
-    }, 2000);
+      }, 2000);
+    }
   });
 
   // Array of background colors
@@ -82,7 +82,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
             alt={section.title}
             width={1000}
             height={1000}
-            className={`w-[32%] lg:w-[40%] opacity-70 ${frontColor.text}`}
+            className={`w-[32%] lg:w-[40%] opacity-90 ${frontColor.text}`}
           />
           <h3
             className={`w-[90%] text-2xl lg:text-4xl font-bold ${frontColor.text}`}

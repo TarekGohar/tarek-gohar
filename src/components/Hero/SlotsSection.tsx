@@ -64,7 +64,7 @@ export default function SlotsSection() {
         ref={targetRef}
         className="bg-neutral-50 rounded-[2rem] px-2 gap-x-6 py-[4rem] max-w-[80rem] w-fit mx-auto flex items-center justify-center md:gap-x-12 overflow-hidden"
       >
-        <h1 className="text-5xl md:text-7xl font-extrabold w-[65%] md:w-[70%] capitalize h-fit">
+        <h1 className="text-5xl md:text-7xl font-bold w-[65%] md:w-[70%] capitalize h-fit">
           Full-stack apps built from the ground up.
         </h1>
         <div className="w-fit text-center flex flex-col space-y-4 md:space-y-8">

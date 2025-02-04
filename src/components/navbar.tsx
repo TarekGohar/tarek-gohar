@@ -12,14 +12,14 @@ export default function Navbar({ light }: NavbarProps) {
 
   return (
     <nav
-      className={`fixed inset-0 w-full z-20 mx-auto text-white unselectable pt-4 h-fit duration-150 ${
+      className={`fixed inset-0 w-full z-50 mx-auto text-white unselectable pt-4 h-fit duration-150 ${
         light ? "opacity-0" : "opacity-100"
       }`}
     >
       <ul
         className="relative flex items-center justify-between w-fit gap-x-4 mx-auto font-semibold bg-opacity-80 p-2 rounded-full"
         style={{
-          background: "rgba(150, 150, 150, 0.3)",
+          background: "rgba(150, 150, 150, 0.2)",
           backdropFilter: "blur(10px)",
         }}
       >

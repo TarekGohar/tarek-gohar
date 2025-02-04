@@ -7,7 +7,7 @@ const images = [
   { src: "/langImages/aws.png", color: "rgb(251, 193, 104)" },
   { src: "/langImages/c.png", color: "rgb(124,172,219)" },
   { src: "/langImages/c++.png", color: "rgb(31, 117, 182)" },
-  { src: "/langImages/next.png", color: "rgb(255, 255, 255)" },
+  { src: "/langImages/next.png", color: "rgb(245, 245, 245)" },
   { src: "/langImages/pandas.svg", color: "rgb(28, 20, 105)" },
   { src: "/langImages/postgresql.png", color: "rgb(143,171,196)" },
   { src: "/langImages/python.png", color: "rgb(70, 70, 70)" },
@@ -71,7 +71,7 @@ export default function AnimatedCircles() {
         positions.push({
           x: Math.cos(angle) * baseRadius,
           y: (Math.sin(angle) * baseRadius) / 1.25,
-          radius: Math.random() * 70 + 60,
+          radius: Math.random() * 70 + 70,
         });
       }
     }
@@ -81,6 +81,7 @@ export default function AnimatedCircles() {
   }, [isMobile]);
 
   useEffect(() => {
+    if (initialCircles.length === 0) return;
     const interval = setInterval(() => {
       if (isMobile) {
         setJiggledCircles((prevCircles) =>
@@ -111,9 +112,9 @@ export default function AnimatedCircles() {
   }, [initialCircles]); // Depend only on `initialCircles`
 
   return (
-    <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center">
+    <section className="h-[40rem] md:h-[70rem] w-full flex justify-center items-center">
       <div className="h-full w-[30rem] text-center flex justify-center items-center relative">
-        <h1 className="text-5xl font-bold absolute top-[18%] md:top-[45%]">
+        <h1 className="text-5xl font-bold absolute top-[18%] md:top-[45%] text-cyan-900">
           Using the latest tech for the best results.
         </h1>
 

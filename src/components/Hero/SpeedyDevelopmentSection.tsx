@@ -20,11 +20,6 @@ const chunkSections = (sections: SectionData[]) => {
     chunked.push(sections.slice(index, index + chunkSize));
     index += chunkSize;
   }
-
-  for (let i = 0; i < chunked.length; i++) {
-    console.log("chunked", i);
-    console.log(chunked[i].length);
-  }
   return chunked;
 };
 
@@ -107,7 +102,7 @@ export default function SquigglyPathSection() {
   const sectionGroups = chunkSections(sections);
 
   return (
-    <section className="py-[10rem] bg-neutral-100 text-white">
+    <section className="py-[10rem] bg-neutral-50 text-white">
       <div className="w-full h-full max-w-[80rem] mx-auto flex flex-col items-start justify-center space-y-12 px-4">
         <h2 className="text-3xl md:text-5xl font-bold text-[#012A4A] capitalize">
           Why choose us?
@@ -116,8 +111,6 @@ export default function SquigglyPathSection() {
           {sectionGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="grid gap-4">
               {group.map((section, index) => {
-                useInView(refs[index], { once: true }); // Track each section separately
-
                 return (
                   <div key={index}>
                     <FlipCard index={index + groupIndex} section={section} />
