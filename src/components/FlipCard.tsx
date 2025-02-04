@@ -31,18 +31,26 @@ export default function FlipCard({ index, section }: SectionDataProps) {
       debounceRef.current = setTimeout(() => {
         setHovering(true);
         setIsAnimating(true);
-        setIsFlipped((prev) => !prev);
+        setIsFlipped(true);
       }, 200); // 200ms debounce delay
     }
   }
 
   useEffect(() => {
-    if (!hovering) {
-      setTimeout(() => {
+    let timeout: NodeJS.Timeout | null;
+
+    if (isFlipped) {
+      timeout = setTimeout(() => {
         setIsFlipped(false);
-      }, 2000);
+      }, 4000);
     }
-  });
+
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  }, [hovering]); // Add dependency to only trigger when `hovering` changes
 
   // Array of background colors
   const colors = [

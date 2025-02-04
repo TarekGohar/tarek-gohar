@@ -14,12 +14,11 @@ import AnimatedCirclesSection from "@/components/Hero/AnimateCircles";
 import MovingLinesBackground from "@/components/MovingLines";
 import SpeedyDevelopmentSection from "@/components/Hero/SpeedyDevelopmentSection";
 import ParticlesBackground from "@/components/GradientBackground";
+import WebAppsSection from "@/components/Hero/WebAppsSection";
 
 export default function Page() {
   const firstName = "TAREK";
   const lastName = "GOHAR";
-  const targetRef = useRef(null);
-  const isInView = useInView(targetRef, { once: true });
   const [firstLetters, setFirstLetters] = useState(
     Array(firstName.length).fill("A")
   );
@@ -116,9 +115,9 @@ export default function Page() {
       <Navbar light={!bgBlack} />
       {/* First Section (Locks scroll initially) */}
       <section
-        className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden ${
+        className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 ${
           bgBlack ? "text-cyan-800" : "text-white"
-        } ${isLocked ? "fixed inset-0 z-10" : "absolute top-0 w-full"}`}
+        } ${isLocked ? "fixed inset-0" : "absolute top-0 w-full"}`}
       >
         <div className="z-20 opacity-60 max-w-[80rem] mx-auto w-fit text-center grid grid-cols-2 md:gap-y-8 md:grid-cols-1">
           <h1 className="w-fit grid grid-cols-1 md:grid-cols-5 text-[7rem] leading-[7rem] md:text-[13rem] md:leading-[11rem] font-extrabold">
@@ -195,32 +194,8 @@ export default function Page() {
       <AnimatedCirclesSection />
       <SpeedyDevelopmentSection />
 
+      <WebAppsSection />
       <section className="min-h-screen flex items-center justify-center">
-        <h1 className="typewriter text-7xl font-semibold">Web Apps</h1>
-        <div>
-          <motion.svg
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -100 }}
-            width="100"
-            height="100"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 18.01V18M8 3H16C17.1046 3 18 3.89543 18 5V19C18 20.1046 17.1046 21 16 21H8C6.89543 21 6 20.1046 6 19V5C6 3.89543 6.89543 3 8 3Z"
-              stroke="#000000"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </motion.svg>
-        </div>
-      </section>
-      <section
-        ref={targetRef}
-        className="min-h-screen flex items-center justify-center"
-      >
         <h1 className="typewriter text-7xl font-semibold">Tarek Gohar</h1>
       </section>
       {/* Disable scrolling when locked */}

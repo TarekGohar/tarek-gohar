@@ -55,17 +55,18 @@ const FloatingParticles: React.FC = () => {
   }, [windowSize]); // Re-run when window size updates
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 pointer-events-none">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full -z-10"
+          className="absolute rounded-full"
           style={{
             width: particle.size,
             height: particle.size,
             top: particle.y,
             left: particle.x,
             backgroundImage: "radial-gradient(#0b586b, #FFFFFF)",
+            zIndex: -10,
           }}
           animate={{
             y: ["0%", "-30%", "30%", "-20%", "0%"], // Floating motion
@@ -85,21 +86,23 @@ const FloatingParticles: React.FC = () => {
 
       {/* Blurred Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none z-10"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(70px)",
-          WebkitBackdropFilter: "blur(70px)",
+          backdropFilter: "blur(150px)",
+          WebkitBackdropFilter: "blur(150px)",
+          zIndex: 0,
         }}
       />
 
       {/* Grainy Texture Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none z-20"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background: "url(/noise.png)",
-          opacity: 0.2,
-          mixBlendMode: "overlay",
+          opacity: 0.0,
+          backgroundBlendMode: "overlay",
+          zIndex: 20,
         }}
       />
     </div>
