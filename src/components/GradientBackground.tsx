@@ -23,18 +23,23 @@ const FloatingParticles: React.FC = () => {
   // Handle window resize
   useEffect(() => {
     let resizeTimeout: NodeJS.Timeout;
+    const MOBILE_BREAKPOINT = 768; // Define mobile breakpoint
 
     const handleResize = () => {
-      clearTimeout(resizeTimeout); // Clear previous timeout
+      clearTimeout(resizeTimeout);
+
       resizeTimeout = setTimeout(() => {
-        setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      }, 500); // Delay updates by 500ms
+        if (window.innerWidth >= MOBILE_BREAKPOINT) {
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        }
+      }, 500); // Debounce delay
     };
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
       clearTimeout(resizeTimeout);
@@ -46,7 +51,7 @@ const FloatingParticles: React.FC = () => {
     const newParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => ({
       id: i,
       x: (Math.random() - 0.2) * windowSize.width, // Random X position based on window width
-      y: (Math.random() + 0.2) * windowSize.height, // Random Y position based on window height
+      y: Math.random() * windowSize.height, // Random Y position based on window height
       size: Math.random() * 100 + windowSize.width * 0.2, // Random size
       duration: Math.random() * 6 + 10, // Animation duration
       delay: Math.random() * 3, // Animation delay
@@ -89,8 +94,8 @@ const FloatingParticles: React.FC = () => {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(150px)",
-          WebkitBackdropFilter: "blur(150px)",
+          backdropFilter: "blur(8rem)",
+          WebkitBackdropFilter: "blur(8rem)",
           zIndex: 0,
         }}
       />

@@ -14,7 +14,7 @@ import AnimatedCirclesSection from "@/components/Hero/AnimateCircles";
 import MovingLinesBackground from "@/components/MovingLines";
 import SpeedyDevelopmentSection from "@/components/Hero/SpeedyDevelopmentSection";
 import ParticlesBackground from "@/components/GradientBackground";
-import WebAppsSection from "@/components/Hero/WebAppsSection";
+import WebAppsSection from "../components/Hero/WebAppsSection";
 
 export default function Page() {
   const firstName = "TAREK";

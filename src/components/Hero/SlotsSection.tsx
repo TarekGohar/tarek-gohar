@@ -29,10 +29,10 @@ export default function SlotsSection() {
   const xOffset5 = useTransform(adjustedScroll, [0.9, 1], [100, -3]);
 
   // Apply `useSpring` for smoother bounce effect
-  const springX1 = useSpring(xOffset1, { stiffness: 300, damping: 50 });
-  const springX2 = useSpring(xOffset2, { stiffness: 300, damping: 40 });
-  const springX3 = useSpring(xOffset3, { stiffness: 300, damping: 30 });
-  const springX4 = useSpring(xOffset4, { stiffness: 300, damping: 20 });
+  const springX1 = useSpring(xOffset1, { stiffness: 300, damping: 30 });
+  const springX2 = useSpring(xOffset2, { stiffness: 300, damping: 25 });
+  const springX3 = useSpring(xOffset3, { stiffness: 300, damping: 20 });
+  const springX4 = useSpring(xOffset4, { stiffness: 300, damping: 15 });
   const springX5 = useSpring(xOffset5, { stiffness: 300, damping: 10 });
 
   useEffect(() => {
