@@ -13,7 +13,7 @@ const images = [
   { src: "/langImages/python.png", color: "rgb(70, 70, 70)" },
   { src: "/langImages/react.png", color: "rgb(48, 164, 206)" },
   { src: "/langImages/ts.png", color: "rgb(137,175,223)" },
-  { src: "/langImages/prisma.svg", color: "rgb(27, 41, 51)" },
+  { src: "/langImages/prisma.svg", color: "rgb(50, 50, 60)" },
   { src: "/langImages/azure.png", color: "rgb(0, 120, 212)" },
 ];
 
@@ -81,38 +81,29 @@ export default function AnimatedCircles() {
   }, [isMobile]);
 
   useEffect(() => {
-    if (initialCircles.length === 0) return;
+    if (initialCircles.length === 0 || jiggledCircles.length === 0) return;
+
     const interval = setInterval(() => {
-      if (isMobile) {
-        setJiggledCircles((prevCircles) =>
-          prevCircles.map((pos, index) => {
-            const initialPos = initialCircles[index]; // Get corresponding initial position
-            return {
-              ...pos,
-              x: initialPos.x + (Math.random() - 0.5) * 2, // Small movement around initial x
-              y: initialPos.y + (Math.random() - 0.5) * 2, // Small movement around initial y
-            };
-          })
-        );
-      } else {
-        setJiggledCircles((prevCircles) =>
-          prevCircles.map((pos, index) => {
-            const initialPos = initialCircles[index]; // Get corresponding initial position
-            return {
-              ...pos,
-              x: initialPos.x + (Math.random() - 0.5) * 3, // Small movement around initial x
-              y: initialPos.y + (Math.random() - 0.5) * 3, // Small movement around initial y
-            };
-          })
-        );
-      }
+      setJiggledCircles((prevCircles) =>
+        prevCircles.map((pos, index) => {
+          const initialPos = initialCircles[index];
+
+          if (!initialPos) return pos; // Ensure initialPos is defined
+
+          return {
+            ...pos,
+            x: initialPos.x + (Math.random() - 0.5) * (isMobile ? 2 : 3),
+            y: initialPos.y + (Math.random() - 0.5) * (isMobile ? 2 : 3),
+          };
+        })
+      );
     }, 100);
 
     return () => clearInterval(interval);
-  }, [initialCircles]); // Depend only on `initialCircles`
+  }, [initialCircles, jiggledCircles, isMobile]);
 
   return (
-    <section className="h-[40rem] md:h-[70rem] w-full flex justify-center items-center">
+    <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center">
       <div className="h-full w-[30rem] text-center flex justify-center items-center relative">
         <h1 className="text-5xl font-bold absolute top-[18%] md:top-[45%] text-cyan-900">
           Using the latest tech for the best results.

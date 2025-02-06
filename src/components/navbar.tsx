@@ -38,7 +38,7 @@ export default function Navbar({ light }: NavbarProps) {
           <Link
             // onMouseEnter={() => setHoveredItem("about")}
             // onMouseLeave={() => setHoveredItem(null)}
-            href="/contact-us"
+            href="/about"
             className={`relative z-20 duration-200 md:px-6 py-2 ${light_color}`}
           >
             About
@@ -46,7 +46,7 @@ export default function Navbar({ light }: NavbarProps) {
           <Link
             // onMouseEnter={() => setHoveredItem("apps")}
             // onMouseLeave={() => setHoveredItem(null)}
-            href="/contact-us"
+            href="/webapps"
             className={`relative z-20 duration-200 md:px-6 py-2 ${light_color}`}
           >
             Web Apps
@@ -54,7 +54,7 @@ export default function Navbar({ light }: NavbarProps) {
           <Link
             // onMouseEnter={() => setHoveredItem("sites")}
             // onMouseLeave={() => setHoveredItem(null)}
-            href="/contact-us"
+            href="/websites"
             className={`relative z-20 duration-200 md:px-6 py- ${light_color}`}
           >
             Web Sites

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import FlipCard from "../FlipCard";
@@ -12,11 +12,35 @@ type SectionData = {
   content: string;
 };
 
-const chunkSections = (sections: SectionData[]) => {
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return width;
+};
+
+const chunkSections = (sections: SectionData[], width: number) => {
   let chunked = [];
   let index = 0;
+
   while (index < sections.length) {
-    let chunkSize: number = chunked.length % 2 === 0 ? 1 : 2; // Alternate between 4 and 3
+    let chunkSize: number;
+
+    if (width < 768) {
+      chunkSize = chunked.length % 2 === 0 ? 3 : 4;
+    } else if (width < 1024) {
+      chunkSize = chunked.length % 2 === 0 ? 5 : 3;
+    } else {
+      chunkSize = chunked.length % 2 === 0 ? 3 : 4;
+    }
+
     chunked.push(sections.slice(index, index + chunkSize));
     index += chunkSize;
   }
@@ -74,7 +98,7 @@ export default function SquigglyPathSection() {
         "Optimized for cloud infrastructure to ensure flexibility, speed, and scalability.",
     },
     {
-      title: "Performance Optimized",
+      title: "Performance",
       src: "/icons/performance.svg",
       content: "Fast, responsive, and efficient apps with minimal load times.",
     },
@@ -99,17 +123,20 @@ export default function SquigglyPathSection() {
   ];
 
   const refs = sections.map(() => useRef(null)); // Create separate refs for each section
-  const sectionGroups = chunkSections(sections);
+  const sectionGroups = chunkSections(sections, useWindowWidth());
 
   return (
     <section className="py-[4rem] md:py-[10rem] bg-neutral-50 text-white">
-      <div className="w-full h-full max-w-[80rem] mx-auto flex flex-col items-start justify-center space-y-12 px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-[#012A4A] capitalize">
+      <div className="w-full h-full flex flex-col items-start justify-center px-4 md:px-8 space-y-12">
+        <h1 className="max-w-[100rem]  mx-auto w-full text-left md:text-xl font-semibold opacity-80 text-cyan-950">
+          Our Services
+        </h1>
+        <h2 className="max-w-[65rem] mx-auto w-full text-left text-3xl md:text-5xl font-bold text-[#012A4A] capitalize">
           Why choose us?
         </h2>
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-[100rem] md:h-[70rem]">
+        <div className="max-w-[65rem] mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 h-[80rem] md:h-[55rem]">
           {sectionGroups.map((group, groupIndex) => (
-            <div key={groupIndex} className="grid gap-4">
+            <div key={groupIndex} className="grid gap-2 md:gap-4">
               {group.map((section, index) => {
                 return (
                   <div key={index}>

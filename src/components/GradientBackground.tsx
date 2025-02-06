@@ -102,10 +102,12 @@ const FloatingParticles: React.FC = () => {
 
       {/* Grainy Texture Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="h-screen absolute inset-0 pointer-events-none"
         style={{
           background: "url(/noise.png)",
-          opacity: 0.0,
+          backgroundRepeat: "repeat", // Tiling the image
+          backgroundSize: "100px 100px", // Adjust this value for more density (smaller size increases density)
+          opacity: 0.3,
           backgroundBlendMode: "overlay",
           zIndex: 20,
         }}

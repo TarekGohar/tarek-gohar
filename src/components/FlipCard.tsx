@@ -83,17 +83,17 @@ export default function FlipCard({ index, section }: SectionDataProps) {
       >
         {/* Front Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-2 lg:space-y-4 ${frontColor.bg}`}
+          className={`rounded-2xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 ${frontColor.bg} bg-noise`}
         >
           <Image
             src={section.src}
             alt={section.title}
             width={1000}
             height={1000}
-            className={`w-[32%] lg:w-[40%] opacity-90 ${frontColor.text}`}
+            className={`md:p-2 w-[32%] lg:w-[40%] opacity-100 mix-blend-screen ${frontColor.text}`}
           />
           <h3
-            className={`w-[90%] text-2xl lg:text-4xl font-bold ${frontColor.text}`}
+            className={`w-[90%] md:text-xl lg:text-2xl font-bold ${frontColor.text}`}
           >
             {section.title}
           </h3>
@@ -101,10 +101,10 @@ export default function FlipCard({ index, section }: SectionDataProps) {
 
         {/* Back Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-4 flex items-center justify-center ${frontColor.bg}`}
+          className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center ${frontColor.bg}`}
         >
           <span
-            className={`text-lg lg:text-2xl font-semibold ${frontColor.text}`}
+            className={`text-md lg:text-xl font-semibold ${frontColor.text}`}
           >
             {section.content}
           </span>
