@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const NUM_PARTICLES = 10;
+const NUM_PARTICLES = 15;
 
 const FloatingParticles: React.FC = () => {
   interface Particle {
@@ -107,7 +107,7 @@ const FloatingParticles: React.FC = () => {
           background: "url(/noise.png)",
           backgroundRepeat: "repeat", // Tiling the image
           backgroundSize: "100px 100px", // Adjust this value for more density (smaller size increases density)
-          opacity: 0.3,
+          opacity: 0.25,
           backgroundBlendMode: "overlay",
           zIndex: 20,
         }}

@@ -5,6 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { linearGradient, section } from "framer-motion/client";
 import Link from "next/link";
 
+const TYPING_SPEED = 0.05;
+
 export function GetAQuote() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -30,7 +32,10 @@ export function GetAQuote() {
             key={index}
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.065, delay: index * 0.065 + 1 }}
+            transition={{
+              duration: TYPING_SPEED,
+              delay: index * TYPING_SPEED + 0.5,
+            }}
           >
             {letter}
           </motion.span>
@@ -46,8 +51,8 @@ export function GetAQuote() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{
-              duration: 0.065,
-              delay: index * 0.065 + text.length * 0.065 + 1,
+              duration: TYPING_SPEED,
+              delay: index * TYPING_SPEED + text.length * TYPING_SPEED + 0.5,
             }}
           >
             {subheader}
@@ -62,7 +67,11 @@ export function GetAQuote() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{
-            delay: 0.065 + text.length * 0.065 + text.length * 0.065 + 1,
+            delay:
+              TYPING_SPEED +
+              text.length * TYPING_SPEED +
+              text.length * TYPING_SPEED +
+              0.5,
           }}
         >
           Get a quote

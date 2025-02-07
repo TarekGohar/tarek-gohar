@@ -163,18 +163,17 @@ export default function Page() {
         {/* Gradient Fade to White at the Bottom */}
         <motion.div
           className={`absolute inset-0 pointer-events-none z-40`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isLocked ? 0 : 1 }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: isLocked ? 1 : 1 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           style={{
-            background: isLocked
-              ? "transparent"
-              : "linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)",
+            background:
+              "linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0.35) 80%, rgba(255, 255, 255, 0.65) 90%, rgba(255, 255, 255, 1) 100%)",
           }}
         />
         {/* Transition background from black to white */}
         <motion.div
-          className="absolute inset-0 z-0 w-full h-screen bg-cyan-950"
+          className="absolute inset-0 z-0 w-full h-screen bg-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: bgBlack ? 0 : 1 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -185,7 +184,7 @@ export default function Page() {
 
       <section className="h-[30rem] md:h-[40rem] max-w-[70rem] mx-auto flex items-center justify-center px-4">
         <h1 className="typewriter text-5xl md:text-7xl font-semibold text-left md:leading-[4.5rem]">
-          Dedicated to helping your business{" "}
+          We help your business{" "}
           <span className="opacity-80 text-cyan-800">grow</span>,{" "}
           <span className="opacity-90 text-cyan-800">innovate</span>, and{" "}
           <span className="opacity-100 text-cyan-800">succeed</span>.

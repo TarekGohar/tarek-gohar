@@ -32,7 +32,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
         setHovering(true);
         setIsAnimating(true);
         setIsFlipped(true);
-      }, 200); // 200ms debounce delay
+      }, 150); // 200ms debounce delay
     }
   }
 
@@ -83,7 +83,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
       >
         {/* Front Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 ${frontColor.bg} bg-noise`}
+          className={`rounded-xl overflow-hidden border-[.2rem] border-white border-opacity-25 flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 ${frontColor.bg} bg-noise`}
         >
           <Image
             src={section.src}
@@ -93,7 +93,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
             className={`md:p-2 w-[32%] lg:w-[40%] opacity-100 mix-blend-screen ${frontColor.text}`}
           />
           <h3
-            className={`w-[90%] md:text-xl lg:text-2xl font-bold ${frontColor.text}`}
+            className={`w-[90%] md:text-xl lg:text-2xl font-semibold ${frontColor.text}`}
           >
             {section.title}
           </h3>
@@ -101,7 +101,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
 
         {/* Back Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center ${frontColor.bg}`}
+          className={`rounded-xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center ${frontColor.bg}`}
         >
           <span
             className={`text-md lg:text-xl font-semibold ${frontColor.text}`}

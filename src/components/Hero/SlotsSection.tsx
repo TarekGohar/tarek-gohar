@@ -35,13 +35,13 @@ export default function SlotsSection() {
   const springX5 = useSpring(xOffset5, { stiffness: 300, damping: 10 });
 
   return (
-    <section className="bg-neutral-50 w-full h-[40rem] md:h-[35rem] mb-[0rem] md:mb-[0rem] px-4 flex flex-col justify-center items-center">
+    <section className="bg-neutral-50 w-full h-[40rem] md:h-[40rem] mb-[0rem] md:mb-[0rem] px-4 flex flex-col justify-center items-center">
       <div
         ref={targetRef}
         className="bg-neutral-50 rounded-[2rem] px-2 gap-x-6 py-[4rem] max-w-[80rem] w-fit mx-auto flex items-center justify-center md:gap-x-12 overflow-hidden"
       >
-        <h1 className="text-5xl md:text-7xl text-neutral-900/50 font-bold w-[65%] md:w-[70%] capitalize h-fit">
-          Full-stack apps built from the ground up.
+        <h1 className="text-5xl md:text-7xl text-cyan-950 font-bold w-[65%] md:w-[70%] capitalize h-fit">
+          We build full-stack apps from the ground up.
         </h1>
         <div className="w-fit text-center flex flex-col space-y-4 md:space-y-8">
           <motion.div

@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "@/components/navbar";
+import WordStyleSection from "@/components/Websites/WordStyleSection";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -8,8 +9,7 @@ export default function Page() {
   const ref = useRef(null);
   const t1 = "First";
   const t2 = "impressions";
-  const t3 = "matter.";
-  const t4 = "Make\u00a0it\u00a0count.";
+  const t3 = "matter";
 
   const direction = "up";
   const value = 50;
@@ -20,7 +20,7 @@ export default function Page() {
     damping: 100,
     stiffness: 120,
   });
-  const isInView = useInView(ref2, { once: true });
+  const isInView = useInView(ref2, { once: true, margin: "0px" });
 
   useEffect(() => {
     if (isInView) {
@@ -45,143 +45,152 @@ export default function Page() {
       <Navbar light={false} />
 
       <motion.div
-        className="bg-cyan-50"
+        className="bg-cyan-50 relative"
         initial={{
           background:
             "linear-gradient(45deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)",
         }}
         animate={{
           background: [
-            "linear-gradient(45deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)", // 0deg
-            "linear-gradient(90deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)", // 90deg
-            "linear-gradient(180deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)", // 180deg
-            "linear-gradient(270deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)", // 270deg
+            "linear-gradient(45deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)",
+            "linear-gradient(90deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)",
+            "linear-gradient(180deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)",
+            "linear-gradient(270deg, #062a33 0%, #0f3c4f 15%, #067e99 50%, #0496b5 60%, #99c1d3 100%)",
           ],
         }}
         transition={{
-          duration: 10, // Adjust for speed
+          duration: 10,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "linear",
         }}
         style={{
-          height: "200vh",
+          height: "100%",
           width: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: -1,
+          position: "relative",
+          zIndex: 0,
           backgroundSize: "400% 400%",
-          backgroundPosition: "0% 50%", // Keep this fixed for now
+          backgroundPosition: "0% 50%",
         }}
-      />
+      >
+        {/* Noise Overlay covering everything */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "url(/noise2.png)",
+            backgroundRepeat: "repeat",
+            backgroundSize: "100px 100px",
+            opacity: 0.1,
+            backgroundBlendMode: "overlay",
+            zIndex: 1, // Ensure it overlays everything
+          }}
+        />
 
-      <div className="h-screen flex flex-col items-start justify-center text-white">
-        <div className="max-w-[120rem] mx-auto px-4 md:px-8 flex flex-col items-start justify-center space-y-4 md:space-y-0 opacity-100 text-neutral-400 mix-blend-plus-lighter z-40">
-          <h1 className="w-full overflow-hidden text-left font-bold text-5xl md:text-[5.4rem] lg:text-[8.75rem] uppercase">
-            {t1.split("").map((t1, index) => (
-              <motion.span
-                key={index}
-                className="inline-block h-fit"
-                initial={{ y: index % 2 == 0 ? -300 : 300, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  y: {
-                    delay: index * 0.055,
+        <section className="h-screen flex flex-col items-start justify-center text-white relative">
+          <div className="max-w-[120rem] mx-auto px-4 md:px-8 flex flex-col items-start justify-center space-y-4 md:space-y-0 opacity-80 text-neutral-300 mix-blend-plus-lighter z-50">
+            <h1 className="w-full overflow-hidden tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] uppercase">
+              {t1.split("").map((t1, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block h-fit"
+                  initial={{ y: index % 2 === 0 ? -300 : 300, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    y: {
+                      delay: index * 0.055,
+                      duration: 0.3,
+                      ease: "easeOut",
+                    },
+                    opacity: {
+                      delay: index * 0.055,
+                      duration: 0.3,
+                      ease: "easeOut",
+                    },
+                  }}
+                >
+                  {t1}
+                </motion.span>
+              ))}
+            </h1>
+
+            <h1 className="w-full pr-1 overflow-hidden tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] uppercase">
+              {t2.split("").map((letter, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block h-fit"
+                  initial={{ y: index % 2 === 0 ? -300 : 300, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * 0.055 + t1.length * 0.055,
                     duration: 0.3,
                     ease: "easeOut",
-                  },
-                  opacity: {
-                    delay: index * 0.055,
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </h1>
+
+            <h1 className="w-full overflow-hidden tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] uppercase">
+              {t3.split("").map((t3, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block h-fit"
+                  initial={{ y: index % 2 === 0 ? -300 : 300, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay:
+                      index * 0.055 + t1.length * 0.055 + t2.length * 0.055,
                     duration: 0.3,
                     ease: "easeOut",
-                  },
-                }}
-              >
-                {t1}
-              </motion.span>
-            ))}
-          </h1>
-          <h1 className="w-fit overflow-hidden text-left font-bold text-5xl md:text-[5.4rem] lg:text-[8.75rem] uppercase">
-            {t2.split("").map((letter, index) => (
-              <motion.span
-                key={index}
-                className="inline-block h-fit"
-                initial={{ y: -index % 2 == 0 ? -300 : 300, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.055 + t1.length * 0.055,
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </h1>
-
-          <h1 className="w-full overflow-hidden text-left font-bold text-5xl md:text-[5.4rem] lg:text-[8.75rem] uppercase">
-            {t3.split("").map((t3, index) => (
-              <motion.span
-                key={index}
-                className="inline-block h-fit"
-                initial={{ y: index % 2 == 0 ? -300 : 300, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.055 + t1.length * 0.055 + t2.length * 0.055,
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-              >
-                {t3}
-              </motion.span>
-            ))}
-          </h1>
-          <h1 className="w-full overflow-hidden text-left font-bold text-5xl md:text-[5.4rem] lg:text-[8.75rem] uppercase">
-            {t4.split("").map((t4, index) => (
-              <motion.span
-                key={index}
-                className="inline-block h-fit"
-                initial={{ y: index % 2 == 0 ? -300 : 300, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay:
-                    index * 0.055 +
-                    t1.length * 0.055 +
-                    t2.length * 0.055 +
-                    t3.length * 0.055 +
-                    0.5,
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-              >
-                {t4}
-              </motion.span>
-            ))}
-          </h1>
-        </div>
-      </div>
-
-      <div className="h-screen">
-        <div className="max-w-[100rem] mx-auto w-[90%] md:w-full px-4 md:px-8 flex flex-col md:flex-row items-start justify-between space-y-4 md:space-y-0 opacity-100 text-neutral-100 mix-blend-plus-lighter z-40">
-          <h2 className="md:w-1/2 overflow-hidden text-left font-bold text-4xl md:text-6xl uppercase text-white">
-            Seconds it takes for someone to form an opinion about your website.
-          </h2>
-          <div>
-            <span
-              className="w-full text-right font-bold text-[6rem] md:text-[10rem] uppercase text-white"
-              ref={ref2}
-            />
-            <span className="font-bold text-xl md:text-[3.5rem] text-white">
-              ms
-            </span>
+                  }}
+                >
+                  {t3}
+                </motion.span>
+              ))}
+            </h1>
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section className="h-[40rem] md:h-[50rem] relative max-w-[100rem] mx-auto w-full">
+          <div className=" px-4 md:px-8 flex flex-col items-center justify-center text-neutral-100 mix-blend-plus-lighter">
+            <div className="w-full">
+              <h2 className="md:w-[40%] overflow-hidden text-left font-bold text-3xl md:text-4xl uppercase text-white tracking-tighter">
+                Seconds it takes for someone to form an opinion about your
+                website.
+              </h2>
+            </div>
+
+            <div className="w-fit mt-[5rem]">
+              <span
+                className="italic w-[18rem] h-[11.7rem] md:w-[22.5rem] md:h-[14.55rem] lg:w-[25.5rem] lg:h-[16.2rem] inline-block text-left font-bold text-[16rem] leading-[12rem] md:text-[20rem] md:leading-[15rem] lg:text-[23rem] lg:leading-[16rem] uppercase text-white tracking-tighter"
+                ref={ref2}
+              />
+              <span className="italic w-fit inline-block font-bold text-left text-xl md:text-[2rem] text-white tracking-tighter">
+                ms
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style={{
+            backdropFilter: "blur(30)",
+            WebkitBackdropFilter: "blur(30)",
+            background: "rgba(22, 78, 99, 0.4)",
+          }}
+          className="h-[30rem] w-full flex justify-center items-center"
+        >
+          <h2 className="w-[40rem] text-center font-bold text-4xl md:text-5xl uppercase text-white tracking-tighter">
+            We'll make sure yours is worth the click.
+          </h2>
+        </section>
+      </motion.div>
+
+      <WordStyleSection />
 
       {/* Cool */}
       {/* <div
@@ -196,18 +205,6 @@ export default function Page() {
           zIndex: 20,
         }}
       /> */}
-
-      <div
-        className="h-[200vh] absolute inset-0 pointer-events-none"
-        style={{
-          background: "url(/noise2.png)",
-          backgroundRepeat: "repeat", // Tiling the image
-          backgroundSize: "100px 100px", // Adjust this value for more density (smaller size increases density)
-          opacity: 0.15,
-          backgroundBlendMode: "overlay",
-          zIndex: 20,
-        }}
-      />
     </>
   );
 }

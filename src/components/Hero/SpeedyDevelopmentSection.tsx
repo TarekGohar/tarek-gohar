@@ -34,7 +34,7 @@ const chunkSections = (sections: SectionData[], width: number) => {
     let chunkSize: number;
 
     if (width < 768) {
-      chunkSize = chunked.length % 2 === 0 ? 3 : 4;
+      chunkSize = chunked.length % 3 === 0 ? 1 : 2;
     } else if (width < 1024) {
       chunkSize = chunked.length % 2 === 0 ? 5 : 3;
     } else {
@@ -122,7 +122,6 @@ export default function SquigglyPathSection() {
     },
   ];
 
-  const refs = sections.map(() => useRef(null)); // Create separate refs for each section
   const sectionGroups = chunkSections(sections, useWindowWidth());
 
   return (
