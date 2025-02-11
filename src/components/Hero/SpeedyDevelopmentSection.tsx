@@ -13,12 +13,13 @@ type SectionData = {
 };
 
 const useWindowWidth = () => {
-  const [width, setWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1024
-  );
+  const [width, setWidth] = useState<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
+
+    setWidth(window.innerWidth); // Set initial width on mount
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -122,7 +123,10 @@ export default function SquigglyPathSection() {
     },
   ];
 
-  const sectionGroups = chunkSections(sections, useWindowWidth());
+  const width = useWindowWidth();
+  if (width === null) return null; // Avoid mismatch in hydration
+
+  const sectionGroups = chunkSections(sections, width);
 
   return (
     <section className="py-[4rem] md:py-[10rem] bg-neutral-50 text-white">

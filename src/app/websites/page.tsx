@@ -1,6 +1,9 @@
 "use client";
 
+import DotGrid from "@/components/GridDots";
 import Navbar from "@/components/navbar";
+import PerformanceSection from "@/components/Websites/PerformanceSection";
+import SecuritySection from "@/components/Websites/SecuritySection";
 import WordStyleSection from "@/components/Websites/WordStyleSection";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
@@ -20,7 +23,7 @@ export default function Page() {
     damping: 100,
     stiffness: 120,
   });
-  const isInView = useInView(ref2, { once: true, margin: "0px" });
+  const isInView = useInView(ref2, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (isInView) {
@@ -79,7 +82,7 @@ export default function Page() {
           style={{
             background: "url(/noise2.png)",
             backgroundRepeat: "repeat",
-            backgroundSize: "100px 100px",
+            backgroundSize: "300px 300px",
             opacity: 0.1,
             backgroundBlendMode: "overlay",
             zIndex: 1, // Ensure it overlays everything
@@ -154,43 +157,37 @@ export default function Page() {
             </h1>
           </div>
         </section>
-
-        <section className="h-[40rem] md:h-[50rem] relative max-w-[100rem] mx-auto w-full">
-          <div className=" px-4 md:px-8 flex flex-col items-center justify-center text-neutral-100 mix-blend-plus-lighter">
-            <div className="w-full">
-              <h2 className="md:w-[40%] overflow-hidden text-left font-bold text-3xl md:text-4xl uppercase text-white tracking-tighter">
-                Seconds it takes for someone to form an opinion about your
-                website.
-              </h2>
-            </div>
-
-            <div className="w-fit mt-[5rem]">
-              <span
-                className="italic w-[18rem] h-[11.7rem] md:w-[22.5rem] md:h-[14.55rem] lg:w-[25.5rem] lg:h-[16.2rem] inline-block text-left font-bold text-[16rem] leading-[12rem] md:text-[20rem] md:leading-[15rem] lg:text-[23rem] lg:leading-[16rem] uppercase text-white tracking-tighter"
-                ref={ref2}
-              />
-              <span className="italic w-fit inline-block font-bold text-left text-xl md:text-[2rem] text-white tracking-tighter">
-                ms
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <section
-          style={{
-            backdropFilter: "blur(30)",
-            WebkitBackdropFilter: "blur(30)",
-            background: "rgba(22, 78, 99, 0.4)",
-          }}
-          className="h-[30rem] w-full flex justify-center items-center"
-        >
-          <h2 className="w-[40rem] text-center font-bold text-4xl md:text-5xl uppercase text-white tracking-tighter">
-            We'll make sure yours is worth the click.
-          </h2>
-        </section>
       </motion.div>
 
+      <section className="h-[40rem] md:h-[45rem] relative max-w-[100rem] mx-auto w-full flex items-center justify-center">
+        <div className=" px-4 md:px-8 flex flex-col items-center justify-center text-cyan-800 mix-blend-plus-lighter">
+          <div className="w-full">
+            <h2 className="md:w-[40%] overflow-hidden text-left font-bold text-3xl md:text-4xl uppercase tracking-tighter">
+              Time it takes for someone to form an opinion about your website.
+            </h2>
+          </div>
+
+          <div className="w-fit mt-[5rem]">
+            <span
+              className="italic w-[18rem] h-[11.7rem] md:w-[22.5rem] md:h-[14.55rem] lg:w-[25.5rem] lg:h-[16.2rem] inline-block text-left font-extrabold text-[16rem] leading-[12rem] md:text-[20rem] md:leading-[15rem] lg:text-[23rem] lg:leading-[16rem] uppercase tracking-tighter"
+              ref={ref2}
+            />
+            <span className="italic w-fit inline-block font-bold text-left text-xl md:text-[2rem] tracking-tighter">
+              ms
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="h-[30rem] bg-neutral-100 w-full flex justify-center items-center">
+        <h2 className="max-w-[40rem] text-center font-bold text-4xl md:text-5xl uppercase text-cyan-800 tracking-tighter">
+          We'll make sure yours is worth the click.
+        </h2>
+      </section>
+
       <WordStyleSection />
+      <PerformanceSection />
+      <SecuritySection />
 
       {/* Cool */}
       {/* <div

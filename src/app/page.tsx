@@ -2,18 +2,11 @@
 
 import Navbar from "@/components/navbar";
 import { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  useInView,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import SlotsSection from "@/components/Hero/SlotsSection";
 import AnimatedCirclesSection from "@/components/Hero/AnimateCircles";
-import MovingLinesBackground from "@/components/MovingLines";
 import SpeedyDevelopmentSection from "@/components/Hero/SpeedyDevelopmentSection";
-import ParticlesBackground from "@/components/GradientBackground";
+import ParticlesBackground from "@/components/Hero/GradientBackground";
 import WebAppsSection from "../components/Hero/WebAppsSection";
 import WebSitesSection from "@/components/Hero/WebSitesSection";
 import { GetAQuote } from "@/components/Hero/GetAQuoteSection";

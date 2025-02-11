@@ -14,7 +14,7 @@ export function GetAQuote() {
   const subheader = "We’ll Handle the Code.";
   return (
     <section
-      className="relative min-h-[50rem] min-w-[20rem] flex flex-col items-center justify-center overflow-hidden px-4 md:px-8"
+      className="relative min-h-[47rem] min-w-[20rem] flex flex-col items-center justify-center overflow-hidden px-4 md:px-8"
       style={{
         background:
           "linear-gradient(220deg, rgba(22, 78, 99, 0.3), rgba(255, 255, 255, 1) 100%), " +

@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  motion,
-  useInView,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import { section } from "framer-motion/client";
-import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
 import { BoxesContainer } from "../BoxesContainer";
 
 export default function WebSitesSection() {
