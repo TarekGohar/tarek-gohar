@@ -175,8 +175,11 @@ export default function Page() {
 
       {/* Spacer - Prevents instant scrolling when fixed section disappears */}
 
-      <section className="h-[30rem] md:h-[40rem] max-w-[70rem] mx-auto flex items-center justify-center px-4">
-        <h1 className="typewriter text-5xl md:text-7xl font-semibold text-left md:leading-[4.5rem]">
+      <section className="h-[30rem] md:h-[40rem] max-w-[70rem] mx-auto flex flex-col items-center justify-center px-4 space-y-4">
+        <h1 className="md:text-2xl font-semibold opacity-60 capitalize text-center text-cyan-800">
+          What do we do?
+        </h1>
+        <h1 className="typewriter text-5xl md:text-7xl font-semibold text-center md:leading-[4.5rem]">
           We help your business{" "}
           <span className="opacity-80 text-cyan-800">grow</span>,{" "}
           <span className="opacity-90 text-cyan-800">innovate</span>, and{" "}

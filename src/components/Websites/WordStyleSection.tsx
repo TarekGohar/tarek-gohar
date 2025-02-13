@@ -2,12 +2,42 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const words = [
-  { text: "Corporate", font: "Corporate", fontColor: "#ADADAD" }, // Business, Finance, Consulting
-  { text: "Modern", font: "Modern", fontColor: "#333D46" }, // E-Learning, Schools, Universities
-  { text: "Artistic", font: "Artistic", fontColor: "#98AA98" }, // Creative, Design, Photography
-  { text: "Luxury", font: "Luxury", fontColor: "#312000" }, // High-end Brands, Fashion, Hospitality
-  { text: "Innovative", font: "Innovative", fontColor: "#272727" }, // Tech, Startups, R&D
-  { text: "Minimalist", font: "Minimalist", fontColor: "#B1A898" }, // Law, Healthcare, Finance
+  {
+    text: "Corporate",
+    font: "Corporate",
+    fontColor: "#ADADAD",
+    fontSize: "text-[4rem] md:text-[8rem] lg:text-[10.75rem]",
+  }, // Business, Finance, Consulting
+  {
+    text: "Modern",
+    font: "Modern",
+    fontColor: "#333D46",
+    fontSize: "text-[4rem] md:text-[9rem] lg:text-[11rem]",
+  }, // E-Learning, Schools, Universities
+  {
+    text: "Artistic",
+    font: "Artistic",
+    fontColor: "#98AA98",
+    fontSize: "text-[4rem] md:text-[8rem] lg:text-[11rem]",
+  }, // Creative, Design, Photography
+  {
+    text: "Luxury",
+    font: "Luxury",
+    fontColor: "#312000",
+    fontSize: "text-[4.5rem] md:text-[9rem] lg:text-[11rem]",
+  }, // High-end Brands, Fashion, Hospitality
+  {
+    text: "Innovative",
+    font: "Innovative",
+    fontColor: "#272727",
+    fontSize: "text-[4.5rem] md:text-[8rem] lg:text-[11rem]",
+  }, // Tech, Startups, R&D
+  {
+    text: "Minimalist",
+    font: "Minimalist",
+    fontColor: "#B1A898",
+    fontSize: "text-[4.5rem] md:text-[9rem] lg:text-[11rem]",
+  }, // Law, Healthcare, Finance
 ];
 
 const typingSpeed = 100; // Speed of typing (ms per letter)
@@ -48,16 +78,15 @@ export default function WordFlip() {
   }, [displayedText, isDeleting, index]);
 
   return (
-    <section className="h-[50rem] bg-neutral-50">
-      <div className="relative max-w-[100rem] mx-auto h-[95%] w-full flex flex-col items-center justify-center">
-        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-700 opacity-70 px-4 md:px-8">
+    <section className="h-[40rem] md:h-[60rem] bg-neutral-50">
+      <div className="relative max-w-[120rem] mx-auto h-[95%] w-full flex flex-col items-center justify-center">
+        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-neutral-700 opacity-70 px-4 md:px-8">
           Styling
         </h1>
         <h2 className="absolute top-[65%] max-w-[30rem] md:max-w-[40rem] text-neutral-400 text-center font-semibold text-xl md:text-3xl">
           No matter the mood, we can style your website to perfectly suit you.
         </h2>
-        <div className="flex flex-col items-center justify-center">
-          {/* <div className="flex items-center justify-center"> */}
+        <div className="-ml-[0.75rem] flex flex-col items-center justify-center">
           <motion.span
             key={index}
             style={{
@@ -66,7 +95,7 @@ export default function WordFlip() {
               textTransform: "uppercase",
               color: words[index].fontColor,
             }}
-            className="text-[5rem] md:text-[12rem]"
+            className={`tracking-tighter ${words[index].fontSize}`}
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}

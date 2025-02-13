@@ -6,6 +6,18 @@ export default function NinetyPercentCircle({ delay = 0 }) {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" }); // Adjust margin for better control
+  const [size, setSize] = useState(100);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth >= 768) setSize(200); // Large screens
+      else setSize(100); // Extra small screens
+    };
+
+    updateSize(); // Set initial size
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -39,12 +51,12 @@ export default function NinetyPercentCircle({ delay = 0 }) {
   return (
     <div
       ref={ref}
-      className="relative w-[12.5rem] h-[12.5rem] flex items-center justify-center"
+      className="relative w-[6.25rem] h-[6rem] md:w-[12.5rem] md:h-[12.5rem] flex items-center justify-center"
     >
       {/* Background Gray Circle */}
       <svg
-        width="200"
-        height="200"
+        width={size}
+        height={size}
         viewBox="0 0 200 200"
         className="absolute top-0 left-0"
       >
@@ -64,17 +76,17 @@ export default function NinetyPercentCircle({ delay = 0 }) {
 
       {/* Animated Progress Circle */}
       <svg
-        width="200"
-        height="200"
+        width={size}
+        height={size}
         viewBox="0 0 200 200"
-        className="absolute top-0 left-0"
+        className="absolute top-0 left-0" // Position on top of the background circle
       >
         <motion.circle
           cx="100"
           cy="100"
           r="90"
           fill="transparent"
-          stroke="#22c55e"
+          stroke="#164e63"
           strokeWidth="20"
           strokeLinecap="round"
           strokeDasharray="565"
@@ -87,8 +99,8 @@ export default function NinetyPercentCircle({ delay = 0 }) {
       </svg>
 
       {/* Centered Count-Up Number */}
-      <div className="absolute flex items-center justify-center text-neutral-950">
-        <h3 className="font-bold text-4xl">{count}</h3>
+      <div className="absolute flex items-center justify-center text-cyan-900/60">
+        <h3 className="font-bold text-xl md:text-4xl">{count}</h3>
       </div>
     </div>
   );

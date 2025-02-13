@@ -87,7 +87,7 @@ export function GetAQuote() {
         }}
       />
 
-      <h1 className="absolute top-[4rem] max-w-[100rem] mx-auto w-full md:text-xl font-semibold text-cyan-800 opacity-60 px-4 md:px-8">
+      <h1 className="absolute top-[4rem] max-w-[120rem] mx-auto w-full md:text-xl font-semibold text-cyan-800 opacity-60 px-4 md:px-8">
         Pricing
       </h1>
     </section>

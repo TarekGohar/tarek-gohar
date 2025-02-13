@@ -54,15 +54,15 @@ export default function FlipCard({ index, section }: SectionDataProps) {
 
   // Array of background colors
   const colors = [
-    { bg: "bg-[#012A4A]", text: "text-[#A9D6E5]" }, // Dark Blue & Light Blue
-    { bg: "bg-[#013A63]", text: "text-[#89C2D9]" }, // Deep Blue & Sky Blue
-    { bg: "bg-[#01497C]", text: "text-[#61A5C2]" }, // Navy & Muted Blue
-    { bg: "bg-[#014F86]", text: "text-[#468FAF]" }, // Slightly Brighter Navy & Teal
-    { bg: "bg-[#2A6F97]", text: "text-[#A9D6E5]" }, // Darker Teal & Soft Teal
-    { bg: "bg-[#468FAF]", text: "text-[#01497C]" }, // Teal & Navy
-    { bg: "bg-[#61A5C2]", text: "text-[#013A63]" }, // Light Teal & Deep Blue
-    { bg: "bg-[#89C2D9]", text: "text-[#012A4A]" }, // Sky Blue & Dark Blue
-    { bg: "bg-[#A9D6E5]", text: "text-[#014F86]" }, // Soft Blue & Medium Navy
+    { bg: "from-[#012A4A] to-[#013A63]", text: "text-[#A9D6E5]" }, // Dark Blue to Deep Blue
+    { bg: "from-[#013A63] to-[#01497C]", text: "text-[#89C2D9]" }, // Deep Blue to Navy
+    { bg: "from-[#01497C] to-[#014F86]", text: "text-[#61A5C2]" }, // Navy to Slightly Brighter Navy
+    { bg: "from-[#014F86] to-[#2A6F97]", text: "text-[#468FAF]" }, // Brighter Navy to Darker Teal
+    { bg: "from-[#2A6F97] to-[#468FAF]", text: "text-[#A9D6E5]" }, // Darker Teal to Teal
+    { bg: "from-[#468FAF] to-[#61A5C2]", text: "text-[#01497C]" }, // Teal to Light Teal
+    { bg: "from-[#61A5C2] to-[#89C2D9]", text: "text-[#013A63]" }, // Light Teal to Sky Blue
+    { bg: "from-[#89C2D9] to-[#A9D6E5]", text: "text-[#012A4A]" }, // Sky Blue to Soft Blue
+    { bg: "from-[#A9D6E5] to-[#014F86]", text: "text-[#014F86]" }, // Soft Blue to Medium Navy
   ];
 
   // Select colors based on index
@@ -83,7 +83,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
       >
         {/* Front Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 ${frontColor.bg} border-2 border-opacity-20 border-white`}
+          className={`rounded-2xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 bg-gradient-to-br ${frontColor.bg} border-2 border-opacity-20 border-white`}
         >
           <Image
             src={section.src}
@@ -101,7 +101,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
 
         {/* Back Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center ${frontColor.bg}`}
+          className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center bg-gradient-to-tl ${frontColor.bg}`}
         >
           <span
             className={`text-md lg:text-xl font-semibold ${frontColor.text}`}

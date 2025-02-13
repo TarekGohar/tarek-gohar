@@ -6,7 +6,7 @@ import DotGrid from "../GridDots";
 export default function SecuritySection() {
   return (
     <section className="h-[40rem]">
-      <div className="relative py-40 max-w-[100rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden">
+      <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-black opacity-90 px-4 md:px-8">
           Security
         </h1>

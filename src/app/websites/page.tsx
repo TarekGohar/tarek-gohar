@@ -1,11 +1,16 @@
 "use client";
 
-import DotGrid from "@/components/GridDots";
 import Navbar from "@/components/navbar";
 import PerformanceSection from "@/components/Websites/PerformanceSection";
 import SecuritySection from "@/components/Websites/SecuritySection";
 import WordStyleSection from "@/components/Websites/WordStyleSection";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function Page() {
@@ -14,34 +19,44 @@ export default function Page() {
   const t2 = "impressions";
   const t3 = "matter";
 
-  const direction = "up";
-  const value = 50;
+  const [displayNumber, setDisplayNumber] = useState<number>(0);
+  const targetRef = useRef(null); // Reference to track visibility
+  const isInView = useInView(targetRef, { once: true });
+  const [offset, setOffset] = useState({ x: "-4rem", y: "-4rem" });
 
-  const ref2 = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === "down" ? value : 0);
-  const springValue = useSpring(motionValue, {
-    damping: 100,
-    stiffness: 120,
-  });
-  const isInView = useInView(ref2, { once: true, margin: "-100px" });
+  const count = useMotionValue(0);
 
   useEffect(() => {
     if (isInView) {
-      motionValue.set(direction === "down" ? 0 : value);
-    }
-  }, [motionValue, isInView]);
+      const controls = animate(count, 50, {
+        duration: 3, // 3-second animation
+        ease: "easeOut",
+        onUpdate: (latest) => setDisplayNumber(Math.floor(latest)),
+      });
 
-  useEffect(
-    () =>
-      springValue.on("change", (latest) => {
-        if (ref2.current) {
-          ref2.current.textContent = Intl.NumberFormat("en-US").format(
-            Number(latest.toFixed(0))
-          );
-        }
-      }),
-    [springValue]
-  );
+      return controls.stop; // Cleanup animation when unmounted
+    }
+  }, [isInView]);
+
+  useEffect(() => {
+    const updateOffset = () => {
+      if (window.innerWidth >= 1024) {
+        // Large screens (lg+)
+        setOffset({ x: "-4rem", y: "-0rem" });
+      } else if (window.innerWidth >= 768) {
+        // Medium screens (md)
+        setOffset({ x: "-2.5rem", y: "-0rem" });
+      } else {
+        // Small screens (sm)
+        setOffset({ x: "-1.5rem", y: "-0rem" });
+      }
+    };
+
+    updateOffset(); // Run on mount
+    window.addEventListener("resize", updateOffset); // Update on resize
+
+    return () => window.removeEventListener("resize", updateOffset);
+  }, []);
 
   return (
     <>
@@ -89,8 +104,8 @@ export default function Page() {
           }}
         />
 
-        <section className="h-screen flex flex-col items-start justify-center text-white relative">
-          <div className="max-w-[120rem] mx-auto px-4 md:px-8 flex flex-col items-start justify-center space-y-4 md:space-y-0 opacity-80 text-neutral-300 mix-blend-plus-lighter z-50">
+        {/* <section className="h-screen flex flex-col items-start justify-center text-white relative">
+          <div className="max-w-[120rem] mx-auto w-full px-4 md:px-8 flex flex-col items-start justify-center space-y-4 md:space-y-0 opacity-80 text-neutral-300 mix-blend-plus-lighter z-50">
             <h1 className="w-full overflow-hidden tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] uppercase">
               {t1.split("").map((t1, index) => (
                 <motion.span
@@ -156,33 +171,72 @@ export default function Page() {
               ))}
             </h1>
           </div>
+        </section> */}
+
+        <section className="h-screen min-h-[50rem]">
+          <div className="flex flex-col items-start justify-end text-white relative h-[85%] space-y-4 ">
+            <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start opacity-80 text-neutral-300 mix-blend-plus-lighter z-50 px-4 md:px-8">
+              <h1 className="-ml-[.1rem] md:-ml-[.5rem] tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] leading-[3rem] md:leading-[4.2rem] lg:leading-[7rem] uppercase">
+                First
+              </h1>
+
+              <h1 className="-ml-[.1rem] md:-ml-[.5rem] tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] leading-[3rem] md:leading-[4.2rem] lg:leading-[7rem] uppercase">
+                Impressions
+              </h1>
+
+              <h1 className="-ml-[.1rem] md:-ml-[.5rem] tracking-tighter font-bold text-6xl md:text-[5.4rem] lg:text-[9rem] leading-[3rem] md:leading-[4.2rem] lg:leading-[7rem] uppercase">
+                Matter
+              </h1>
+            </div>
+            <div className="max-w-[120rem] mx-auto w-full text-2xl md:text-3xl lg:text-5xl font-medium tracking-tighter px-4 md:px-8 mix-blend-plus-lighter">
+              <h2>We'll make yours count.</h2>
+            </div>
+          </div>
         </section>
       </motion.div>
 
-      <section className="h-[40rem] md:h-[45rem] relative max-w-[100rem] mx-auto w-full flex items-center justify-center">
-        <div className=" px-4 md:px-8 flex flex-col items-center justify-center text-cyan-800 mix-blend-plus-lighter">
-          <div className="w-full">
-            <h2 className="md:w-[40%] overflow-hidden text-left font-bold text-3xl md:text-4xl uppercase tracking-tighter">
+      <section className="relative max-w-[120rem] mx-auto w-full">
+        <div className="pt-[5rem] md:pt-[15rem] w-full h-[40rem] px-4 md:px-8 flex flex-col md:flex-row items-center md:items-start justify-center text-cyan-800 mix-blend-plus-lighter space-y-[8rem]">
+          <div className=" w-full p-4">
+            <h2 className="w-full md:w-[20rem] overflow-hidden text-cyan-800 opacity-80 text-left font-bold text-3xl md:text-4xl tracking-tighter">
               Time it takes for someone to form an opinion about your website.
             </h2>
           </div>
 
-          <div className="w-fit mt-[5rem]">
+          <div className="w-fit flex items-end justify-center">
+            <motion.span
+              ref={targetRef}
+              className={`italic w-[23rem] h-[13rem] md:w-[28rem] md:h-[16rem] lg:w-[43rem] lg:h-[18.65rem] inline-block text-left font-extrabold text-[20rem] leading-[12rem] md:text-[25rem] md:leading-[15rem] lg:text-[40rem] lg:leading-[16rem] uppercase tracking-tighter duration-500 transition-opacity mix-blend-lighten text-cyan-800 -mr-[3rem]`}
+            >
+              {/* First digit (normal) */}
+              <span>{displayNumber.toString()[0]}</span>
+
+              {/* Second digit (elevated) */}
+              <motion.span
+                initial={{ y: 0 }}
+                animate={offset} // Adjust elevation as needed
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                className="inline-block opacity-90"
+              >
+                {displayNumber.toString()[1]}
+              </motion.span>
+            </motion.span>
             <span
-              className="italic w-[18rem] h-[11.7rem] md:w-[22.5rem] md:h-[14.55rem] lg:w-[25.5rem] lg:h-[16.2rem] inline-block text-left font-extrabold text-[16rem] leading-[12rem] md:text-[20rem] md:leading-[15rem] lg:text-[23rem] lg:leading-[16rem] uppercase tracking-tighter"
-              ref={ref2}
-            />
-            <span className="italic w-fit inline-block font-bold text-left text-xl md:text-[2rem] tracking-tighter">
+              className={`italic w-fit inline-block font-bold text-left text-xl md:text-[2rem] tracking-tighter }`}
+            >
               ms
             </span>
           </div>
         </div>
-      </section>
-
-      <section className="h-[30rem] bg-neutral-100 w-full flex justify-center items-center">
-        <h2 className="max-w-[40rem] text-center font-bold text-4xl md:text-5xl uppercase text-cyan-800 tracking-tighter">
-          We'll make sure yours is worth the click.
-        </h2>
+        <div className="my-[10rem] md:my-[20rem] h-[20rem] w-full flex flex-col items-center justify-center space-y-[2rem]">
+          <p className="w-[80%] md:w-[40%] text-cyan-700 text-left font-bold text-3xl md:text-4xl tracking-tighter">
+            People decide fast, and options are endless. If your website doesn’t
+            make an impact immediately, they move on.
+          </p>
+          <p className="w-[80%] md:w-[40%] text-cyan-900 text-left font-bold text-3xl md:text-4xl tracking-tighter">
+            You don’t get a second chance at a first impression.
+          </p>
+        </div>
       </section>
 
       <WordStyleSection />

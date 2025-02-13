@@ -17,14 +17,14 @@ export default function WebSitesSection() {
           }}
         />
 
-        <h1 className="absolute top-[4rem] max-w-[100rem] mx-auto w-full md:text-xl font-semibold text-neutral-400 opacity-90 px-4 md:px-8 z-20">
+        <h1 className="absolute top-[4rem] max-w-[120rem] mx-auto w-full md:text-xl font-semibold text-neutral-400 opacity-90 px-4 md:px-8 z-20">
           Web Sites
         </h1>
 
         <BoxesContainer />
 
-        <div className="w-full max-w-[100rem] px-4 md:px-8 flex flex-col items-center space-y-[1rem] md:space-y-[2rem] justify-between text-cente z-20">
-          <p className="max-w-[40rem] w-full text-center text-5xl md:text-5xl font-semibold text-white">
+        <div className="w-full max-w-[120rem] px-4 md:px-8 flex flex-col items-center space-y-[1rem] md:space-y-[2rem] justify-between text-cente z-20">
+          <p className="max-w-[44rem] w-full text-center text-5xl md:text-5xl font-semibold text-white">
             Modern, Responsive, and High-Performance Websites.
           </p>
           <Link

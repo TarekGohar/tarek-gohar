@@ -105,7 +105,7 @@ export default function AnimatedCircles() {
   return (
     <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center">
       <div className="h-full w-[30rem] text-center flex justify-center items-center relative">
-        <h1 className="text-5xl font-bold absolute top-[18%] md:top-[45%] text-cyan-900">
+        <h1 className="text-3xl md:text-5xl font-bold absolute top-[18%] md:top-[45%] text-cyan-900 px-4">
           Using the latest tech for the best results.
         </h1>
 
@@ -123,7 +123,7 @@ export default function AnimatedCircles() {
               background: images[i % images.length].color,
               backdropFilter: "blur(10px)",
             }}
-            className="absolute rounded-full flex justify-center items-center top-[58%] md:top-[45%]"
+            className="absolute rounded-full flex justify-center items-center top-[50%] md:top-[45%]"
           >
             <div className="relative w-3/4 h-3/4">
               <Image

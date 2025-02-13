@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const NUM_PARTICLES = 15;
+const NUM_PARTICLES = 8;
 
 const FloatingParticles: React.FC = () => {
   interface Particle {
@@ -70,7 +70,7 @@ const FloatingParticles: React.FC = () => {
             height: particle.size,
             top: particle.y,
             left: particle.x,
-            backgroundImage: "radial-gradient(#0b586b, #FFFFFF)",
+            backgroundImage: "radial-gradient(#0e7490, #FFFFFF)",
             zIndex: -10,
           }}
           animate={{
@@ -107,7 +107,7 @@ const FloatingParticles: React.FC = () => {
           background: "url(/noise.png)",
           backgroundRepeat: "repeat", // Tiling the image
           backgroundSize: "100px 100px", // Adjust this value for more density (smaller size increases density)
-          opacity: 0.25,
+          opacity: 0.1,
           backgroundBlendMode: "overlay",
           zIndex: 20,
         }}

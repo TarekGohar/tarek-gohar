@@ -11,58 +11,81 @@ export default function SlotsSection() {
   });
 
   // Remap the scroll range so that everything completes at 0.5
-  const adjustedScroll = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
+  const adjustedScroll = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
-  // Staggered animation with the adjusted scroll
-  const opacity1 = useTransform(adjustedScroll, [0.5, 1], [0, 1]);
-  const opacity2 = useTransform(adjustedScroll, [0.6, 1], [0, 1]);
-  const opacity3 = useTransform(adjustedScroll, [0.7, 1], [0, 1]);
-  const opacity4 = useTransform(adjustedScroll, [0.8, 1], [0, 1]);
-  const opacity5 = useTransform(adjustedScroll, [0.9, 1], [0, 1]);
+  // Staggered opacity (both for scroll down and scroll up)
+  const opacity1 = useSpring(useTransform(adjustedScroll, [0.5, 1], [0, 1]), {
+    stiffness: 200,
+    damping: 30,
+  });
+  const opacity2 = useSpring(useTransform(adjustedScroll, [0.6, 1], [0, 1]), {
+    stiffness: 200,
+    damping: 30,
+  });
+  const opacity3 = useSpring(useTransform(adjustedScroll, [0.7, 1], [0, 1]), {
+    stiffness: 200,
+    damping: 30,
+  });
+  const opacity4 = useSpring(useTransform(adjustedScroll, [0.8, 1], [0, 1]), {
+    stiffness: 200,
+    damping: 30,
+  });
+  const opacity5 = useSpring(useTransform(adjustedScroll, [0.9, 1], [0, 1]), {
+    stiffness: 200,
+    damping: 30,
+  });
 
-  // Staggered animation with bounce (overshoot)
-  const xOffset1 = useTransform(adjustedScroll, [0.5, 1], [100, -3]);
-  const xOffset2 = useTransform(adjustedScroll, [0.6, 1], [100, -3]);
-  const xOffset3 = useTransform(adjustedScroll, [0.7, 1], [100, -3]);
-  const xOffset4 = useTransform(adjustedScroll, [0.8, 1], [100, -3]);
-  const xOffset5 = useTransform(adjustedScroll, [0.9, 1], [100, -3]);
-
-  // Apply `useSpring` for smoother bounce effect
-  const springX1 = useSpring(xOffset1, { stiffness: 300, damping: 30 });
-  const springX2 = useSpring(xOffset2, { stiffness: 300, damping: 25 });
-  const springX3 = useSpring(xOffset3, { stiffness: 300, damping: 20 });
-  const springX4 = useSpring(xOffset4, { stiffness: 300, damping: 15 });
-  const springX5 = useSpring(xOffset5, { stiffness: 300, damping: 10 });
+  // Staggered bounce animation for x-offset (smooth in & out)
+  const xOffset1 = useSpring(
+    useTransform(adjustedScroll, [0.5, 1], [400, -20]),
+    { stiffness: 300, damping: 30 }
+  );
+  const xOffset2 = useSpring(
+    useTransform(adjustedScroll, [0.6, 1], [400, -20]),
+    { stiffness: 300, damping: 27.5 }
+  );
+  const xOffset3 = useSpring(
+    useTransform(adjustedScroll, [0.7, 1], [400, -20]),
+    { stiffness: 300, damping: 25 }
+  );
+  const xOffset4 = useSpring(
+    useTransform(adjustedScroll, [0.8, 1], [400, -20]),
+    { stiffness: 300, damping: 22.5 }
+  );
+  const xOffset5 = useSpring(
+    useTransform(adjustedScroll, [0.9, 1], [400, -20]),
+    { stiffness: 300, damping: 20 }
+  );
 
   return (
-    <section className="bg-neutral-50 w-full h-[40rem] md:h-[40rem] mb-[0rem] md:mb-[0rem] px-4 flex flex-col justify-center items-center">
+    <section className="w-full h-[40rem] px-4 flex flex-col justify-center items-center">
       <div
         ref={targetRef}
-        className="bg-neutral-50 rounded-[2rem] px-2 gap-x-6 py-[4rem] max-w-[80rem] w-fit mx-auto flex items-center justify-center md:gap-x-12 overflow-hidden"
+        className="px-2 gap-x-6 py-[4rem] max-w-[100rem] w-fit mx-auto flex items-center justify-between"
       >
-        <h1 className="text-5xl md:text-7xl text-cyan-950 font-bold w-[65%] md:w-[70%] capitalize h-fit">
+        <h1 className="text-5xl md:text-7xl text-cyan-950 font-bold w-[65%] md:w-[50%] capitalize">
           We build full-stack apps from the ground up.
         </h1>
-        <div className="w-fit text-center flex flex-col space-y-4 md:space-y-8">
+        <div className="w-fit text-center flex flex-col space-y-4">
           <motion.div
-            style={{ opacity: opacity5, x: springX5 }}
-            className="bg-cyan-800/80 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
+            style={{ opacity: opacity5, x: xOffset5 }}
+            className="bg-cyan-800/80 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
-            style={{ opacity: opacity4, x: springX4 }}
-            className="bg-cyan-800/90 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
+            style={{ opacity: opacity4, x: xOffset4 }}
+            className="bg-cyan-800/90 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
-            style={{ opacity: opacity3, x: springX3 }}
-            className="bg-cyan-800 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
+            style={{ opacity: opacity3, x: xOffset3 }}
+            className="bg-cyan-800 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
-            style={{ opacity: opacity2, x: springX2 }}
-            className="bg-cyan-900 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
+            style={{ opacity: opacity2, x: xOffset2 }}
+            className="bg-cyan-900 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
-            style={{ opacity: opacity1, x: springX1 }}
-            className="bg-cyan-950 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-40 mx-auto"
+            style={{ opacity: opacity1, x: xOffset1 }}
+            className="bg-cyan-950 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
         </div>
       </div>
