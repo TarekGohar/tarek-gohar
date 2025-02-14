@@ -5,12 +5,12 @@ import DotGrid from "../GridDots";
 
 export default function SecuritySection() {
   return (
-    <section className="h-[40.5rem]">
+    <section className="h-[40.5rem] bg-white">
       <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-black text-opacity-90 px-4 md:px-8">
           Security
         </h1>
-        <div className="w-[11rem] md:w-[16rem] flex items-center justify-center text-yellow-500">
+        <div className="w-[11rem] md:w-[16rem] flex items-center justify-center text-yellow-500 z-20">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
@@ -29,12 +29,12 @@ export default function SecuritySection() {
           </svg>
         </div>
 
-        <p className="py-[1rem] md:py-[.8rem] h-fit max-w-[21rem] md:max-w-[40rem] text-neutral-600 text-center font-bold text-2xl md:text-4xl mix-blend-plus-darker bg-white capitalize">
+        <p className="py-[.75rem] md:py-[.8rem] h-fit max-w-[19rem] md:max-w-[40rem] text-neutral-800 text-center font-bold text-2xl md:text-4xl capitalize bg-white z-20">
           We keep your website safe with threat protection and encrypted
           connections.
         </p>
 
-        <div className="absolute top-0 left-0 w-full -z-10">
+        <div className="absolute top-0 left-0 w-full z-10">
           <DotGrid />
         </div>
       </div>

@@ -57,7 +57,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
     { bg: "from-[#012A4A] to-[#013A63]", text: "text-[#A9D6E5]" }, // Dark Blue to Deep Blue
     { bg: "from-[#013A63] to-[#01497C]", text: "text-[#89C2D9]" }, // Deep Blue to Navy
     { bg: "from-[#01497C] to-[#014F86]", text: "text-[#61A5C2]" }, // Navy to Slightly Brighter Navy
-    { bg: "from-[#014F86] to-[#2A6F97]", text: "text-[#468FAF]" }, // Brighter Navy to Darker Teal
+    { bg: "from-[#014F86] to-[#2A6F97]", text: "text-[#72B6C9]" }, // Brighter Navy to Darker Tea
     { bg: "from-[#2A6F97] to-[#468FAF]", text: "text-[#A9D6E5]" }, // Darker Teal to Teal
     { bg: "from-[#468FAF] to-[#61A5C2]", text: "text-[#01497C]" }, // Teal to Light Teal
     { bg: "from-[#61A5C2] to-[#89C2D9]", text: "text-[#013A63]" }, // Light Teal to Sky Blue
@@ -93,7 +93,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
             className={`md:p-2 w-[32%] lg:w-[40%] opacity-100 mix-blend-screen ${frontColor.text}`}
           />
           <h3
-            className={`w-[90%] md:text-xl lg:text-2xl font-bold mix-blend-lighten ${frontColor.text}`}
+            className={`w-[90%] md:text-xl lg:text-2xl font-bold ${frontColor.text}`}
           >
             {section.title}
           </h3>

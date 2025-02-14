@@ -269,7 +269,6 @@
 .dot-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10px, 1fr)); /* Adaptive columns */
-  gap: .85rem; /* Spacing between dots */
   width: 100%; /* Full screen width */;
   height: 100%;
   justify-content: center; /* Center dots horizontally */
@@ -278,9 +277,10 @@
 }
 
 .dot {
-  width: .65rem; /* Smaller dots */
-  height: .65rem;
+  width: .6rem; /* Smaller dots */
+  height: .6rem;
   background-color: rgb(124, 124, 124);
   border-radius: 50%;
 }
+
 

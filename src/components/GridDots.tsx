@@ -1,28 +1,43 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
-const GRID_SIZE = 50; // 10x10 Grid (Adjustable)
-
 const DotGrid = () => {
-  const dots = [];
+  const [gridSize, setGridSize] = useState(() =>
+    typeof window !== "undefined" && window.innerWidth < 768 ? 20 : 33
+  ); // Set initial gridSize dynamically based on screen width
 
-  for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
-    dots.push(
-      <motion.div
-        key={i}
-        className="dot"
-        animate={{ opacity: [0, 0.8, 0] }}
-        transition={{
-          duration: 1 + Math.random(), // Random pulse duration between 1-2s
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: Math.random() * 2, // Random delay for a scattered effect
-        }}
-      />
-    );
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setGridSize(window.innerWidth < 768 ? 20 : 33);
+    };
 
-  return <div className="dot-grid">{dots}</div>;
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const dots = useMemo(() => {
+    return Array.from({ length: gridSize * gridSize }, (_, i) => {
+      const randomDuration = 1 + Math.random();
+      const randomDelay = Math.random() * 2;
+
+      return (
+        <motion.div
+          key={i}
+          className="dot"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 0.8, 0] }}
+          transition={{
+            duration: randomDuration,
+            delay: randomDelay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      );
+    });
+  }, [gridSize]); // ✅ Now updates when `gridSize` changes
+
+  return <div className="dot-grid gap-[1.5rem]">{dots}</div>;
 };
 
 export default DotGrid;

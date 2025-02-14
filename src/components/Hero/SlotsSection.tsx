@@ -37,33 +37,33 @@ export default function SlotsSection() {
 
   // Staggered bounce animation for x-offset (smooth in & out)
   const xOffset1 = useSpring(
-    useTransform(adjustedScroll, [0.5, 1], [400, -20]),
+    useTransform(adjustedScroll, [0.5, 1], [400, -10]),
     { stiffness: 300, damping: 30 }
   );
   const xOffset2 = useSpring(
-    useTransform(adjustedScroll, [0.6, 1], [400, -20]),
+    useTransform(adjustedScroll, [0.6, 1], [400, -10]),
     { stiffness: 300, damping: 27.5 }
   );
   const xOffset3 = useSpring(
-    useTransform(adjustedScroll, [0.7, 1], [400, -20]),
+    useTransform(adjustedScroll, [0.7, 1], [400, -10]),
     { stiffness: 300, damping: 25 }
   );
   const xOffset4 = useSpring(
-    useTransform(adjustedScroll, [0.8, 1], [400, -20]),
+    useTransform(adjustedScroll, [0.8, 1], [400, -10]),
     { stiffness: 300, damping: 22.5 }
   );
   const xOffset5 = useSpring(
-    useTransform(adjustedScroll, [0.9, 1], [400, -20]),
+    useTransform(adjustedScroll, [0.9, 1], [400, -10]),
     { stiffness: 300, damping: 20 }
   );
 
   return (
-    <section className="w-full h-[40rem] px-4 flex flex-col justify-center items-center">
+    <section className="w-full md:h-[40rem] px-4 flex flex-col justify-center items-center overflow-hidden">
       <div
         ref={targetRef}
         className="px-2 gap-x-6 py-[4rem] max-w-[100rem] w-fit mx-auto flex items-center justify-between"
       >
-        <h1 className="text-5xl md:text-7xl text-cyan-900 font-bold w-[65%] md:w-[50%] capitalize">
+        <h1 className="text-4xl md:text-7xl text-cyan-900 font-bold w-[65%] md:w-[50%] capitalize">
           We build full-stack apps from the ground up.
         </h1>
         <div className="w-fit text-center flex flex-col space-y-4">

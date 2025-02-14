@@ -78,7 +78,7 @@ export default function WordFlip() {
   }, [displayedText, isDeleting, index]);
 
   return (
-    <section className="h-[40rem] md:h-[60rem] bg-neutral-50">
+    <section className="h-[40rem] md:h-[55rem] bg-neutral-50">
       <div className="relative max-w-[120rem] mx-auto h-[95%] w-full flex flex-col items-center justify-center">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-neutral-700 opacity-70 px-4 md:px-8">
           Styling

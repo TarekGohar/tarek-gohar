@@ -130,8 +130,8 @@ export default function SquigglyPathSection() {
 
   return (
     <section className="py-[4rem] md:py-[10rem] bg-neutral-50 text-white">
-      <div className="w-full h-full flex flex-col items-start justify-center px-4 md:px-8 space-y-12">
-        <h1 className="max-w-[120rem]  mx-auto w-full text-left md:text-xl font-semibold opacity-80 text-cyan-950 px-4 md:px-8">
+      <div className="w-full h-full flex flex-col items-start justify-center space-y-12 px-4 md:px-8">
+        <h1 className="max-w-[120rem] mx-auto w-full text-left md:text-xl font-semibold opacity-80 text-cyan-950 md:px-8">
           Our Services
         </h1>
         <h2 className="max-w-[80rem] mx-auto w-full text-left text-3xl md:text-5xl font-bold text-[#012A4A] capitalize">

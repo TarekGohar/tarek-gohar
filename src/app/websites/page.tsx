@@ -2,10 +2,10 @@
 
 import Navbar from "@/components/navbar";
 import AnimatedSection from "@/components/Websites/AnimatedSection";
-import IntegrationSection from "@/components/Websites/IntegrationSection";
-import { GetAQuote } from "@/components/Websites/InterestedSection";
+import InterestedSection from "@/components/Websites/InterestedSection";
 import PerformanceSection from "@/components/Websites/PerformanceSection";
 import SecuritySection from "@/components/Websites/SecuritySection";
+import SupportSection from "@/components/Websites/SupportSection";
 import WordStyleSection from "@/components/Websites/WordStyleSection";
 import {
   animate,
@@ -87,7 +87,7 @@ export default function Page() {
 
       {/* About Our Services */}
 
-      <section className="h-[40rem] md:h-[30rem] my-[5rem] md:my-[10rem] flex items-center justify-center">
+      <section className="h-[40rem] md:h-[30rem] my-[5rem] md:my-[10rem] flex items-center justify-center bg-white">
         <div className="relative max-w-[120rem] mx-auto w-full h-[85%] md:h-[70%] flex flex-col md:flex-row items-center justify-center px-4 md:px-8 space-y-[4rem] md:space-x-[2rem]">
           <div className="md:w-[40%] flex flex-col lg:flex-col items-start justify-start space-y-[1rem]">
             <h1 className="w-full md:text-xl font-semibold text-cyan-800/40 capitalize">
@@ -108,9 +108,9 @@ export default function Page() {
       </section>
 
       {/* Time */}
-      <section className="relative max-w-[120rem] mx-auto w-full flex flex-col md:flex-row items-center justify-center space-y-[3rem] md:space-y-0 px-4 pb-[5rem] md:py-[10rem]">
+      <section className="relative max-w-[120rem] mx-auto w-full flex flex-col md:flex-row items-center justify-center space-y-[3rem] md:space-y-0 px-4 pb-[5rem] md:pb-[10rem] bg-white">
         {/* Time */}
-        <div className=" w-full flex flex-col items-center justify-center space-y-[2rem] md:space-y-[4rem] max-w-[50%] md:max-w-[20rem] ">
+        <div className=" w-full flex flex-col items-center justify-center space-y-[2rem] md:space-y-[4rem] max-w-[50%] md:max-w-[20rem] z-10">
           {/* Number */}
           <div className="w-fit flex items-end justify-start font-number">
             <span
@@ -132,11 +132,11 @@ export default function Page() {
 
         {/* Text */}
         <div className="md:w-[37rem] flex flex-col items-center justify-center space-y-[2rem]">
-          <p className="w-[80%] md:w-[70%] text-cyan-700 text-left font-bold text-3xl md:text-4xl tracking-tighter">
+          <p className="w-full md:w-[70%] text-cyan-700 text-left font-bold text-3xl md:text-4xl tracking-tighter">
             People decide fast, and options are endless. If your website doesn’t
             make an impact immediately, they move on.
           </p>
-          <p className="w-[80%] md:w-[70%] text-cyan-900 text-left font-bold text-3xl md:text-4xl tracking-tighter">
+          <p className="w-full md:w-[70%] text-cyan-900 text-left font-bold text-3xl md:text-4xl tracking-tighter">
             You don’t get a second chance at a first impression.
           </p>
         </div>
@@ -145,8 +145,8 @@ export default function Page() {
       <WordStyleSection />
       <PerformanceSection />
       <SecuritySection />
-      <IntegrationSection />
-      <GetAQuote />
+      <SupportSection />
+      <InterestedSection />
 
       {/* Cool */}
       {/* <div

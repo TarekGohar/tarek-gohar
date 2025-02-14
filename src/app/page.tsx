@@ -173,7 +173,7 @@ export default function Page() {
         />
       </section>
 
-      <section className="h-[40rem] flex items-center justify-center">
+      <section className="h-[25rem] md:h-[40rem] flex items-center justify-center">
         <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-4 px-4">
           <h1 className="md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
             What do we do?
