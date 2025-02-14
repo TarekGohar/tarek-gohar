@@ -5,12 +5,12 @@ import DotGrid from "../GridDots";
 
 export default function SecuritySection() {
   return (
-    <section className="h-[40rem]">
-      <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden">
-        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-black opacity-90 px-4 md:px-8">
+    <section className="h-[40.5rem]">
+      <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
+        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-black text-opacity-90 px-4 md:px-8">
           Security
         </h1>
-        <div className="w-[16rem] flex items-center justify-center">
+        <div className="w-[11rem] md:w-[16rem] flex items-center justify-center text-yellow-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
@@ -18,7 +18,7 @@ export default function SecuritySection() {
             height="100%"
           >
             <path
-              fill="#D5D5D5"
+              fill="#E5E5E5"
               d="M24,4c-5.5,0-10,4.5-10,10v4h4v-4c0-3.3,2.7-6,6-6s6,2.7,6,6v4h4v-4C34,8.5,29.5,4,24,4z"
             />
             <path
@@ -29,10 +29,9 @@ export default function SecuritySection() {
           </svg>
         </div>
 
-        <p className="py-5 h-fit max-w-[44rem] text-black text-center font-semibold text-5xl md:text-3xl mix-blend-plus-darker bg-white">
-          We keep your website safe with built-in protection against threats,
-          secure connections, and regular updates. Your data and visitors stay
-          safe, giving you peace of mind.
+        <p className="py-[1rem] md:py-[.8rem] h-fit max-w-[21rem] md:max-w-[40rem] text-neutral-600 text-center font-bold text-2xl md:text-4xl mix-blend-plus-darker bg-white capitalize">
+          We keep your website safe with threat protection and encrypted
+          connections.
         </p>
 
         <div className="absolute top-0 left-0 w-full -z-10">

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const GRID_SIZE = 43; // 10x10 Grid (Adjustable)
+const GRID_SIZE = 50; // 10x10 Grid (Adjustable)
 
 const DotGrid = () => {
   const dots = [];

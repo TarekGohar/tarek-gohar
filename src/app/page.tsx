@@ -173,18 +173,22 @@ export default function Page() {
         />
       </section>
 
-      {/* Spacer - Prevents instant scrolling when fixed section disappears */}
-
-      <section className="h-[30rem] md:h-[40rem] max-w-[70rem] mx-auto flex flex-col items-center justify-center px-4 space-y-4">
-        <h1 className="md:text-2xl font-semibold opacity-60 capitalize text-center text-cyan-800">
-          What do we do?
-        </h1>
-        <h1 className="typewriter text-5xl md:text-7xl font-semibold text-center md:leading-[4.5rem]">
-          We help your business{" "}
-          <span className="opacity-80 text-cyan-800">grow</span>,{" "}
-          <span className="opacity-90 text-cyan-800">innovate</span>, and{" "}
-          <span className="opacity-100 text-cyan-800">succeed</span>.
-        </h1>
+      <section className="h-[40rem] flex items-center justify-center">
+        <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-4 px-4">
+          <h1 className="md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
+            What do we do?
+          </h1>
+          <h2 className="max-w-[50rem] text-cyan-800/60 text-center font-bold text-4xl md:text-6xl tracking-tighter">
+            We help your business{" "}
+            <span className="opacity-80 text-cyan-900">grow</span>,{" "}
+            <span className="opacity-90 text-cyan-900">innovate</span>, and{" "}
+            <span className="opacity-100 text-cyan-900">succeed</span>.
+          </h2>
+          <p className="max-w-[20rem] md:max-w-[32rem] text-cyan-700/50 text-center font-semibold md:text-xl tracking-tighter">
+            We design and develop websites and web applications that are
+            user-friendly, reliable, and built to support your business goals.
+          </p>
+        </div>
       </section>
 
       <SlotsSection />

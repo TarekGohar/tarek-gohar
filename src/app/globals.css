@@ -7,6 +7,14 @@
   }
 
   /* Fonts */
+
+  @font-face {
+    font-family: 'Number';
+    src: url('/fonts/Number.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
   @font-face {
     font-family: 'Primeform Pro';
     src: url('/fonts/primeform_pro/PrimeformProDemo-Black.otf') format('opentype');

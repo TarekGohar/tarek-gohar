@@ -93,7 +93,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
             className={`md:p-2 w-[32%] lg:w-[40%] opacity-100 mix-blend-screen ${frontColor.text}`}
           />
           <h3
-            className={`w-[90%] md:text-xl lg:text-2xl font-bold ${frontColor.text}`}
+            className={`w-[90%] md:text-xl lg:text-2xl font-bold mix-blend-lighten ${frontColor.text}`}
           >
             {section.title}
           </h3>

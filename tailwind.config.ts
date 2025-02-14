@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         primeform: ["Primeform Pro", "sans-serif"],
         helvetica: ["Helvetica", "sans-serif"],
+        number: ["Number", "sans-serif"],
       },
     },
 

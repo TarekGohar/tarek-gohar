@@ -4,7 +4,7 @@ import ScoreCircle from "./Score";
 export default function PerformanceSection() {
   return (
     <section className="h-fit">
-      <div className="py-[10rem] md:py-[20rem] relative max-w-[120rem] mx-auto w-full  flex flex-col items-center justify-center">
+      <div className="py-[10rem] md:py-[20rem] relative max-w-[120rem] mx-auto w-full  flex flex-col items-center justify-center px-4 md:px-8">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-700 opacity-70 px-4 md:px-8">
           Performance
         </h1>
