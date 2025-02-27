@@ -88,7 +88,7 @@ export default function Page() {
       {/* About Our Services */}
 
       <section className="h-[40rem] md:h-[30rem] my-[5rem] md:my-[10rem] flex items-center justify-center bg-white">
-        <div className="relative max-w-[120rem] mx-auto w-full h-[85%] md:h-[70%] flex flex-col md:flex-row items-center justify-center px-4 md:px-8 space-y-[4rem] md:space-x-[2rem]">
+        <div className="relative max-w-[100rem] mx-auto w-full h-[85%] md:h-[70%] flex flex-col md:flex-row items-center justify-center px-4 md:px-8 space-y-[4rem] md:space-x-[2rem]">
           <div className="md:w-[40%] flex flex-col lg:flex-col items-start justify-start space-y-[1rem]">
             <h1 className="w-full md:text-xl font-semibold text-cyan-800/40 capitalize">
               Websites that impress

@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import FlipCard from "../FlipCard";
-import { div } from "framer-motion/client";
 
 type SectionData = {
   title: string;
@@ -130,14 +127,14 @@ export default function SquigglyPathSection() {
 
   return (
     <section className="py-[4rem] md:py-[10rem] bg-neutral-50 text-white">
-      <div className="w-full h-full flex flex-col items-start justify-center space-y-12 px-4 md:px-8">
+      <div className="w-full h-full flex flex-col items-start justify-center space-y-12">
         <h1 className="max-w-[120rem] mx-auto w-full text-left md:text-xl font-semibold opacity-80 text-cyan-950 md:px-8">
           Our Services
         </h1>
-        <h2 className="max-w-[80rem] mx-auto w-full text-left text-3xl md:text-5xl font-bold text-[#012A4A] capitalize">
+        <h2 className="max-w-[80rem] mx-auto w-full text-left text-3xl md:text-5xl font-bold text-[#012A4A] capitalize px-4 md:px-8">
           Why choose us?
         </h2>
-        <div className="max-w-[80rem] mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 h-[80rem] md:h-[55rem]">
+        <div className="max-w-[80rem] mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 h-[80rem] md:h-[55rem] px-4 md:px-8">
           {sectionGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="grid gap-2 md:gap-4">
               {group.map((section, index) => {

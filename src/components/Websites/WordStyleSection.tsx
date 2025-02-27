@@ -83,7 +83,7 @@ export default function WordFlip() {
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-neutral-700 opacity-70 px-4 md:px-8">
           Styling
         </h1>
-        <h2 className="absolute top-[60%] max-w-[30rem] md:max-w-[40rem] text-neutral-400 text-center font-semibold text-xl md:text-2xl">
+        <h2 className="absolute top-[70%] max-w-[30rem] md:max-w-[40rem] text-neutral-800 text-center font-semibold text-xl md:text-2xl">
           No matter the mood, we can style your website to perfectly suit you.
         </h2>
         <div className="-ml-[0.75rem] flex flex-col items-center justify-center">

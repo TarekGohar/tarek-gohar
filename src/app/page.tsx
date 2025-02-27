@@ -178,13 +178,19 @@ export default function Page() {
           <h1 className="md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
             What do we do?
           </h1>
-          <h2 className="max-w-[50rem] text-cyan-800/60 text-center font-bold text-4xl md:text-6xl tracking-tighter">
+          <h2 className="max-w-[50rem] md:max-w-[55rem] text-neutral-400 text-center font-bold text-4xl md:text-7xl tracking-tighter">
             We help your business{" "}
-            <span className="opacity-80 text-cyan-900">grow</span>,{" "}
-            <span className="opacity-90 text-cyan-900">innovate</span>, and{" "}
-            <span className="opacity-100 text-cyan-900">succeed</span>.
+            <span className="opacity-80 text-cyan-800 pr-[.125rem]">grow</span>,{" "}
+            <span className="opacity-90 text-cyan-800 pr-[.125rem]">
+              innovate
+            </span>
+            , and{" "}
+            <span className="opacity-100 text-cyan-800 pr-[.125rem]">
+              succeed
+            </span>
+            .
           </h2>
-          <p className="max-w-[20rem] md:max-w-[32rem] text-cyan-700/50 text-center font-semibold md:text-xl tracking-tighter">
+          <p className="max-w-[20rem] md:max-w-[32rem] text-neutral-300 text-center font-semibold md:text-xl tracking-tighter">
             We design and develop websites and web applications that are
             user-friendly, reliable, and built to support your business goals.
           </p>

@@ -4,16 +4,16 @@ import ScoreCircle from "./Score";
 export default function PerformanceSection() {
   return (
     <section className="h-fit bg-white">
-      <div className="py-[10rem] md:py-[20rem] relative max-w-[120rem] mx-auto w-full  flex flex-col items-center justify-center px-4 md:px-8">
+      <div className="py-[10rem] md:py-[20rem] relative max-w-[100rem] mx-auto w-full  flex flex-col items-center justify-center px-4 md:px-8">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-700 opacity-70 px-4 md:px-8">
           Performance
         </h1>
         <div className="w-full flex flex-col items-start justify-center space-y-[5rem] md:space-y-[10rem]">
           <div className="w-full flex flex-col lg:flex-row items-start justify-between space-y-[2rem] lg:space-y-0 lg:space-x-[5rem]">
-            <h2 className="w-full mx-auto lg:mx-0 lg:max-w-[40rem] text-cyan-900 text-left font-bold text-5xl md:text-7xl uppercase">
+            <h2 className="w-full mx-auto lg:mx-0 lg:max-w-[40rem] text-neutral-800/70 text-left font-bold text-5xl md:text-7xl uppercase">
               Built for speed. Designed for search.
             </h2>
-            <p className="w-full mx-auto lg:max-w-[40rem] text-cyan-800/50 text-left font-semibold text-xl md:text-2xl">
+            <p className="w-full mx-auto lg:max-w-[40rem] text-neutral-400/80 text-left font-semibold text-xl md:text-2xl">
               We optimize every layer of your website — from streamlined code
               and minimized assets to advanced caching and global CDNs. By
               reducing unnecessary load and prioritizing efficiency, we ensure
