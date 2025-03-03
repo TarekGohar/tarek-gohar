@@ -105,7 +105,7 @@ export default function AnimatedCircles() {
   return (
     <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center">
       <div className="h-full w-[30rem] text-center flex justify-center items-center relative">
-        <h1 className="text-3xl md:text-5xl font-bold absolute top-[18%] md:top-[45%] text-cyan-900 px-4">
+        <h1 className="text-3xl md:text-5xl font-medium absolute top-[18%] md:top-[43%] bg-neutral-50 p-4 text-cyan-950 rounded-2xl tracking-wider">
           Using the latest tech for the best results.
         </h1>
 

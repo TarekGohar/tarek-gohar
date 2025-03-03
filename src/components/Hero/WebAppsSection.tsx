@@ -34,17 +34,16 @@ export default function WebAppsSection() {
   return (
     <section
       ref={targetRef}
-      className="min-h-[40rem] flex items-center justify-center bg-white text-cyan-900"
+      className="min-h-[50rem] flex items-center justify-center bg-white text-cyan-900"
     >
       <div className="mt-10 md:mt-0 max-w-[120rem] mx-auto w-full px-4 md:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between">
         <div className="w-full flex flex-col items-start space-y-[1rem] md:space-y-[2rem] justify-between text-left">
           <h1 className="md:text-xl font-semibold opacity-80">Web Apps</h1>
-
-          <p className="text-5xl font-semibold">
+          <h2 className="w-full md:max-w-[80rem] text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
             Your Ideas, Transformed into Powerful Web Applications.
-          </p>
+          </h2>
           <Link
-            className="text-2xl font-semibold header-underline  text-cyan-600"
+            className="md:max-w-[35rem] text-cyan-800/60 text-center font-medium md:text-xl header-underline-light"
             href="/web-apps"
           >
             Learn More

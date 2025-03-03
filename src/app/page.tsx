@@ -110,7 +110,7 @@ export default function Page() {
       <Navbar light={!bgBlack} />
       {/* First Section (Locks scroll initially) */}
       <section
-        className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 ${
+        className={`relative h-screen min-h-[45rem] max-h-[100rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 ${
           bgBlack ? "text-cyan-800" : "text-white"
         } ${isLocked ? "fixed inset-0" : "absolute top-0 w-full"}`}
       >
@@ -164,33 +164,20 @@ export default function Page() {
               "linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0.35) 80%, rgba(255, 255, 255, 0.65) 90%, rgba(255, 255, 255, 1) 100%)",
           }}
         />
-        {/* Transition background from black to white */}
-        <motion.div
-          className="absolute inset-0 z-0 w-full h-screen bg-none"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: bgBlack ? 0 : 1 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-        />
       </section>
 
       <section className="h-[25rem] md:h-[40rem] flex items-center justify-center">
         <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-4 px-4">
-          <h1 className="md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
+          <h1 className="md:text-xl font-semibold text-cyan-800/40 opacity-70 capitalize">
             What do we do?
           </h1>
-          <h2 className="max-w-[50rem] md:max-w-[55rem] text-neutral-400 text-center font-bold text-4xl md:text-7xl tracking-tighter">
+          <h2 className="w-full md:max-w-[70rem] text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
             We help your business{" "}
-            <span className="opacity-80 text-cyan-800 pr-[.125rem]">grow</span>,{" "}
-            <span className="opacity-90 text-cyan-800 pr-[.125rem]">
-              innovate
-            </span>
-            , and{" "}
-            <span className="opacity-100 text-cyan-800 pr-[.125rem]">
-              succeed
-            </span>
-            .
+            <span className="text-cyan-800/80 pr-[.125rem]">grow</span>,{" "}
+            <span className="text-cyan-800/80 pr-[.125rem]">innovate</span>, and{" "}
+            <span className="text-cyan-800/80 pr-[.125rem]">succeed</span>.
           </h2>
-          <p className="max-w-[20rem] md:max-w-[32rem] text-neutral-300 text-center font-semibold md:text-xl tracking-tighter">
+          <p className="md:max-w-[35rem] text-cyan-800/60 text-center font- md:text-xl">
             We design and develop websites and web applications that are
             user-friendly, reliable, and built to support your business goals.
           </p>

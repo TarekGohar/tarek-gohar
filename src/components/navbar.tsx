@@ -1,26 +1,26 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
 
 interface NavbarProps {
   light: boolean;
 }
 
 export default function Navbar({ light }: NavbarProps) {
-  const light_color = light ? "text-white" : "text-white";
+  const light_color = light ? "text-white" : "text-black";
 
   return (
-    <nav
-      className={`fixed inset-0 w-full mx-auto text-white unselectable pt-4 h-fit duration-150 ${
-        light ? "opacity-0" : "opacity-100"
-      }`}
+    <motion.nav
+      className={`fixed inset-0 top-5 w-full mx-auto unselectable h-[3.5rem]`}
+      initial={{ opacity: 0 }}
+      animate={!light ? { opacity: 1 } : { opacity: 0 }}
       style={{ zIndex: 1000, backgroundBlendMode: "" }}
     >
       <ul
-        className="relative flex items-center justify-between w-fit gap-x-4 mx-auto font-semibold bg-opacity-80 p-2 rounded-full"
+        className="h-full flex items-center justify-between max-w-[90rem] gap-x-4 mx-auto font-medium bg-opacity-80 p-[.3rem] rounded-2xl"
         style={{
-          background: "rgba(150, 150, 150, 0.2)",
+          background: "rgba(230,230,230, 0.3)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
           backgroundBlendMode: "overlay",
@@ -31,19 +31,17 @@ export default function Navbar({ light }: NavbarProps) {
         <li>
           <Link
             href="/"
-            className="relative w-[8rem] lg:w-[12rem] duration-300 hover:opacity-75"
-          >
-            Logo
-          </Link>
+            className="block min-h-[3rem] min-w-[4rem] bg-red-500 duration-300 hover:opacity-75"
+          ></Link>
         </li>
 
         {/* Nav Links */}
-        <li className="relative flex justify-center items-center md:gap-x-6 ">
+        <li className=" flex justify-center items-center md:gap-x-6 ">
           <Link
             // onMouseEnter={() => setHoveredItem("about")}
             // onMouseLeave={() => setHoveredItem(null)}
             href="/about"
-            className={`relative duration-200 md:px-6 py-2 ${light_color}`}
+            className={`tracking-wider duration-200 md:px-6 py-2 ${light_color}`}
           >
             About
           </Link>
@@ -51,7 +49,7 @@ export default function Navbar({ light }: NavbarProps) {
             // onMouseEnter={() => setHoveredItem("apps")}
             // onMouseLeave={() => setHoveredItem(null)}
             href="/webapps"
-            className={`relative duration-200 md:px-6 py-2 ${light_color}`}
+            className={`tracking-wider duration-200 md:px-6 py-2 ${light_color}`}
           >
             Web Apps
           </Link>
@@ -59,7 +57,7 @@ export default function Navbar({ light }: NavbarProps) {
             // onMouseEnter={() => setHoveredItem("sites")}
             // onMouseLeave={() => setHoveredItem(null)}
             href="/websites"
-            className={`relative duration-200 md:px-6 py- ${light_color}`}
+            className={`tracking-wider duration-200 md:px-6 py-2 ${light_color}`}
           >
             Web Sites
           </Link>
@@ -68,11 +66,19 @@ export default function Navbar({ light }: NavbarProps) {
         {/* Get a Quote Button */}
         <Link
           href="/contact-us"
-          className="relative bg-white text-black rounded-full p-2 md:p-3 px-3 md:px-6"
+          className=" bg-white text-black rounded-xl p-2 h-full"
         >
           Get a Quote
         </Link>
+
+        <Link
+          href="/contact-us"
+          className="md:hidden h-full w-[3rem] p-2 rounded-xl bg-white flex flex-col items-center justify-center space-y-1"
+        >
+          <span className="block w-[80%] h-[.2rem] bg-black" />
+          <span className="block w-[80%] h-[.2rem] bg-black" />
+        </Link>
       </ul>
-    </nav>
+    </motion.nav>
   );
 }

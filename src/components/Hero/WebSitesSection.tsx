@@ -5,7 +5,7 @@ import { BoxesContainer } from "../BoxesContainer";
 
 export default function WebSitesSection() {
   return (
-    <section className="relative h-[40rem] flex items-center justify-center">
+    <section className="relative h-[50rem] flex items-center justify-center">
       <div className="h-full relative w-full overflow-hidden bg-[#020b0f] opacity-100 flex flex-col items-center justify-center">
         <div
           className="absolute inset-0 w-full h-full bg-cyan-950 z-20 pointer-events-none"
@@ -24,11 +24,11 @@ export default function WebSitesSection() {
         <BoxesContainer />
 
         <div className="w-full max-w-[120rem] px-4 md:px-8 flex flex-col items-center space-y-[1rem] md:space-y-[2rem] justify-between text-cente z-20">
-          <p className="max-w-[44rem] w-full text-center text-5xl md:text-5xl font-semibold text-white">
+          <h2 className="w-full md:max-w-[80rem] text-white text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
             Modern, Responsive, and High-Performance Websites.
-          </p>
+          </h2>
           <Link
-            className="text-center text-2xl font-semibold header-underline text-white opacity-80"
+            className="md:max-w-[35rem] text-white/80 text-center font-medium md:text-xl header-underline-light"
             href="/websites"
           >
             Learn More

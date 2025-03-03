@@ -50,7 +50,7 @@ const FloatingParticles: React.FC = () => {
   useEffect(() => {
     const newParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => ({
       id: i,
-      x: (Math.random() - 0.2) * windowSize.width, // Random X position based on window width
+      x: Math.random() * windowSize.width, // Random X position based on window width
       y: Math.random() * windowSize.height, // Random Y position based on window height
       size: Math.random() * 100 + windowSize.width * 0.2, // Random size
       duration: Math.random() * 6 + 10, // Animation duration
@@ -70,7 +70,8 @@ const FloatingParticles: React.FC = () => {
             height: particle.size,
             top: particle.y,
             left: particle.x,
-            backgroundImage: "radial-gradient(#0e7490, #FFFFFF)",
+            backgroundImage:
+              "radial-gradient(circle, rgba(14, 116, 144, 1) 30%, rgba(14, 116, 144, 0) 70%)",
             zIndex: -10,
           }}
           animate={{
@@ -101,17 +102,17 @@ const FloatingParticles: React.FC = () => {
       />
 
       {/* Grainy Texture Overlay */}
-      <div
+      {/* <div
         className="h-screen absolute inset-0 pointer-events-none"
         style={{
           background: "url(/noise.png)",
           backgroundRepeat: "repeat", // Tiling the image
           backgroundSize: "100px 100px", // Adjust this value for more density (smaller size increases density)
-          opacity: 0.1,
+          opacity: 0.0,
           backgroundBlendMode: "overlay",
           zIndex: 20,
         }}
-      />
+      /> */}
     </div>
   );
 };

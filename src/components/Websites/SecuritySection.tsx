@@ -29,7 +29,7 @@ export default function SecuritySection() {
           </svg>
         </div>
 
-        <p className="py-[.75rem] md:py-[.8rem] h-fit max-w-[19rem] md:max-w-[40rem] text-neutral-800 text-center font-bold text-2xl md:text-4xl capitalize bg-white z-20">
+        <p className="py-[.75rem] md:py-[2.2rem] h-fit max-w-[19rem] md:max-w-[40rem] text-neutral-800 text-center font-semibold tracking-wider text-2xl md:text-4xl uppercase bg-white z-20">
           We keep your website safe with threat protection and encrypted
           connections.
         </p>

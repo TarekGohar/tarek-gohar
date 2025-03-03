@@ -8,7 +8,7 @@ export default function AnimatedSection() {
     let newLines = Array.from({ length: 15 }, () => ({
       id: Math.random(),
       direction: Math.floor(Math.random() * 4), // 0 = Top → Bottom, 1 = Bottom → Top, 2 = Left → Right, 3 = Right → Left
-      size: Math.random() * 2, // Thickness: 2px - 5px
+      size: Math.random() * 3 + 1, // Thickness: 2px - 5px
       length: Math.random() * 80 + 40, // Length: 40px - 120px
       position: Math.random() * 60 + 20, // Random position along the edge
       duration: Math.random() * 2 + 4, // Random duration (2s to 4s)
@@ -19,7 +19,7 @@ export default function AnimatedSection() {
   }, []);
 
   return (
-    <div className="relative w-full md:w-[30rem] lg:w-[60%]  h-full rounded-lg overflow-hidden flex">
+    <div className="relative w-full md:w-[30rem] lg:w-[60%] h-full rounded-lg overflow-hidden flex">
       {/* Radial Gradient Layer */}
       <div
         className="absolute inset-0 w-full h-full z-50"

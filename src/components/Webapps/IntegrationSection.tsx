@@ -31,7 +31,7 @@ export default function IntegrationSection() {
         </h1>
         <div className="max-w-[110rem] mx-auto w-full flex flex-col md:flex-row items-center justify-center space-y-[3rem] md:space-y-[0rem]">
           <div className="w-full flex flex-col lg:flex-row items-start justify-between space-y-[2rem] md:space-y-0 lg:space-x-[5rem]">
-            <h2 className="max-w-[90%] mx-auto lg:mx-0 lg:max-w-1/2 text-cyan-950 text-left font-bold text-5xl md:text-7xl uppercase">
+            <h2 className="max-w-[90%] mx-auto lg:mx-0 lg:max-w-1/2 text-cyan-950 text-left font-medium text-5xl md:text-7xl uppercase tracking-wider">
               Seamless integration with your favourite providers
             </h2>
           </div>

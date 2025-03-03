@@ -4,21 +4,33 @@ export default function SupportSection() {
   return (
     <section className="min-h-[40.5rem] bg-white">
       <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
-        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-black text-opacity-90 px-4 md:px-8">
+        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-900 text-opacity-90 px-4 md:px-8">
           Support
         </h1>
-        <svg
-          //   fill="#c4c4c4"
-          version="1.1"
-          width="200"
-          height="200"
-          viewBox="0 0 95.348 95.347"
-        >
-          <g>
-            <g>
-              <motion.path
-                fill="#c4c4c4"
-                d="M56.527,60.122l-4.662-1.033c-0.047-3.138-0.719-6.168-1.996-9.007l3.606-2.92c0.858-0.695,0.99-1.954,0.296-2.813
+
+        <div className="max-w-[70rem] mx-auto w-full flex flex-col items-center justify-center space-y-[5rem] px-4">
+          <div className="w-full flex flex-col items-center space-y-4">
+            <h2 className="w-full text-cyan-800 text-center font-medium text-4xl md:text-6xl uppercase tracking-wider">
+              Peace of Mind with Ongoing Website Support
+            </h2>
+            <p className="w-full md:max-w-[40rem] text-cyan-800/50 text-center font- md:text-xl">
+              We offer timely maintenance, performance enhancements, and
+              security updates to keep your website running efficiently and
+              securely.
+            </p>
+          </div>
+
+          <div className="w-full flex flex-col md:flex-row space-y-[3rem] md:space-y-0 justify-between items-center">
+            {/* Timely Fixes */}
+            <div className="flex flex-col items-center space-y-4 bg-neutral-50 rounded-xl p-4 min-w-[14rem]">
+              <svg
+                version="1.1"
+                viewBox="0 0 95.348 95.347"
+                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]"
+              >
+                <path
+                  fill="#c4c4c4"
+                  d="M56.527,60.122l-4.662-1.033c-0.047-3.138-0.719-6.168-1.996-9.007l3.606-2.92c0.858-0.695,0.99-1.954,0.296-2.813
 			l-4.521-5.584c-0.334-0.413-0.818-0.675-1.346-0.731c-0.525-0.057-1.056,0.102-1.468,0.435l-3.511,2.846l0,0
 			c-2.486-1.907-5.277-3.259-8.297-4.019v-4.458c0-1.104-0.896-2-2-2h-7.183c-1.104,0-2,0.896-2,2v4.461
 			c-3.08,0.777-5.922,2.171-8.447,4.144l-3.545-2.82c-0.415-0.33-0.94-0.479-1.472-0.422c-0.527,0.06-1.009,0.327-1.339,0.743
@@ -31,13 +43,10 @@ export default function SupportSection() {
 			c1.076,0.237,2.146-0.441,2.385-1.521l1.557-7.014c0.114-0.518,0.02-1.061-0.267-1.508C57.495,60.552,57.045,60.236,56.527,60.122
 			z M37.856,59.435c0,4.859-3.953,8.812-8.813,8.812c-4.858,0-8.811-3.953-8.811-8.812s3.952-8.812,8.811-8.812
 			C33.903,50.624,37.856,54.576,37.856,59.435z"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                style={{ transformOrigin: "center" }}
-              />
-              <motion.path
-                fill="#d4d4d4"
-                d="M61.943,42.999c0.746,0,1.463-0.42,1.807-1.139l1.054-2.208c1.826,0.353,3.735,0.345,5.551-0.021l1.07,2.195
+                />
+                <path
+                  fill="#d4d4d4"
+                  d="M61.943,42.999c0.746,0,1.463-0.42,1.807-1.139l1.054-2.208c1.826,0.353,3.735,0.345,5.551-0.021l1.07,2.195
 			c0.483,0.992,1.682,1.405,2.675,0.921l2.691-1.313c0.477-0.233,0.842-0.646,1.015-1.147c0.172-0.501,0.139-1.051-0.095-1.528
 			l-1.053-2.155c1.458-1.214,2.646-2.686,3.527-4.377l2.278,0.504c1.074,0.238,2.146-0.442,2.386-1.52l0.646-2.923
 			c0.238-1.078-0.441-2.146-1.521-2.385l-2.184-0.484c-0.028-1.962-0.449-3.857-1.248-5.632l1.673-1.355
@@ -50,13 +59,10 @@ export default function SupportSection() {
 			c-0.229,0.479-0.257,1.028-0.08,1.528c0.178,0.5,0.546,0.91,1.024,1.138l2.702,1.289C61.361,42.935,61.654,42.999,61.943,42.999z
 			 M62.01,25.635c0-3.039,2.473-5.51,5.512-5.51c3.038,0,5.51,2.472,5.51,5.51c0,3.039-2.472,5.511-5.51,5.511
 			C64.482,31.146,62.01,28.674,62.01,25.635z"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                style={{ transformOrigin: "center" }}
-              />
-              <motion.path
-                fill="#e4e4e4"
-                d="M93.782,64.115l-2.182-0.483c-0.028-1.961-0.449-3.856-1.25-5.632l1.675-1.355c0.412-0.334,0.675-0.818,0.73-1.346
+                />
+                <path
+                  fill="#e4e4e4"
+                  d="M93.782,64.115l-2.182-0.483c-0.028-1.961-0.449-3.856-1.25-5.632l1.675-1.355c0.412-0.334,0.675-0.818,0.73-1.346
 			s-0.103-1.057-0.437-1.468l-1.885-2.327c-0.695-0.859-1.956-0.99-2.813-0.295l-1.613,1.307c-1.556-1.193-3.3-2.038-5.188-2.513
 			v-2.039c0-1.104-0.896-2-2-2h-2.994c-1.104,0-2,0.896-2,2v2.041c-1.929,0.485-3.706,1.358-5.281,2.592h-0.001l-1.632-1.298
 			c-0.415-0.331-0.938-0.482-1.472-0.422c-0.527,0.061-1.009,0.326-1.339,0.742l-1.863,2.343c-0.688,0.864-0.544,2.123,0.32,2.812
@@ -69,21 +75,62 @@ export default function SupportSection() {
 			l2.278,0.506c0.52,0.115,1.061,0.02,1.508-0.267c0.447-0.285,0.763-0.735,0.878-1.254l0.647-2.923
 			C95.542,65.422,94.861,64.355,93.782,64.115z M82.838,63.848c0,3.039-2.472,5.511-5.509,5.511c-3.038,0-5.512-2.472-5.512-5.511
 			s2.474-5.511,5.512-5.511C80.366,58.338,82.838,60.81,82.838,63.848z"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                style={{ transformOrigin: "center" }}
-              />
-            </g>
-          </g>
-        </svg>
-        <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-4 px-4">
-          <h2 className="max-w-[50rem] text-cyan-800 text-center font-bold text-4xl md:text-6xl tracking-tighter">
-            Peace of Mind with Ongoing Website Support
-          </h2>
-          <p className="max-w-[20rem] md:max-w-[32rem] text-cyan-700/50 text-center font-semibold md:text-xl tracking-tighter">
-            Timely fixes, performance tuning, and security updates to keep you
-            ahead.
-          </p>
+                />
+              </svg>
+              <h2 className="font-semibold text-cyan-900">Timely Fixes</h2>
+            </div>
+
+            {/* Performance Enheancements */}
+            <div className="flex flex-col items-center space-y-4 bg-neutral-50 rounded-xl p-4 min-w-[14rem]">
+              <svg
+                fill="#d5d5d5"
+                version="1.1"
+                id="Capa_1"
+                viewBox="0 0 96.258 96.258"
+                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]"
+              >
+                <g>
+                  <path
+                    d="M75.225,37.515c-0.357-0.616-1.017-0.995-1.729-0.995h-21.03L67.177,2.8c0.271-0.618,0.21-1.331-0.16-1.896
+		S66.018,0,65.344,0H41.976c-0.848,0-1.604,0.535-1.886,1.334L20.876,55.762c-0.216,0.612-0.122,1.291,0.253,1.821
+		s0.984,0.845,1.633,0.845h22.636L34.391,93.662c-0.189,0.607-0.079,1.269,0.298,1.781s0.975,0.814,1.611,0.814h5.449
+		c0.719,0,1.382-0.386,1.738-1.01L75.234,39.51C75.587,38.891,75.583,38.131,75.225,37.515z"
+                  />
+                </g>
+              </svg>
+              <h2 className="font-semibold text-cyan-900">
+                Optimized Performance
+              </h2>
+            </div>
+
+            {/* Security */}
+            <div className="flex flex-col items-center space-y-4 bg-neutral-50 rounded-xl p-4 min-w-[14rem]">
+              <svg
+                version="1.1"
+                id="_x32_"
+                viewBox="0 0 512 512"
+                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]"
+              >
+                <path
+                  fill="#e5e5e5"
+                  d="M493.118,60.602c-40.138,17.719-93.777,20.322-143.881-0.447C324.872,50.055,273.523,25.223,255.999,0
+		c-17.521,25.223-68.871,50.055-93.236,60.154C112.657,80.924,59.021,78.32,18.88,60.602c-7.203-3.182-15.096,2.08-15.096,9.955
+		C3.784,493.475,255.999,512,255.999,512s252.217-18.525,252.217-441.443C508.216,62.682,500.323,57.42,493.118,60.602z
+		 M89.155,125.33c32.033,0,63.305-6.23,92.947-18.518c16.129-6.686,46.719-20.51,73.896-39.258
+		c27.178,18.748,57.77,32.572,73.898,39.258c29.647,12.289,60.918,18.52,92.949,18.518c11.256,0,22.45-0.801,33.428-2.367
+		C439.72,416.264,284.815,456.182,255.999,461.07c-28.814-4.889-183.72-44.807-200.273-338.108
+		C66.704,124.531,77.899,125.33,89.155,125.33z"
+                />
+                <path
+                  fill="#c4c4c4"
+                  d="M255.999,409.279c29.94-8.686,119.684-49.879,144.676-234.27c-30.955-2.328-61.182-9.543-90.117-21.539
+		c-12.354-5.121-32.789-14.211-54.559-26.502c-21.768,12.291-42.201,21.381-54.556,26.502
+		c-28.932,11.994-59.156,19.209-90.117,21.539C136.317,359.4,226.06,400.594,255.999,409.279z"
+                />
+              </svg>
+              <h2 className="font-semibold text-cyan-900">Security Updates</h2>
+            </div>
+          </div>
         </div>
       </div>
     </section>

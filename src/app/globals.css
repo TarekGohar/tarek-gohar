@@ -265,6 +265,34 @@
   width: 0; /* Shrink underline */
 }
 
+.header-underline-light {
+  position: relative;
+  display: inline-block;
+  padding-bottom: .5rem;
+  transition: color 0.3s ease;
+}
+
+.header-underline-light::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Start with no underline */
+  height: .1rem;
+  background-color: currentColor;
+  transition: width 0.3s ease; /* Only animate width */
+}
+
+.header-underline-light:hover::after {
+  width: 100%; /* Grow underline to full width */
+}
+
+.header-underline-light:not(:hover)::after {
+  left: auto; /* Move start position to the right */
+  right: 0; /* Shrink underline from the right */
+  width: 0; /* Shrink underline */
+}
+
 
 .dot-grid {
   display: grid;
@@ -282,5 +310,4 @@
   background-color: rgb(124, 124, 124);
   border-radius: 50%;
 }
-
 

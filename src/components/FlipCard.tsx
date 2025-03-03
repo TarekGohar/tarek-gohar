@@ -54,15 +54,19 @@ export default function FlipCard({ index, section }: SectionDataProps) {
 
   // Array of background colors
   const colors = [
-    { bg: "from-[#012A4A] to-[#013A63]", text: "text-[#A9D6E5]" }, // Dark Blue to Deep Blue
-    { bg: "from-[#013A63] to-[#01497C]", text: "text-[#89C2D9]" }, // Deep Blue to Navy
-    { bg: "from-[#01497C] to-[#014F86]", text: "text-[#61A5C2]" }, // Navy to Slightly Brighter Navy
-    { bg: "from-[#014F86] to-[#2A6F97]", text: "text-[#72B6C9]" }, // Brighter Navy to Darker Tea
-    { bg: "from-[#2A6F97] to-[#468FAF]", text: "text-[#A9D6E5]" }, // Darker Teal to Teal
-    { bg: "from-[#468FAF] to-[#61A5C2]", text: "text-[#01497C]" }, // Teal to Light Teal
-    { bg: "from-[#61A5C2] to-[#89C2D9]", text: "text-[#013A63]" }, // Light Teal to Sky Blue
-    { bg: "from-[#89C2D9] to-[#A9D6E5]", text: "text-[#012A4A]" }, // Sky Blue to Soft Blue
-    { bg: "from-[#A9D6E5] to-[#014F86]", text: "text-[#014F86]" }, // Soft Blue to Medium Navy
+    { bg: "from-[#083344] to-[#0C4155]", text: "#AFE8F2" }, // Deepest Cyan
+    { bg: "from-[#0C435A] to-[#105066]", text: "#5CD5EE" },
+    { bg: "from-[#0E4B65] to-[#145B72]", text: "#87DFF0" },
+    { bg: "from-[#12566F] to-[#18667C]", text: "#AFE8F2" },
+    { bg: "from-[#16607A] to-[#1E7189]", text: "#D7F3F7" },
+    { bg: "from-[#1C6B86] to-[#25809A]", text: "#87DFF0" },
+    { bg: "from-[#237592] to-[#2D8CA6]", text: "#5CD5EE" },
+    { bg: "from-[#2A809E] to-[#3598B2]", text: "#AFE8F2" }, // Moving toward Lighter Cyan
+    { bg: "from-[#309BAA] to-[#3DA7BE]", text: "#D7F3F7" }, // Transitioning to bg-cyan-700
+    { bg: "from-[#36A5B6] to-[#45B5CA]", text: "#87DFF0" },
+    { bg: "from-[#3DB0C2] to-[#4DC2D6]", text: "#5CD5EE" },
+    { bg: "from-[#45BBCE] to-[#55D0E4]", text: "#D7F3F7" }, // Almost at bg-cyan-600
+    { bg: "from-[#4DC6DA] to-[#5DDAF0]", text: "#FFFFFF" }, // Final Step to bg-cyan-600
   ];
 
   // Select colors based on index
@@ -90,10 +94,10 @@ export default function FlipCard({ index, section }: SectionDataProps) {
             alt={section.title}
             width={1000}
             height={1000}
-            className={`md:p-2 w-[32%] lg:w-[40%] opacity-100 mix-blend-screen ${frontColor.text}`}
+            className={`p-1 md:p-2 w-[32%] lg:w-[34%] opacity-100 mix-blend-screen ${frontColor.text}`}
           />
           <h3
-            className={`w-[90%] md:text-xl lg:text-2xl font-bold ${frontColor.text}`}
+            className={`w-[90%] md:text-xl lg:text-2xl font-medium tracking-wider ${frontColor.text}`}
           >
             {section.title}
           </h3>
@@ -104,7 +108,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
           className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center bg-gradient-to-tl ${frontColor.bg}`}
         >
           <span
-            className={`text-md lg:text-xl font-semibold ${frontColor.text}`}
+            className={`text-md lg:text-xl font-medium tracking-wider ${frontColor.text}`}
           >
             {section.content}
           </span>
