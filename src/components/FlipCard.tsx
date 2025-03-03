@@ -87,7 +87,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
       >
         {/* Front Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 bg-gradient-to-br ${frontColor.bg} border-2 border-opacity-20 border-white`}
+          className={`rounded-xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 bg-gradient-to-br ${frontColor.bg} border-2 border-opacity-20 border-white`}
         >
           <Image
             src={section.src}
@@ -105,7 +105,7 @@ export default function FlipCard({ index, section }: SectionDataProps) {
 
         {/* Back Side */}
         <div
-          className={`rounded-2xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center bg-gradient-to-tl ${frontColor.bg}`}
+          className={`rounded-xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center bg-gradient-to-tl ${frontColor.bg}`}
         >
           <span
             className={`text-md lg:text-xl font-medium tracking-wider ${frontColor.text}`}

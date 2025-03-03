@@ -199,7 +199,7 @@ export default function AccessibilitySection() {
             {/* Dashboards */}
             <div className="min-w-40 min-h-40 bg-neutral-50/70 py-[6rem] flex flex-col items-center justify-center">
               <div
-                className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] overflow-y-auto bg-neutral-50 rounded-2xl border-2 border-neutral-300 overflow-hidden"
+                className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] bg-neutral-50 overflow-hidden space-y-2"
                 style={{
                   WebkitMaskImage:
                     "linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0))",
@@ -207,52 +207,132 @@ export default function AccessibilitySection() {
                     "linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0))",
                 }}
               >
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-semibold text-neutral-500 bg-neutral-200/60">
-                  <span className="pl-2">Order ID</span>
-                  <span className="pl-2">First Name</span>
-                  <span className="pl-2">Last Name</span>
-                  <span className="pl-2">Date</span>
-                </div>
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-medium text-neutral-500/80 bg-neutral-50">
-                  <span className="pl-2">#B2045</span>
-                  <span className="pl-2">William</span>
-                  <span className="pl-2">Jones</span>
-                  <span className="pl-2">Feb 28, 2024</span>
+                <div className="w-full flex space-x-2">
+                  {/* Progress Circle */}
+                  <div className="w-[12rem] h-[7rem] bg-neutral-100 rounded-xl flex items-center justify-center">
+                    <div className="w-[4rem] h-[4rem] md:w-[5rem] md:h-[5rem] relative flex items-center justify-center">
+                      <svg className="w-full h-full" viewBox="0 0 36 36">
+                        <circle
+                          cx="18"
+                          cy="18"
+                          r="15.5"
+                          fill="none"
+                          stroke="#F3F4F6"
+                          strokeWidth="3"
+                        />
+
+                        <circle
+                          cx="18"
+                          cy="18"
+                          r="15.5"
+                          fill="none"
+                          stroke="#b2b2b2"
+                          strokeWidth="3.5"
+                          strokeDasharray="50 50"
+                          strokeDashoffset="0"
+                        />
+                        <circle
+                          cx="18"
+                          cy="18"
+                          r="15.5"
+                          fill="none"
+                          stroke="#c4c4c4"
+                          strokeWidth="3.5"
+                          strokeDasharray="50 50"
+                          strokeDashoffset="-40"
+                        />
+
+                        <circle
+                          cx="18"
+                          cy="18"
+                          r="15.5"
+                          fill="none"
+                          stroke="#e4e4e4"
+                          strokeWidth="3.5"
+                          strokeDasharray="25 75"
+                          strokeDashoffset="-50"
+                        />
+
+                        <circle
+                          cx="18"
+                          cy="18"
+                          r="15.5"
+                          fill="none"
+                          stroke="#f4f4f4"
+                          strokeWidth="3.5"
+                          strokeDasharray="25 75"
+                          strokeDashoffset="-75"
+                        />
+                      </svg>
+
+                      <span className="absolute text-transparent bg-neutral-200 rounded-md font-bold text-xs  p-">
+                        100%
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Bar Chart */}
+                  <div className="w-full h-[7rem] bg-blue-100/30 rounded-xl flex items-end justify-between px-[2rem] py-[1rem]">
+                    <span className="inline-block w-[1.33rem] h-[4.0rem] bg-blue-300/60" />
+                    <span className="inline-block w-[1.33rem] h-[2.7rem] bg-blue-300/90" />
+                    <span className="inline-block w-[1.33rem] h-[3.9rem] bg-blue-300/60" />
+                    <span className="inline-block w-[1.33rem] h-[2.3rem] bg-blue-300/70" />
+                    <span className="inline-block w-[1.33rem] h-[4.2rem] bg-blue-300/60" />
+                    <span className="inline-block w-[1.33rem] h-[2.5rem] bg-blue-300/30" />
+                    <span className="inline-block w-[1.33rem] h-[2.2rem] bg-blue-300/60" />
+                    <span className="inline-block w-[1.33rem] h-[2.7rem] bg-blue-300/70" />
+                    <span className="inline-block w-[1.33rem] h-[3.6rem] bg-blue-300/50" />
+                  </div>
                 </div>
 
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-medium text-neutral-500/80 bg-neutral-50">
-                  <span className="pl-2">#B2045</span>
-                  <span className="pl-2">Liam</span>
-                  <span className="pl-2">Smith</span>
-                  <span className="pl-2">Feb 28, 2024</span>
+                {/* Logs */}
+                <div className="w-full flex space-x-2">
+                  <div className="w-[60rem] h-[7rem] bg-neutral-200 rounded-xl space-y-4 py-3">
+                    <div className="w-[80%] mx-auto flex space-x-2">
+                      <span className="inline-block w-[4rem] h-[.5rem] text-[.6rem] text-neutral-500 font-medium">
+                        Logs
+                      </span>
+                    </div>
+                    <div className="w-[80%] h-[80%] mx-auto my-auto flex flex-col items-center justify-start space-y-2 ">
+                      {Array.from({ length: 6 }).map((_, i) => (
+                        <div key={i} className="w-full flex space-x-2">
+                          <span className="inline-block w-[.25rem] h-[.25rem] bg-neutral-400/40" />
+                          <span className="inline-block w-full h-[.25rem] bg-neutral-400/40" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="w-full h-[7rem] bg-green-200 rounded-xl p-4 flex flex-col items-center justify-start space-y-4">
+                    <span className=" inline-block h-[1rem] w-[90%] text-[.6rem] font-medium text-green-600">
+                      Orders
+                    </span>
+                    <span className=" inline-block h-[2rem] w-[90%] text-sm text-center font-bold text-green-600">
+                      96,540
+                    </span>
+                    <span className=" inline-block h-[1rem] w-[90%] text-xs text-left text-green-600">
+                      + 6.16%
+                    </span>
+                  </div>
+                  <div className="w-full h-[7rem] bg-yellow-200 rounded-xl p-4 flex flex-col items-center justify-start space-y-4">
+                    <span className=" inline-block h-[1rem] w-[90%] text-[.6rem] font-medium text-yellow-600">
+                      Issues
+                    </span>
+                    <span className=" inline-block h-[2rem] w-[90%] text-sm text-center font-bold text-yellow-600">
+                      503
+                    </span>
+                    <span className=" inline-block h-[1rem] w-[90%] text-xs text-left text-yellow-600">
+                      + 6.16%
+                    </span>
+                  </div>
                 </div>
 
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-medium text-neutral-500/80 bg-neutral-100/60">
-                  <span className="pl-2">#C3089</span>
-                  <span className="pl-2">Sophia</span>
-                  <span className="pl-2">Garcia</span>
-                  <span className="pl-2">Feb 27, 2024</span>
-                </div>
+                {/* Placeholder */}
+                <div className="w-full flex space-x-2">
+                  <div className="w-full h-[7rem] bg-blue-200 rounded-xl"></div>
 
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-medium text-neutral-500/80 bg-neutral-50">
-                  <span className="pl-2">#D4011</span>
-                  <span className="pl-2">Ethan</span>
-                  <span className="pl-2">Williams</span>
-                  <span className="pl-2">Feb 26, 2024</span>
-                </div>
-
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-medium text-neutral-500/80 bg-neutral-100/60">
-                  <span className="pl-2">#C3089</span>
-                  <span className="pl-2">Sophia</span>
-                  <span className="pl-2">Garcia</span>
-                  <span className="pl-2">Feb 27, 2024</span>
-                </div>
-
-                <div className="h-10 text-xs items-center grid grid-cols-4 font-medium text-neutral-500/80 bg-neutral-50">
-                  <span className="pl-2">#D4011</span>
-                  <span className="pl-2">Tarek</span>
-                  <span className="pl-2">Gohar</span>
-                  <span className="pl-2">Nov 15, 2001</span>
+                  <div className="w-[6rem] h-[7rem] bg-blue-200 rounded-xl"></div>
+                  <div className="w-[6rem] h-[7rem] bg-blue-200 rounded-xl"></div>
                 </div>
               </div>
               <div className="mt-4">
@@ -262,6 +342,78 @@ export default function AccessibilitySection() {
                 <p className="max-w-[18rem] text-center text-sm">
                   Track key metrics, identify trends, and make informed
                   decisions — all in one centralized place.
+                </p>
+              </div>
+            </div>
+
+            {/* E-Commerce */}
+            <div className="min-w-40 min-h-40 bg-neutral-50/70 py-[6rem] flex flex-col items-center justify-center">
+              <div
+                className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] bg-neutral-50 rounded-2xl border-neutral-300 overflow-hidden"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 95%, rgba(0,0,0,0))",
+                  maskImage:
+                    "linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 95%, rgba(0,0,0,0))",
+                }}
+              >
+                <div className="h-8 text-xs items-center px-2 flex justify-between bg-neutral-200/50">
+                  {/* <div className="w-full h-full flex items-center space-x-[.3rem]">
+                    <span className="w-[.7rem] h-[.7rem] rounded-full bg-red-500 inline-block" />
+                    <span className="w-[.7rem] h-[.7rem] rounded-full bg-yellow-500 inline-block" />
+                    <span className="w-[.7rem] h-[.7rem] rounded-full bg-green-500 inline-block" />
+                  </div> */}
+                </div>
+                <div className="h-72 bg-neutral-100 p-6 flex flex-col items-center justify-start space-y-1">
+                  {/* Checkout Page */}
+                  <div className="w-[80%] min-h-[10rem] flex flex-col justify-start items-center p-2 bg-neutral-200/60 rounded-xl">
+                    <span className="text-[.5rem] font-semibold text-neutral-600 my-1">
+                      November
+                    </span>
+
+                    <div className="w-full grid grid-cols-7 gap-1 gap-y-2">
+                      {/* Days of the Week */}
+                      {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map(
+                        (day) => (
+                          <span
+                            key={day}
+                            className="text-[.5rem] font-semibold text-center text-neutral-400"
+                          >
+                            {day}
+                          </span>
+                        )
+                      )}
+
+                      {/* Empty spaces for correct date alignment */}
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+
+                      {/* Calendar Numbers */}
+                      {Array.from({ length: 30 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className={`text-[.5rem] font-medium text-neutral-400 flex items-center justify-center h-6 ${
+                            i === 14
+                              ? "border-2 border-neutral-400/50 rounded-full"
+                              : ""
+                          }`}
+                        >
+                          {i + 1}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4">
+                <h3 className="text-cyan-800 text-center font-medium uppercase tracking-wider">
+                  Booking Systems
+                </h3>
+                <p className="max-w-[18rem] text-center text-sm">
+                  Schedule, reschedule, and manage appointments seamlessly while
+                  integrating with your workflow.
                 </p>
               </div>
             </div>
