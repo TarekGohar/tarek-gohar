@@ -35,7 +35,7 @@ export default function SecuritySection() {
         </p>
 
         <div className="absolute top-0 left-0 w-full z-10">
-          <DotGrid />
+          {/* <DotGrid /> */}
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import CustomCursor from "@/components/custom-cursor";
 import Footer from "@/components/footer";
+import LenisProvider from "@/components/LenisProvider";
 
 export default function RootLayout({
   children,
@@ -11,8 +12,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-primeform`}>
-        {children}
-        <Footer />
+        <LenisProvider>
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

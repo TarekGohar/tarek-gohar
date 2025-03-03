@@ -366,7 +366,7 @@ export default function AccessibilitySection() {
                 </div>
                 <div className="h-72 bg-neutral-100 p-6 flex flex-col items-center justify-start space-y-1">
                   {/* Checkout Page */}
-                  <div className="w-[80%] min-h-[10rem] flex flex-col justify-start items-center p-2 bg-neutral-200/60 rounded-xl">
+                  <div className="w-[80%] min-w-[20rem] min-h-[10rem] flex flex-col justify-start items-center p-2 bg-neutral-200/60 rounded-xl">
                     <span className="text-[.5rem] font-semibold text-neutral-600 my-1">
                       November
                     </span>

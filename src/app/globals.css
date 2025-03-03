@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  overflow-x: hidden;
+  overscroll-behavior: none; /* Prevents browser default scroll interference */
+  scroll-behavior: auto !important;
+  will-change: transform; /* Optimizes smooth animations */
+}
+
+body {
+  transform: translate3d(0, 0, 0); /* Forces GPU acceleration */
+  backface-visibility: hidden; /* Helps reduce flickering */
+}
+
+
 
   /* Fonts */
 
@@ -304,10 +314,7 @@
   overflow: hidden;
 }
 
-.dot {
-  width: .6rem; /* Smaller dots */
-  height: .6rem;
-  background-color: rgb(124, 124, 124);
-  border-radius: 50%;
-}
+
+
+
 

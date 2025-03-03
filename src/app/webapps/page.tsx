@@ -7,6 +7,7 @@ import MovingLinesBackground2 from "@/components/MovingLinesV2";
 import Navbar from "@/components/navbar";
 import AccessibilitySection from "@/components/Webapps/AccessibilitySection";
 import IntegrationSection from "@/components/Webapps/IntegrationSection";
+import ProcessSection from "@/components/Webapps/ProcessSection";
 import SecuritySection from "@/components/Websites/SecuritySection";
 import { motion } from "framer-motion";
 
@@ -89,22 +90,22 @@ export default function Page() {
           </div>
         </section>
       </motion.div>
-
       <section className="h-[50rem] flex items-center justify-center">
         <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start justify-center space-y-4 px-4">
           <h1 className="w-full md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
             Why Custom Web Apps?
           </h1>
-          <h2 className="max-w-[80rem] w-full text-cyan-900/100 text-left text-4xl md:text-5xl tracking-wider">
+          <h2 className="max-w-[80rem] w-full text-cyan-900/100 text-left font-medium text-4xl md:text-5xl tracking-wider">
             Off-the-shelf software often comes with limitations. A custom web
             application is designed to fit your specific business needs,
             improving efficiency and streamlining operations.
           </h2>
         </div>
       </section>
-
       <hr className="max-w-[40%] mx-auto border-t-[.5px] border-gray-20"></hr>
       <AccessibilitySection />
+      <ProcessSection />
+      reac
       <IntegrationSection />
     </>
   );
