@@ -4,7 +4,7 @@ export default function SupportSection() {
   return (
     <section className="min-h-[40.5rem] bg-neutral-100">
       <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
-        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-900 text-opacity-90 px-4 md:px-8">
+        <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-neutral-900 text-opacity-90 px-4 md:px-8">
           Support
         </h1>
 
@@ -77,7 +77,7 @@ export default function SupportSection() {
 			s2.474-5.511,5.512-5.511C80.366,58.338,82.838,60.81,82.838,63.848z"
                 />
               </svg>
-              <h2 className="font-semibold text-cyan-900">Timely Fixes</h2>
+              <h2 className="font-semibold text-neutral-900">Timely Fixes</h2>
             </div>
 
             {/* Performance Enheancements */}
@@ -98,7 +98,7 @@ export default function SupportSection() {
                   />
                 </g>
               </svg>
-              <h2 className="font-semibold text-cyan-900">
+              <h2 className="font-semibold text-neutral-900">
                 Optimized Performance
               </h2>
             </div>
@@ -128,7 +128,9 @@ export default function SupportSection() {
 		c-28.932,11.994-59.156,19.209-90.117,21.539C136.317,359.4,226.06,400.594,255.999,409.279z"
                 />
               </svg>
-              <h2 className="font-semibold text-cyan-900">Security Updates</h2>
+              <h2 className="font-semibold text-neutral-900">
+                Security Updates
+              </h2>
             </div>
           </div>
         </div>

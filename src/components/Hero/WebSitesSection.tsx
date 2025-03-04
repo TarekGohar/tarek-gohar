@@ -5,7 +5,7 @@ import { BoxesContainer } from "../BoxesContainer";
 
 export default function WebSitesSection() {
   return (
-    <section className="relative h-[50rem] flex items-center justify-center">
+    <section className="relative h-[45rem] flex items-center justify-center">
       <div className="h-full relative w-full overflow-hidden bg-[#020b0f] opacity-100 flex flex-col items-center justify-center">
         <div
           className="absolute inset-0 w-full h-full bg-cyan-950 z-20 pointer-events-none"

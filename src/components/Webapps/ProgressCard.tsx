@@ -36,7 +36,7 @@ const Card = ({
   return (
     <div
       ref={container}
-      className="h-[80vh] min-h-[60rem]"
+      className="h-[100vh] min-h-[50rem]"
       style={{
         display: "flex",
         alignItems: "center",
@@ -46,7 +46,7 @@ const Card = ({
       }}
     >
       <motion.div
-        className="relative flex flex-col items-start justify-between h-[26rem] w-[59rem] rounded-2xl p-[3rem]"
+        className="relative flex flex-col items-start justify-between h-[26rem] w-[59rem] rounded-2xl p-[2.5rem] md:p-[3rem]"
         style={{
           backgroundColor: color,
           scale,

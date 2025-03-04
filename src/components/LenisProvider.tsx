@@ -14,8 +14,7 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
         orientation: "vertical",
         gestureOrientation: "vertical",
         smoothWheel: true,
-        smoothTouch: false, // ✅ Ensures default scrolling behavior on touch devices
-        syncTouch: true, // ✅ Ensures fixed elements remain fixed
+        syncTouch: false, // ✅ Ensures fixed elements remain fixed
       });
 
       const update = (time: number) => {

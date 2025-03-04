@@ -67,7 +67,7 @@ export default function Navbar({ light }: NavbarProps) {
 
         {/* Get a Quote Button */}
         <Link
-          href="/contact-us"
+          href="/get-a-quote"
           className=" bg-white text-black rounded-xl p-2 h-full flex items-center justify-center duration-200 hover:opacity-75"
         >
           Get a Quote

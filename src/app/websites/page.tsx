@@ -137,7 +137,7 @@ export default function Page() {
             People decide fast, and options are endless. If your website doesn’t
             make an impact immediately, they move on.
           </p>
-          <p className="w-full md:w-[70%] text-cyan-900/100 text-left font-medium text-2xl md:text-4xl tracking">
+          <p className="w-full md:w-[70%] text-cyan-950/100 text-left font-semibold text-2xl md:text-4xl tracking">
             You don’t get a second chance at a first impression.
           </p>
         </div>

@@ -66,8 +66,8 @@ export default function Page() {
         /> */}
 
         <section className="h-screen max-h-[100rem] min-h-[50rem] flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center text-white relative h-[70%] space-y-4 px-4 md:px-[5rem]">
-            <div className="max-w-[120rem] mx-auto flex flex-col items-center mix-blend-plus-lighter z-50 ">
+          <div className="flex flex-col items-center justify-center text-white relative h-[70%] space-y-4 px-4 md:px-[0rem]">
+            <div className="max-w-[120rem] mx-auto w-full flex flex-col items-center mix-blend-plus-lighter z-50 ">
               <h1 className="tracking-wider font-medium text-[3rem] md:text-[5.4rem] lg:text-[6rem] leading-[3rem] md:leading-[5rem] lg:leading-[5.5rem] uppercase">
                 Build Smart.
               </h1>
@@ -76,7 +76,7 @@ export default function Page() {
                 Work Faster.
               </h1>
             </div>
-            <div className="max-w-[40rem] mx-auto w-full md:text-xl lg:text-xl font-normal text-center tracking-wide px-4 md:px-8 mix-blend-plus-lighter">
+            <div className="max-w-[30rem] md:max-w-[40rem] mx-auto w-full md:text-xl lg:text-xl font-normal text-center tracking-wide px-4 md:px-8 mix-blend-plus-lighter">
               <h2>
                 Web applications designed to optimize processes, increase
                 efficiency, and drive results.
@@ -90,10 +90,10 @@ export default function Page() {
           <h1 className="w-full md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
             Why Custom Web Apps?
           </h1>
-          <h2 className="max-w-[80rem] w-full text-cyan-900/100 text-left font-medium text-4xl md:text-5xl tracking-wider">
-            Off-the-shelf software often comes with limitations. A custom web
-            application is designed to fit your specific business needs,
-            improving efficiency and streamlining operations.
+          <h2 className="max-w-[80rem] w-full text-cyan-900/100 text-left font-medium text-3xl md:text-5xl tracking-wider uppercase">
+            Prebuilt software has limitations. A custom web application is
+            tailored to your business needs, increasing efficiency and
+            streamlining operations.
           </h2>
         </div>
       </section>

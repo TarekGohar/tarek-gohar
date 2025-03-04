@@ -45,12 +45,12 @@ export default function Footer() {
 
           {/* Where to Buy */}
           <li className="w-fit md:px-0 md:w-full text-center px-12 font-semibold uppercase">
-            <Link href="/where-to-buy">Web Apps</Link>
+            <Link href="/webapps">Web Apps</Link>
           </li>
 
           {/* Where to Buy */}
           <li className="w-fit md:px-0 md:w-full text-center px-12 font-semibold uppercase">
-            <Link href="/where-to-buy">Web Sites</Link>
+            <Link href="/websites">Web Sites</Link>
           </li>
         </ul>
       </div>

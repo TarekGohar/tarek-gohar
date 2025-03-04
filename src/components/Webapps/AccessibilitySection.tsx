@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AccessibilitySection() {
   return (
-    <section className="h-fit">
+    <section className="h-fit mb-[4rem]">
       <div className="pt-[10rem] md:my-[8rem] relative max-w-[120rem] mx-auto w-full flex flex-col items-center justify-center px-4 md:px-8">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-800/80 px-4 md:px-8">
           Solutions
@@ -21,9 +21,9 @@ export default function AccessibilitySection() {
 
           <div className="max-w-[100rem] w-full grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-x-[5rem] lg:gap-4 text-cyan-800/80">
             {/* Order Management */}
-            <div className="min-w-40 min-h-40 bg-neutral-50/70 py-[6rem] flex flex-col items-center justify-center">
+            <div className="min-w-40 min-h-40 bg-neutral-50/50 rounded-xl py-[6rem] flex flex-col items-center justify-center">
               <div
-                className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] overflow-y-auto bg-neutral-50 rounded-2xl border-2 border-neutral-300 overflow-hidden"
+                className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] bg-neutral-50 rounded-2xl border-2 border-neutral-300 overflow-hidden"
                 style={{
                   WebkitMaskImage:
                     "linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0))",
@@ -91,7 +91,7 @@ export default function AccessibilitySection() {
             </div>
 
             {/* E-Commerce */}
-            <div className="min-w-40 min-h-40 bg-neutral-50/70 py-[6rem] flex flex-col items-center justify-center">
+            <div className="min-w-40 min-h-40 bg-neutral-50/50 rounded-xl py-[6rem] flex flex-col items-center justify-center">
               <div
                 className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] bg-neutral-50 rounded-2xl border-neutral-300 overflow-hidden"
                 style={{
@@ -197,7 +197,7 @@ export default function AccessibilitySection() {
             </div>
 
             {/* Dashboards */}
-            <div className="min-w-40 min-h-40 bg-neutral-50/70 py-[6rem] flex flex-col items-center justify-center">
+            <div className="min-w-40 min-h-40 bg-neutral-50/50 rounded-xl py-[6rem] flex flex-col items-center justify-center">
               <div
                 className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] bg-neutral-50 overflow-hidden space-y-2"
                 style={{
@@ -347,7 +347,7 @@ export default function AccessibilitySection() {
             </div>
 
             {/* E-Commerce */}
-            <div className="min-w-40 min-h-40 bg-neutral-50/70 py-[6rem] flex flex-col items-center justify-center">
+            <div className="min-w-40 min-h-40 bg-neutral-50/50 rounded-xl py-[6rem] flex flex-col items-center justify-center">
               <div
                 className="w-[90%] max-w-[30rem] min-w-[15rem] mx-auto max-h-[16rem] bg-neutral-50 rounded-2xl border-neutral-300 overflow-hidden"
                 style={{
