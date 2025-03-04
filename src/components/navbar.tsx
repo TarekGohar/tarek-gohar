@@ -8,7 +8,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ light }: NavbarProps) {
-  const light_color = light ? "text-white" : "text-black";
+  const light_color = light ? "text-white" : "text-cyan-900";
 
   return (
     <motion.nav
@@ -18,7 +18,7 @@ export default function Navbar({ light }: NavbarProps) {
       style={{ zIndex: 1000, backgroundBlendMode: "" }}
     >
       <ul
-        className="h-full flex items-center justify-between max-w-[90rem] gap-x-4 mx-auto font-medium bg-opacity-80 p-[.3rem] rounded-2xl"
+        className="h-full flex items-center justify-between max-w-[90rem] gap-x-4 mx-auto font-medium bg-opacity-80 p-[.2rem] rounded-2xl"
         style={{
           background: "rgba(230,230,230, 0.3)",
           backdropFilter: "blur(10px)",
@@ -31,8 +31,10 @@ export default function Navbar({ light }: NavbarProps) {
         <li>
           <Link
             href="/"
-            className="block min-h-[3rem] min-w-[4rem] bg-red-500 duration-300 hover:opacity-75"
-          ></Link>
+            className="block min-w-[4rem] duration-300 hover:opacity-75"
+          >
+            Logo
+          </Link>
         </li>
 
         {/* Nav Links */}
@@ -66,7 +68,7 @@ export default function Navbar({ light }: NavbarProps) {
         {/* Get a Quote Button */}
         <Link
           href="/contact-us"
-          className=" bg-white text-black rounded-xl p-2 h-full"
+          className=" bg-white text-black rounded-xl p-2 h-full flex items-center justify-center duration-200 hover:opacity-75"
         >
           Get a Quote
         </Link>

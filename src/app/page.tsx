@@ -1,7 +1,6 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import SlotsSection from "@/components/Hero/SlotsSection";
 import AnimatedCirclesSection from "@/components/Hero/AnimateCircles";
@@ -9,7 +8,7 @@ import SpeedyDevelopmentSection from "@/components/Hero/SpeedyDevelopmentSection
 import ParticlesBackground from "@/components/Hero/GradientBackground";
 import WebAppsSection from "../components/Hero/WebAppsSection";
 import WebSitesSection from "@/components/Hero/WebSitesSection";
-import { GetAQuote } from "@/components/Hero/GetAQuoteSection";
+import GetAQuote from "@/components/Hero/GetAQuoteSection";
 
 export default function Page() {
   const firstName = "TAREK";
@@ -107,12 +106,11 @@ export default function Page() {
 
   return (
     <>
-      <Navbar light={!bgBlack} />
       {/* First Section (Locks scroll initially) */}
       <section
         className={`relative h-screen min-h-[45rem] max-h-[100rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 ${
           bgBlack ? "text-cyan-800" : "text-white"
-        } ${isLocked ? "fixed inset-0" : "absolute top-0 w-full"}`}
+        } ${isLocked ? "fixed inset-0 left-0" : "absolute top-0 w-full"}`}
       >
         <div className="z-20 opacity-70 max-w-[80rem] mx-auto w-fit text-center grid grid-cols-2 md:gap-y-8 md:grid-cols-1">
           <h1 className="w-fit grid grid-cols-1 md:grid-cols-5 text-[7rem] leading-[7rem] md:text-[13rem] md:leading-[11rem] font-extrabold">

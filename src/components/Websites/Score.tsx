@@ -6,11 +6,11 @@ export default function NinetyPercentCircle({ delay = 0 }) {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" }); // Adjust margin for better control
-  const [size, setSize] = useState(100);
+  const [size, setSize] = useState(20);
 
   useEffect(() => {
     const updateSize = () => {
-      if (window.innerWidth >= 768) setSize(200); // Large screens
+      if (window.innerWidth >= 768) setSize(180); // Large screens
       else setSize(100); // Extra small screens
     };
 
@@ -51,7 +51,7 @@ export default function NinetyPercentCircle({ delay = 0 }) {
   return (
     <div
       ref={ref}
-      className="relative w-[6.25rem] h-[6rem] md:w-[12.5rem] md:h-[12.5rem] flex items-center justify-center"
+      className="relative w-[6.25rem] h-[6rem] md:w-[11.3rem] md:h-[11.3rem] flex items-center justify-center"
     >
       {/* Background Gray Circle */}
       <svg
@@ -100,7 +100,7 @@ export default function NinetyPercentCircle({ delay = 0 }) {
 
       {/* Centered Count-Up Number */}
       <div className="absolute flex items-center justify-center text-cyan-900/60">
-        <h3 className="font-bold text-xl md:text-4xl">{count}</h3>
+        <h3 className="font-bold text-xl md:text-3xl">{count}</h3>
       </div>
     </div>
   );

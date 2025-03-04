@@ -1,8 +1,8 @@
 "use client";
 import Card from "./ProgressCard";
 import { useScroll } from "framer-motion";
-import { title } from "process";
-import { useEffect, useRef } from "react";
+import { sub } from "framer-motion/client";
+import { useRef } from "react";
 
 export default function Home() {
   const container = useRef(null);
@@ -14,33 +14,41 @@ export default function Home() {
   const projects = [
     {
       step: 1,
-      color: "#f5f5f5",
+      color: "#f9f9f9",
       title: "First Step",
-      description: "Description 1",
+      subtitle: "Discovery",
+      description:
+        "We begin by understanding your goals, audience, and key requirements. Through collaborative discussions, we map out the core features, user experience, and technical needs to create a strategic plan for development.",
       src: "default.jpg",
       url: "#",
     },
     {
       step: 2,
-      color: "#e8e8e8",
+      color: "#f4f4f4",
       title: "Second Step",
-      description: "Description 2",
+      subtitle: "Design",
+      description:
+        "We design the interface and overall user experience, ensuring that your web app is both visually appealing and easy to navigate. Using modern design principles, we craft layouts, prototypes, and interactive elements that align with your brand and enhance user engagement.",
       src: "default.jpg",
       url: "#",
     },
     {
       step: 3,
-      color: "#d0d0d0",
+      color: "#f1f1f1",
       title: "Third Step",
-      description: "Description 3",
+      subtitle: "Development",
+      description:
+        "We build both the front-end and back-end of your web app using the latest technologies. We focus on performance, security, and scalability, ensuring a smooth and efficient experience for users on all devices.",
       src: "default.jpg",
       url: "#",
     },
     {
       step: 4,
-      color: "#b0b0b0",
+      color: "#efefef",
       title: "Fourth Step",
-      description: "Description 4",
+      subtitle: "Deploy",
+      description:
+        "We rigorously test the app before launching it to ensure everything runs flawlessly. Once live, we continue to provide ongoing support, updates, and improvements, keeping your web app secure and optimized as your business grows.",
       src: "default.jpg",
       url: "#",
     },
@@ -48,7 +56,7 @@ export default function Home() {
 
   return (
     <section ref={container} className="relative px-4 md:px-8">
-      <h1 className="max-w-[120rem] mx-auto md:text-xl font-semibold opacity-80 px-4 md:px-8">
+      <h1 className="max-w-[120rem] mx-auto md:text-xl font-semibold text-cyan-800/80 px-4 md:px-8">
         Our Process
       </h1>
       <div className="flex flex-col items-center justify-center space-y-[.5rem] mt-[5rem] md:mt-[10rem] md:mb-[-5rem]">

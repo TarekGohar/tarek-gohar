@@ -44,7 +44,7 @@ export default function WebAppsSection() {
           </h2>
           <Link
             className="md:max-w-[35rem] text-cyan-800/60 text-center font-medium md:text-xl header-underline-light"
-            href="/web-apps"
+            href="/webapps"
           >
             Learn More
           </Link>

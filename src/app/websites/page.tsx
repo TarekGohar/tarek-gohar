@@ -1,26 +1,18 @@
 "use client";
 
-import Navbar from "@/components/navbar";
 import AnimatedSection from "@/components/Websites/AnimatedSection";
 import InterestedSection from "@/components/Websites/InterestedSection";
 import PerformanceSection from "@/components/Websites/PerformanceSection";
-import SecuritySection from "@/components/Websites/SecuritySection";
+import SecuritySection from "@/components/Webapps/SecuritySection";
 import SupportSection from "@/components/Websites/SupportSection";
 import WordStyleSection from "@/components/Websites/WordStyleSection";
-import {
-  animate,
-  motion,
-  useInView,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import IntegrationSection from "@/components/Websites/IntegrationSection";
 
 export default function Page() {
   return (
     <>
-      <Navbar light={false} />
-
       <motion.div
         className="bg-cyan-50 relative overflow-hidden"
         initial={{
@@ -117,7 +109,7 @@ export default function Page() {
       </section>
 
       {/* Time */}
-      <section className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-y-[8rem] md:space-y-0 py-[5rem] md:py-[10rem] bg-cyan-800/80">
+      <section className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-y-[8rem] md:space-y-0 py-[5rem] md:py-[10rem] bg-cyan-800/90">
         {/* Time */}
         <div className="px-4 w-full flex flex-col items-center justify-center space-y-[2rem] md:space-y-[4rem] max-w-[50%] md:max-w-[20rem] z-10">
           {/* Number */}
@@ -153,7 +145,7 @@ export default function Page() {
 
       <WordStyleSection />
       <PerformanceSection />
-      <SecuritySection />
+      <IntegrationSection />
       <SupportSection />
       <InterestedSection />
 

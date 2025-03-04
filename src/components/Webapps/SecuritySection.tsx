@@ -2,15 +2,16 @@
 
 import Image from "next/image";
 import DotGrid from "../GridDots";
+import ScrambleText from "./ScramblerText";
 
 export default function SecuritySection() {
   return (
-    <section className="h-[40.5rem] bg-white">
-      <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
+    <section className="h-[50rem]">
+      <div className="relative py- max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem] px-4 md:px-8">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-black text-opacity-90 px-4 md:px-8">
           Security
         </h1>
-        <div className="w-[11rem] md:w-[16rem] flex items-center justify-center text-yellow-500 z-20">
+        <div className="w-[11rem] md:w-[12rem] flex items-center justify-center text-yellow-500 z-20">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
@@ -29,13 +30,14 @@ export default function SecuritySection() {
           </svg>
         </div>
 
-        <p className="py-[.75rem] md:py-[2.2rem] h-fit max-w-[19rem] md:max-w-[40rem] text-neutral-800 text-center font-semibold tracking-wider text-2xl md:text-4xl uppercase bg-white z-20">
-          We keep your website safe with threat protection and encrypted
-          connections.
-        </p>
+        <div className="space-y-[1rem]">
+          <ScrambleText />
 
-        <div className="absolute top-0 left-0 w-full z-10">
-          {/* <DotGrid /> */}
+          <p className="w-full mx-auto lg:max-w-[40rem] text-neutral-800/70 text-left font- md:text-xl">
+            We prioritize security in every web app we create, ensuring your
+            business and customer data remain protected. A secure web app builds
+            trust and keeps you compliant with industry regulations.
+          </p>
         </div>
       </div>
     </section>

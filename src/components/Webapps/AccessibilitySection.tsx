@@ -3,7 +3,7 @@ import React from "react";
 export default function AccessibilitySection() {
   return (
     <section className="h-fit">
-      <div className="py-[10rem] md:my-[8rem] relative max-w-[120rem] mx-auto w-full flex flex-col items-center justify-center px-4 md:px-8">
+      <div className="pt-[10rem] md:my-[8rem] relative max-w-[120rem] mx-auto w-full flex flex-col items-center justify-center px-4 md:px-8">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-800/80 px-4 md:px-8">
           Solutions
         </h1>

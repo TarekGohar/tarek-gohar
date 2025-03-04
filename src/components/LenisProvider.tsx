@@ -10,17 +10,17 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
     if (!lenisRef.current) {
       lenisRef.current = new Lenis({
         duration: 0.6,
-        easing: (t) => 1 - Math.pow(1 - t, 5),
+        easing: (t) => 1 - Math.pow(1 - t, 4),
         orientation: "vertical",
         gestureOrientation: "vertical",
         smoothWheel: true,
-        // syncTouch: true,
-        // smoothTouch: false,
+        smoothTouch: false, // ✅ Ensures default scrolling behavior on touch devices
+        syncTouch: true, // ✅ Ensures fixed elements remain fixed
       });
 
       const update = (time: number) => {
         lenisRef.current?.raf(time);
-        setTimeout(() => requestAnimationFrame(update), 1000 / 240); // Maintain 60 FPS
+        requestAnimationFrame(update);
       };
 
       requestAnimationFrame(update);

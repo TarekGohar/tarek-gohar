@@ -1,20 +1,15 @@
 "use client";
 
-import DotGrid from "@/components/GridDots";
-import JigglingDotsBackground from "@/components/JigglingDots";
-import MovingLinesBackground from "@/components/MovingLines";
-import MovingLinesBackground2 from "@/components/MovingLinesV2";
-import Navbar from "@/components/navbar";
 import AccessibilitySection from "@/components/Webapps/AccessibilitySection";
-import IntegrationSection from "@/components/Webapps/IntegrationSection";
+import AISection from "@/components/Webapps/AISection";
 import ProcessSection from "@/components/Webapps/ProcessSection";
-import SecuritySection from "@/components/Websites/SecuritySection";
+import InterestedSection from "@/components/Websites/InterestedSection";
+import SecuritySection from "@/components/Webapps/SecuritySection";
 import { motion } from "framer-motion";
 
 export default function Page() {
   return (
     <>
-      <Navbar light={false} />
       <motion.div
         className=" relative"
         initial={{
@@ -91,7 +86,7 @@ export default function Page() {
         </section>
       </motion.div>
       <section className="h-[50rem] flex items-center justify-center">
-        <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start justify-center space-y-4 px-4">
+        <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start justify-center space-y-4 px-4 md:px-8">
           <h1 className="w-full md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
             Why Custom Web Apps?
           </h1>
@@ -102,11 +97,12 @@ export default function Page() {
           </h2>
         </div>
       </section>
-      <hr className="max-w-[40%] mx-auto border-t-[.5px] border-gray-20"></hr>
-      <AccessibilitySection />
+      {/* <hr className="max-w-[40%] mx-auto border-t-[.5px] border-gray-20"></hr> */}
       <ProcessSection />
-      reac
-      <IntegrationSection />
+      <AccessibilitySection />
+      <AISection />
+      <SecuritySection />
+      <InterestedSection />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function SupportSection() {
   return (
-    <section className="min-h-[40.5rem] bg-white">
+    <section className="min-h-[40.5rem] bg-neutral-100">
       <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-900 text-opacity-90 px-4 md:px-8">
           Support
@@ -10,10 +10,10 @@ export default function SupportSection() {
 
         <div className="max-w-[70rem] mx-auto w-full flex flex-col items-center justify-center space-y-[5rem] px-4">
           <div className="w-full flex flex-col items-center space-y-4">
-            <h2 className="w-full text-cyan-800 text-center font-medium text-4xl md:text-6xl uppercase tracking-wider">
+            <h2 className="w-full text-neutral-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider max-w-[50rem]">
               Peace of Mind with Ongoing Website Support
             </h2>
-            <p className="w-full md:max-w-[40rem] text-cyan-800/50 text-center font- md:text-xl">
+            <p className="w-full md:max-w-[36rem] text-neutral-800/50 text-center font- md:text-xl">
               We offer timely maintenance, performance enhancements, and
               security updates to keep your website running efficiently and
               securely.

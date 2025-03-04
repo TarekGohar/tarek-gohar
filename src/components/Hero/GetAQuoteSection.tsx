@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const TYPING_SPEED = 0.05;
 
-export function GetAQuote() {
+export default function GetAQuote() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
   const text = "Bring the Idea.";
@@ -23,10 +23,13 @@ export function GetAQuote() {
           "linear-gradient(0deg, rgba(22, 78, 99, .3), rgba(255, 255, 255, 1) 100%)",
       }}
     >
-      <div className="max-w-[120rem] mx-auto">
+      <div className="max-w-[120rem] mx-auto w-full">
+        <h1 className="absolute top-[4rem] w-full mx-auto md:text-xl font-semibold text-cyan-800 opacity-60 px-4 md:px-8">
+          Pricing
+        </h1>
         <h2
           ref={ref}
-          className="w-full md:max-w-[80rem] text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider"
+          className="w-fit mx-auto text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider"
         >
           {text.split("").map((letter, index) => (
             <motion.span
@@ -44,7 +47,7 @@ export function GetAQuote() {
         </h2>
         <h2
           ref={ref}
-          className="w-full md:max-w-[80rem] text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider"
+          className="w-fit mx-auto text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider"
         >
           {subheader.split("").map((subheader, index) => (
             <motion.span
@@ -91,10 +94,6 @@ export function GetAQuote() {
             "linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%)",
         }}
       />
-
-      <h1 className="absolute top-[4rem] max-w-[120rem] mx-auto w-full md:text-xl font-semibold text-cyan-800 opacity-60 px-4 md:px-8">
-        Pricing
-      </h1>
     </section>
   );
 }

@@ -29,11 +29,17 @@ export default function IntegrationSection() {
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-800/80 px-4 md:px-8">
           Integration
         </h1>
-        <div className="max-w-[110rem] mx-auto w-full flex flex-col md:flex-row items-center justify-center space-y-[3rem] md:space-y-[0rem]">
-          <div className="w-full flex flex-col lg:flex-row items-start justify-between space-y-[2rem] md:space-y-0 lg:space-x-[5rem]">
-            <h2 className="max-w-[90%] mx-auto lg:mx-0 lg:max-w-1/2 text-cyan-950 text-left font-medium text-5xl md:text-7xl uppercase tracking-wider">
+        <div className="max-w-[100rem] mx-auto w-full flex flex-col lg:flex-row items-center justify-center space-y-[3rem] lg:space-y-[0rem]">
+          <div className="w-full flex flex-col items-start space-y-[1rem]">
+            <h2 className="max-w-[40rem] w-full text-cyan-900/100 text-left font-medium text-4xl md:text-5xl tracking-wider uppercase">
               Seamless integration with your favourite providers
             </h2>
+            <p className="md:max-w-[60rem] text-cyan-800/60 text-left font- md:text-xl">
+              Our web apps are designed to work effortlessly with your favorite
+              tools and services, ensuring a smooth and connected experience.
+              Whether it's payment gateways, CRM systems, or third-party APIs,
+              we integrate seamlessly to enhance functionality and efficiency.
+            </p>
           </div>
 
           {/* Fading Logo Section */}
@@ -52,7 +58,7 @@ export default function IntegrationSection() {
                   height={500}
                   src={logos[currentIndex]}
                   alt="Logo"
-                  className="h-[8rem] md:h-[10rem] lg:h-[12rem] object-contain w-full"
+                  className="p-4 h-[8rem] md:h-[10rem] lg:h-[12rem] object-contain w-full"
                 />
               </motion.div>
             </AnimatePresence>

@@ -1,19 +1,29 @@
 "use client";
-import Image from "next/image";
-import styles from "./style.module.scss";
+
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 interface CardProps {
   i: number;
   title: string;
+  subtitle: string;
+  description: string;
   color: string;
   progress: any;
   range: any;
   targetScale: number;
 }
 
-const Card = ({ i, title, color, progress, range, targetScale }: CardProps) => {
+const Card = ({
+  i,
+  title,
+  subtitle,
+  description,
+  color,
+  progress,
+  range,
+  targetScale,
+}: CardProps) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -26,8 +36,8 @@ const Card = ({ i, title, color, progress, range, targetScale }: CardProps) => {
   return (
     <div
       ref={container}
+      className="h-[80vh] min-h-[60rem]"
       style={{
-        height: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -36,22 +46,24 @@ const Card = ({ i, title, color, progress, range, targetScale }: CardProps) => {
       }}
     >
       <motion.div
+        className="relative flex flex-col items-start justify-between h-[26rem] w-[59rem] rounded-2xl p-[3rem]"
         style={{
           backgroundColor: color,
           scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-          marginTop: "0%",
-          height: "500px",
-          width: "1000px",
-          borderRadius: "25px",
-          padding: "50px",
+          top: `calc(0vh + ${i * 25}px)`,
           transformOrigin: "top",
         }}
       >
-        <h2>{title}</h2>
+        <div className="flex flex-col items-start justify-start h-full space-y-4">
+          <h2 className=" text-cyan-800/40 text-center font-medium text-sm md:text-sm uppercase tracking-wider">
+            {title}
+          </h2>
+          <h3 className=" text-cyan-800 text-center font-medium text-3xl md:text-4xl uppercase tracking-wider">
+            {subtitle}
+          </h3>
+        </div>
+
+        <p className=" text-cyan-800/60 font- md:text-xl">{description}</p>
       </motion.div>
     </div>
   );

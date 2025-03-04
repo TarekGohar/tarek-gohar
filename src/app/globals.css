@@ -2,17 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  overflow-x: hidden;
-  overscroll-behavior: none; /* Prevents browser default scroll interference */
+html, body {
+  width: 100%;
   scroll-behavior: auto !important;
-  will-change: transform; /* Optimizes smooth animations */
+  overflow-x: visible !important; /* ✅ Ensures fixed elements aren’t hidden */
 }
 
-body {
-  transform: translate3d(0, 0, 0); /* Forces GPU acceleration */
-  backface-visibility: hidden; /* Helps reduce flickering */
-}
+
 
 
 
