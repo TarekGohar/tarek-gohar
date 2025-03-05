@@ -61,9 +61,8 @@ export default function SlotsSection() {
     <section className="w-full md:h-[40rem] px-4 flex flex-col justify-center items-center overflow-hidden">
       <div
         ref={targetRef}
-        className="px-2 gap-x-6 py-[4rem] max-w-[100rem] w-fit mx-auto flex items-center justify-between"
-      >
-        <h1 className="text-5xl md:text-7xl text-cyan-800 font-semibold w-[65%] md:w-[50%] uppercase tracking-wider">
+        className="px-2 gap-x-6 py-[4rem] max-w-[100rem] w-fit mx-auto flex items-center justify-between">
+        <h1 className="text-4xl md:text-7xl text-cyan-800 font-semibold w-[65%] md:w-[50%] uppercase tracking-wider">
           Full-stack apps from the ground up.
         </h1>
         <div className="w-fit text-center flex flex-col space-y-4">

@@ -3,7 +3,6 @@
 import AnimatedSection from "@/components/Websites/AnimatedSection";
 import InterestedSection from "@/components/Websites/InterestedSection";
 import PerformanceSection from "@/components/Websites/PerformanceSection";
-import SecuritySection from "@/components/Webapps/SecuritySection";
 import SupportSection from "@/components/Websites/SupportSection";
 import WordStyleSection from "@/components/Websites/WordStyleSection";
 import { motion } from "framer-motion";
@@ -41,8 +40,7 @@ export default function Page() {
           zIndex: 0,
           backgroundSize: "400% 400%",
           backgroundPosition: "0% 50%",
-        }}
-      >
+        }}>
         {/* Noise Overlay covering everything */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -115,13 +113,11 @@ export default function Page() {
           {/* Number */}
           <div className="w-fit flex items-end justify-start font-number">
             <span
-              className={`-mt-[5rem] inline-block md:w-[18rem] text-left font-extrabold text-[20rem] leading-[18.5rem] md:text-[40rem] md:leading-[36rem] uppercase tracking-tight duration-500 transition-opacity mix-blend-lighten text-neutral-50`}
-            >
+              className={`-mt-[5rem] inline-block md:w-[18rem] text-left font-extrabold text-[20rem] leading-[18.5rem] md:text-[40rem] md:leading-[36rem] uppercase tracking-tight duration-500 transition-opacity mix-blend-lighten text-neutral-50`}>
               50
             </span>
             <span
-              className={`inline-block font-medium tracking-wider text-left text-xl md:text-[2rem] text-neutral-100`}
-            >
+              className={`inline-block font-medium tracking-wider text-left text-xl md:text-[2rem] text-neutral-100`}>
               ms
             </span>
           </div>
