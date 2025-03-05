@@ -6,7 +6,7 @@ const words = [
     text: "Corporate",
     font: "Corporate",
     fontColor: "#ADADAD",
-    fontSize: "text-[4rem] md:text-[8rem] lg:text-[10.75rem]",
+    fontSize: "text-[3.75rem] md:text-[8rem] lg:text-[10.75rem]",
   }, // Business, Finance, Consulting
   {
     text: "Luxury",
@@ -31,7 +31,7 @@ const words = [
     text: "Innovative",
     font: "Innovative",
     fontColor: "#272727",
-    fontSize: "text-[4.5rem] md:text-[8rem] lg:text-[10rem] -mt-2",
+    fontSize: "text-[4.25rem] md:text-[8rem] lg:text-[10rem] -mt-2",
   }, // Tech, Startups, R&D
   {
     text: "Minimalist",

@@ -13,14 +13,17 @@ export default function Page() {
     <>
       {/* First Section (Locks scroll initially) */}
       <section
-        className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 text-cyan-800`}>
-        <div className="z-20 opacity-70 max-w-[80rem] mx-auto w-fit text-center grid grid-cols-2 md:gap-y-8 md:grid-cols-1">
-          <h1 className="w-fit grid grid-cols-1 md:grid-cols-5 text-[7rem] leading-[7rem] md:text-[13rem] md:leading-[11rem] font-extrabold mix-blend-difference">
+        className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 `}>
+        <div className="z-20  max-w-[90rem] mx-auto w-fit space-y-[2rem] text-left px-4 md:px-8">
+          <h1 className="w-fit text-cyan-800/90 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
             We Build Websites.
           </h1>
-          <h1 className="w-fit grid grid-cols-1 md:grid-cols-5 text-[7rem] leading-[7rem] md:text-[13rem] md:leading-[11rem] font-extrabold">
+          <h1 className="w-fit text-cyan-800/90 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
             You Build Your Business.
           </h1>
+          <p className="md:max-w-[60rem] text-cyan-800/60 text-left text-xl md:text-2xl font-medium">
+            Smart, scalable digital solutions to power your business.
+          </p>
         </div>
 
         {/* Particles Background */}
@@ -44,10 +47,9 @@ export default function Page() {
             What do we do?
           </h1>
           <h2 className="w-full md:max-w-[70rem] text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
-            We help your business{" "}
-            <span className="text-cyan-800/80 pr-[.125rem]">grow</span>,{" "}
-            <span className="text-cyan-800/80 pr-[.125rem]">innovate</span>, and{" "}
-            <span className="text-cyan-800/80 pr-[.125rem]">succeed</span>.
+            We help your business <span className="text-cyan-800/80">grow</span>
+            , <span className="text-cyan-800/80">innovate</span>, and{" "}
+            <span className="text-cyan-800/80">succeed</span>.
           </h2>
           <p className="md:max-w-[35rem] text-cyan-800/60 text-center font- md:text-xl">
             We design and develop websites and web applications that are

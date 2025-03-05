@@ -39,34 +39,9 @@ export default function Page() {
           backgroundSize: "400% 400%",
           backgroundPosition: "0% 50%",
         }}>
-        {/* Noise Overlay covering everything */}
-        {/* <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "url(/noise2.png)",
-            backgroundRepeat: "repeat",
-            backgroundSize: "200px 200px",
-            opacity: 0.1,
-            backgroundBlendMode: "overlay",
-            zIndex: 1, // Ensure it overlays everything
-          }}
-        /> */}
-        {/* <div
-          className="h-[200vh] absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.1))",
-            backgroundRepeat: "repeat",
-            backgroundSize: "8rem 8rem", // Try a different value for density
-            opacity: 0.3,
-            backgroundBlendMode: "overlay",
-            zIndex: 20,
-          }}
-        /> */}
-
         <section className="h-screen max-h-[100rem] min-h-[50rem] flex items-center justify-center">
           <div className="flex flex-col items-center justify-center text-white relative h-[70%] space-y-4 px-4 md:px-[0rem]">
-            <div className="max-w-[120rem] mx-auto w-full flex flex-col items-center mix-blend-plus-lighter z-50 ">
+            <div className="max-w-[120rem] mx-auto w-full text-center flex flex-col items-center mix-blend-plus-lighter z-50 ">
               <h1 className="tracking-wider font-medium text-[3rem] md:text-[5.4rem] lg:text-[6rem] leading-[3rem] md:leading-[5rem] lg:leading-[5.5rem] uppercase">
                 Build Smart.
               </h1>

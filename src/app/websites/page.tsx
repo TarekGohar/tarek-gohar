@@ -107,7 +107,7 @@ export default function Page() {
       </section>
 
       {/* Time */}
-      <section className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-y-[8rem] md:space-y-0 py-[5rem] md:py-[10rem] bg-cyan-800/90">
+      <section className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-y-[8rem] md:space-y-0 py-[5rem] md:py-[10rem] bg-cyan-800/70">
         {/* Time */}
         <div className="px-4 w-full flex flex-col items-center justify-center space-y-[2rem] md:space-y-[4rem] max-w-[50%] md:max-w-[20rem] z-10">
           {/* Number */}

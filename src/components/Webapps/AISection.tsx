@@ -19,8 +19,7 @@ export default function AISection() {
           "linear-gradient(180deg, rgba(39, 97, 117, 0.3), rgba(255, 255, 255, 1) 100%), " +
           "linear-gradient(270deg, rgba(39, 97, 117, 0.3), rgba(255, 255, 255, 1) 100%), " +
           "linear-gradient(0deg, rgba(39, 97, 117, 0.3), rgba(255, 255, 255, 1) 100%)",
-      }}
-    >
+      }}>
       <div className="max-w-[120rem] mx-auto w-full flex flex-col items-center justify-center space-y-[2rem] z-40 ">
         <h1 className="max-w-[120rem] absolute top-[4rem] w-full mx-auto md:text-xl font-semibold text-cyan-800 opacity-60 px-4 md:px-8">
           Artificial Intelligence
@@ -33,8 +32,7 @@ export default function AISection() {
             backdropFilter: "blur(20px) saturate(150%)", // Increase blur and add saturation for an icy effect
             WebkitBackdropFilter: "blur(20px) saturate(150%)",
             boxShadow: "0 4px 10px rgba(255, 255, 255, 0.3)", // Adds a subtle frosty glow
-          }}
-        >
+          }}>
           <Image
             src="/ai.svg"
             height={50}
@@ -43,7 +41,7 @@ export default function AISection() {
             className="absolute left-[1.2rem] w-[1.75rem] h-[1.75rem] sm:w-[2.5rem] sm:h-[2.5rem] md:w-[3.25rem] md:h-[3.25rem]"
           />
           <div className="flex items-center space-x-[.5rem]">
-            <h2 className="text-cyan-800/90 text-left font-medium text-[1.5rem] sm:text-3xl md:text-5xl uppercase tracking-wider">
+            <h2 className="text-cyan-800/90 text-left font-medium text-[1.4rem] sm:text-3xl md:text-5xl uppercase tracking-wider">
               {text.split("").map((letter, index) => (
                 <motion.span
                   key={index}
@@ -52,8 +50,7 @@ export default function AISection() {
                   transition={{
                     delay: index * TYPING_SPEED + 0.5,
                     duration: 0, // No fade effect, instant appearance
-                  }}
-                >
+                  }}>
                   {letter}
                 </motion.span>
               ))}
