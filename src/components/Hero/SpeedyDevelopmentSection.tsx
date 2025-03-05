@@ -25,7 +25,7 @@ const useWindowWidth = () => {
 };
 
 const chunkSections = (sections: SectionData[], width: number) => {
-  let chunked = [];
+  let chunked: SectionData[][] = [];
   let index = 0;
 
   while (index < sections.length) {

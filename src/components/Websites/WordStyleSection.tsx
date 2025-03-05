@@ -51,7 +51,7 @@ export default function WordFlip() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let timer;
+    let timer: NodeJS.Timeout;
     const currentWord = words[index].text;
 
     if (!isDeleting && displayedText.length < currentWord.length) {

@@ -21,13 +21,11 @@ export default function InterestedSection() {
         <Link
           ref={ref}
           className=" max-w-[20rem] md:max-w-[32rem] text-white text-center font-semibold text-3xl tracking-tighter header-underline capitalize"
-          href="/contact"
-        >
+          href="/get-a-quote">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
+            transition={{ duration: 0.5, delay: 0.5 }}>
             Get a quote
           </motion.h3>
         </Link>

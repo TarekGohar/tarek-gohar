@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/.open-next
+/.next
+/.wrangler
 /.pnp
 .pnp.*
 .yarn/*

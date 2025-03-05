@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+interface Position {
+  x: number;
+  y: number;
+  radius: number;
+}
+
 const images = [
   { src: "/langImages/aws.png", color: "rgb(251, 193, 104)" },
   { src: "/langImages/c.png", color: "rgb(124,172,219)" },
@@ -21,12 +27,8 @@ export default function AnimatedCircles() {
   const [isMobile, setIsMobile] = useState<boolean>(
     typeof window !== "undefined" ? window.innerWidth < 768 : false
   );
-  const [initialCircles, setInitialCircles] = useState<
-    { x: number; y: number; radius: number }[]
-  >([]);
-  const [jiggledCircles, setJiggledCircles] = useState<
-    { x: number; y: number; radius: number }[]
-  >([]);
+  const [initialCircles, setInitialCircles] = useState<Position[]>([]);
+  const [jiggledCircles, setJiggledCircles] = useState<Position[]>([]);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -49,7 +51,7 @@ export default function AnimatedCircles() {
       { count: 2, xOffset: 110 },
     ];
 
-    let positions = [];
+    let positions: Position[] = [];
 
     if (isMobile) {
       let index = 0;
@@ -123,8 +125,7 @@ export default function AnimatedCircles() {
               background: images[i % images.length].color,
               backdropFilter: "blur(10px)",
             }}
-            className="absolute rounded-full flex justify-center items-center top-[50%] md:top-[45%]"
-          >
+            className="absolute rounded-full flex justify-center items-center top-[50%] md:top-[45%]">
             <div className="relative w-3/4 h-3/4">
               <Image
                 alt={`${i} lang logo`}

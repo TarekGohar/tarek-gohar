@@ -61,7 +61,7 @@ export default function GetAQuote() {
         <div className="mt-4 w-full flex items-center justify-center">
           <Link
             className="md:max-w-[35rem] text-cyan-800/80 text-center font-medium md:text-xl underline underline-offset-8 capitalize"
-            href="/contact">
+            href="/get-a-quote">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}

@@ -1,10 +1,17 @@
 "use client";
+import { JSX, useEffect, useRef, useState } from "react";
 
-import { div, h2 } from "framer-motion/client";
-import { useEffect, useRef, useState } from "react";
+// Define interface for queue items
+interface QueueItem {
+  from: string;
+  to: string;
+  start: number;
+  end: number;
+  char?: string;
+}
 
-export default function TextScrambleEffect() {
-  const phrases = [
+export default function TextScrambleEffect(): JSX.Element {
+  const phrases: string[] = [
     "Protected",
     "Encrypted",
     "Compliant",
@@ -14,39 +21,60 @@ export default function TextScrambleEffect() {
     "Confidential",
   ];
 
-  const [text, setText] = useState(phrases[0]);
-  const textRef = useRef(null);
-  let counter = 0;
+  const [text, setText] = useState<string>(phrases[0]);
+  const textRef = useRef<HTMLSpanElement | null>(null);
+  let counter: number = 0;
 
   useEffect(() => {
     class TextScramble {
-      constructor(el) {
+      el: HTMLElement;
+      chars: string;
+      queue: QueueItem[];
+      frame: number;
+      frameRequest: number | null;
+      resolve: ((value: void | PromiseLike<void>) => void) | null;
+
+      constructor(el: HTMLElement) {
         this.el = el;
         this.chars = "!<>-_\\/[]{}—=+*^?#________";
         this.update = this.update.bind(this);
-      }
-      setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => (this.resolve = resolve));
         this.queue = [];
+        this.frame = 0;
+        this.frameRequest = null;
+        this.resolve = null;
+      }
+
+      setText(newText: string): Promise<void> {
+        const oldText: string = this.el.innerText;
+        const length: number = Math.max(oldText.length, newText.length);
+        const promise: Promise<void> = new Promise(
+          (resolve) => (this.resolve = resolve)
+        );
+        this.queue = [];
+
         for (let i = 0; i < length; i++) {
-          const from = oldText[i] || "";
-          const to = newText[i] || "";
-          const start = Math.floor(Math.random() * 40);
-          const end = start + Math.floor(Math.random() * 40);
+          const from: string = oldText[i] || "";
+          const to: string = newText[i] || "";
+          const start: number = Math.floor(Math.random() * 40);
+          const end: number = start + Math.floor(Math.random() * 40);
           this.queue.push({ from, to, start, end });
         }
-        cancelAnimationFrame(this.frameRequest);
+
+        if (this.frameRequest) {
+          cancelAnimationFrame(this.frameRequest);
+        }
         this.frame = 0;
         this.update();
         return promise;
       }
-      update() {
-        let output = "";
-        let complete = 0;
+
+      update(): void {
+        let output: string = "";
+        let complete: number = 0;
+
         for (let i = 0, n = this.queue.length; i < n; i++) {
           let { from, to, start, end, char } = this.queue[i];
+
           if (this.frame >= end) {
             complete++;
             output += to;
@@ -60,23 +88,30 @@ export default function TextScrambleEffect() {
             output += from;
           }
         }
+
         this.el.innerHTML = output;
+
         if (complete === this.queue.length) {
-          this.resolve();
+          if (this.resolve) {
+            this.resolve();
+          }
         } else {
           this.frameRequest = requestAnimationFrame(this.update);
           this.frame++;
         }
       }
-      randomChar() {
+
+      randomChar(): string {
         return this.chars[Math.floor(Math.random() * this.chars.length)];
       }
     }
 
     const el = textRef.current;
+    if (!el) return;
+
     const fx = new TextScramble(el);
 
-    const next = () => {
+    const next = (): void => {
       fx.setText(phrases[counter]).then(() => {
         setTimeout(next, 2000);
       });
@@ -84,10 +119,17 @@ export default function TextScrambleEffect() {
     };
 
     next();
+
+    // Cleanup function
+    return (): void => {
+      if (fx.frameRequest) {
+        cancelAnimationFrame(fx.frameRequest);
+      }
+    };
   }, []);
 
   return (
-    <h2 className="min-h-[8rem] md:min-h-[5rem]  w-full mx-auto lg:mx-0 lg:max-w-[40rem] text-neutral-800/80 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
+    <h2 className="min-h-[8rem] md:min-h-[5rem] w-full mx-auto lg:mx-0 lg:max-w-[40rem] text-neutral-800/80 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
       We'll make sure your data is{" "}
       <span ref={textRef} className="text-neutral-900" />
     </h2>

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import DotGrid from "../GridDots";
 import ScrambleText from "./ScramblerText";
 
 export default function SecuritySection() {
@@ -15,8 +13,7 @@ export default function SecuritySection() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 48 48"
           width="100%"
-          height="100%"
-        >
+          height="100%">
           <path
             fill="#E5E5E5"
             d="M24,4c-5.5,0-10,4.5-10,10v4h4v-4c0-3.3,2.7-6,6-6s6,2.7,6,6v4h4v-4C34,8.5,29.5,4,24,4z"

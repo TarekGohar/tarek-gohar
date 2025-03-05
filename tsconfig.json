@@ -13,6 +13,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    // Disable implicit any errors
+    // "noImplicitAny": false, 
     "plugins": [
       {
         "name": "next"

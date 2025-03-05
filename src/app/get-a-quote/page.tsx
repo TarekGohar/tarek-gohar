@@ -1,4 +1,3 @@
-import MovingLinesBackground from "@/components/MovingLines";
 import QuoteForm from "@/components/Quote/Form";
 import AnimatedSection from "@/components/Websites/AnimatedSection";
 import React from "react";

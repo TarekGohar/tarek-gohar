@@ -106,9 +106,13 @@ export default function Navbar() {
                   maxHeight: "30rem",
                   minHeight: "20rem",
                 }
-              : { opacity: 0 }
+              : {
+                  opacity: 0,
+                  height: "0vh",
+                }
           }
-          transition={{ duration: 0.3 }}>
+          transition={{ duration: 0.3 }}
+          exit={{ opacity: 0 }}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={menu ? { opacity: 1 } : { opacity: 0 }}

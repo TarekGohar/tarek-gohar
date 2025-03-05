@@ -1,13 +1,10 @@
-import MovingLinesBackground from "@/components/MovingLines";
-import QuoteForm from "@/components/Quote/Form";
-import AnimatedSection from "@/components/Websites/AnimatedSection";
 import React from "react";
 
 export default function GetAQuotePage() {
   return (
     <>
       <section className="h-screen min-h-[40rem]">
-        <div className="h-[60vh] max-w-[100rem] mx-auto w-full h-full flex items-center px-4 lg:px-8">
+        <div className="h-[60vh] max-w-[100rem] mx-auto w-full flex items-center px-4 lg:px-8">
           <div className="flex flex-col items-start justify-start space-y-4">
             <h1 className="w-full lg:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
               Success

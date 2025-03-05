@@ -1,15 +1,28 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Shades() {
   const ref = useRef(null);
+  const [segHeight, setSegHeight] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  const seg_height = window.innerHeight / 10;
+  useEffect(() => {
+    // Set segHeight once the component mounts on the client side
+    setSegHeight(window.innerHeight / 10);
+
+    // Optional: Update on window resize
+    const handleResize = () => {
+      setSegHeight(window.innerHeight / 10);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -31,7 +44,7 @@ export default function Shades() {
         const height = useTransform(
           scrollYProgress,
           [startProgress, endProgress],
-          [0, seg_height]
+          [0, segHeight]
         );
 
         return (
