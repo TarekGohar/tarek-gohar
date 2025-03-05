@@ -9,28 +9,29 @@ const words = [
     fontSize: "text-[4rem] md:text-[8rem] lg:text-[10.75rem]",
   }, // Business, Finance, Consulting
   {
-    text: "Modern",
-    font: "Modern",
-    fontColor: "#333D46",
-    fontSize: "text-[4rem] md:text-[9rem] lg:text-[11rem]",
-  }, // E-Learning, Schools, Universities
-  {
-    text: "Artistic",
-    font: "Artistic",
-    fontColor: "#98AA98",
-    fontSize: "text-[4rem] md:text-[8rem] lg:text-[11rem]",
-  }, // Creative, Design, Photography
-  {
     text: "Luxury",
     font: "Luxury",
     fontColor: "#312000",
     fontSize: "text-[4.5rem] md:text-[9rem] lg:text-[11rem]",
   }, // High-end Brands, Fashion, Hospitality
   {
+    text: "Modern",
+    font: "Modern",
+    fontColor: "#333D46",
+    fontSize: "text-[4rem] md:text-[9rem] lg:text-[10rem]",
+  }, // E-Learning, Schools, Universities
+  {
+    text: "Artistic",
+    font: "Artistic",
+    fontColor: "#98AA98",
+    fontSize: "text-[4rem] md:text-[8rem] lg:text-[9rem]",
+  }, // Creative, Design, Photography
+
+  {
     text: "Innovative",
     font: "Innovative",
     fontColor: "#272727",
-    fontSize: "text-[4.5rem] md:text-[8rem] lg:text-[11rem]",
+    fontSize: "text-[4.5rem] md:text-[8rem] lg:text-[10rem] -mt-2",
   }, // Tech, Startups, R&D
   {
     text: "Minimalist",
@@ -83,9 +84,6 @@ export default function WordFlip() {
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-neutral-700 opacity-70 px-4 md:px-8">
           Styling
         </h1>
-        <h2 className="absolute top-[70%] max-w-[30rem] md:max-w-[40rem] text-neutral-800 text-center font-medium tracking-wider text-xl md:text-2xl">
-          No matter the mood, we can style your website to perfectly suit you.
-        </h2>
         <div className="-ml-[0.75rem] flex flex-col items-center justify-center">
           <motion.span
             key={index}
@@ -99,12 +97,14 @@ export default function WordFlip() {
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
+            transition={{ duration: 0.5 }}>
             {displayedText}
           </motion.span>
           {/* </div> */}
         </div>
+        <h2 className="absolute top-[70%] max-w-[30rem] md:max-w-[40rem] text-neutral-800 text-center font-medium tracking-wider text-xl md:text-2xl">
+          No matter the mood, we can style your website to perfectly suit you.
+        </h2>
       </div>
     </section>
   );

@@ -82,27 +82,27 @@ export default function Page() {
     return () => timeouts.forEach(clearInterval);
   }, []);
 
-  useEffect(() => {
-    const triggerScrollUnlock = (event) => {
-      if (isLocked) {
-        event.preventDefault(); // Prevent actual scrolling
-        setBgBlack(true); // Change background to black
-        setTimeout(() => {
-          setIsLocked(false); // Unlock scrolling
-        }, 1000);
-      }
-    };
+  // useEffect(() => {
+  //   const triggerScrollUnlock = (event) => {
+  //     if (isLocked) {
+  //       event.preventDefault(); // Prevent actual scrolling
+  //       setBgBlack(true); // Change background to black
+  //       setTimeout(() => {
+  //         setIsLocked(false); // Unlock scrolling
+  //       }, 1000);
+  //     }
+  //   };
 
-    window.addEventListener("wheel", triggerScrollUnlock, { passive: false });
-    window.addEventListener("touchmove", triggerScrollUnlock, {
-      passive: false,
-    });
+  //   window.addEventListener("wheel", triggerScrollUnlock, { passive: false });
+  //   window.addEventListener("touchmove", triggerScrollUnlock, {
+  //     passive: false,
+  //   });
 
-    return () => {
-      window.removeEventListener("wheel", triggerScrollUnlock);
-      window.removeEventListener("touchmove", triggerScrollUnlock);
-    };
-  }, [isLocked]);
+  //   return () => {
+  //     window.removeEventListener("wheel", triggerScrollUnlock);
+  //     window.removeEventListener("touchmove", triggerScrollUnlock);
+  //   };
+  // }, [isLocked]);
 
   return (
     <>
@@ -110,8 +110,7 @@ export default function Page() {
       <section
         className={`relative h-screen min-h-[45rem] max-h-[100rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 ${
           bgBlack ? "text-cyan-800" : "text-white"
-        } ${isLocked ? "fixed inset-0 left-0" : "absolute top-0 w-full"}`}
-      >
+        } ${isLocked ? "fixed inset-0 left-0" : "absolute top-0 w-full"}`}>
         <div className="z-20 opacity-70 max-w-[80rem] mx-auto w-fit text-center grid grid-cols-2 md:gap-y-8 md:grid-cols-1">
           <h1 className="w-fit grid grid-cols-1 md:grid-cols-5 text-[7rem] leading-[7rem] md:text-[13rem] md:leading-[11rem] font-extrabold">
             {firstLetters.map((letter, index) => (
@@ -125,8 +124,7 @@ export default function Page() {
                   (index == 4 && letter == "K")
                     ? "opacity-100"
                     : "opacity-40"
-                } inline-block w-[8rem] md:w-[11rem] text-center`}
-              >
+                } inline-block w-[8rem] md:w-[11rem] text-center`}>
                 {letter}
               </span>
             ))}
@@ -143,8 +141,7 @@ export default function Page() {
                   (index == 4 && letter == "R")
                     ? "opacity-100"
                     : "opacity-40"
-                } inline-block w-[8rem] md:w-[11rem] text-center`}
-              >
+                } inline-block w-[8rem] md:w-[11rem] text-center`}>
                 {letter}
               </span>
             ))}

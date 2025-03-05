@@ -38,8 +38,7 @@ export default function Page() {
           zIndex: 0,
           backgroundSize: "400% 400%",
           backgroundPosition: "0% 50%",
-        }}
-      >
+        }}>
         {/* Noise Overlay covering everything */}
         {/* <div
           className="absolute inset-0 pointer-events-none"
@@ -87,14 +86,18 @@ export default function Page() {
       </motion.div>
       <section className="h-[50rem] flex items-center justify-center">
         <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start justify-center space-y-4 px-4 md:px-8">
-          <h1 className="w-full md:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
+          <h1 className="w-full md:text-xl font-medium text-neutral-400 opacity-70 capitalize">
             Why Custom Web Apps?
           </h1>
-          <h2 className="max-w-[80rem] w-full text-cyan-900/100 text-left font-medium text-3xl md:text-5xl tracking-wider uppercase">
-            Prebuilt software has limitations. A custom web application is
-            tailored to your business needs, increasing efficiency and
-            streamlining operations.
+          <h2 className="max-w-[70rem] w-full text-neutral-900/100 text-left font-medium text-4xl md:text-5xl tracking-wider uppercase">
+            Prebuilt software has limitations.
           </h2>
+          <p className="md:max-w-[50rem] text-neutral-800/60 text-left font- md:text-xl">
+            A custom web application is specifically designed to align with your
+            business requirements, ensuring a seamless fit with your workflows.
+            It enhances efficiency by automating tasks, reducing manual work,
+            and improving overall productivity.
+          </p>
         </div>
       </section>
       {/* <hr className="max-w-[40%] mx-auto border-t-[.5px] border-gray-20"></hr> */}

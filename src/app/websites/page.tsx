@@ -126,7 +126,7 @@ export default function Page() {
             </span>
           </div>
 
-          <p className="w-full overflow-hidden text-neutral-100/30 text-left font md:text-xl lg:text-xl tracking">
+          <p className="w-full overflow-hidden text-neutral-100/30 text-left font md:text-xl lg:text-xl leading-[1.2rem] md:leading-[1.4rem] lg:leading-[1.5rem] tracking">
             Time it takes for someone to form an opinion about your website.
           </p>
         </div>

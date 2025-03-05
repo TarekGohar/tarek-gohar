@@ -15,6 +15,13 @@ html, body {
   /* Fonts */
 
   @font-face {
+    font-family: 'Zilap';
+    src: url('/fonts/zilap.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
     font-family: 'Number';
     src: url('/fonts/Number.ttf') format('truetype');
     font-weight: 500;

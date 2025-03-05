@@ -21,16 +21,14 @@ export default function GetAQuote() {
           "linear-gradient(180deg, rgba(22, 78, 99, 0.3), rgba(255, 255, 255, 1) 100%), " +
           "linear-gradient(270deg, rgba(22, 78, 99, .3), rgba(255, 255, 255, 1) 100%), " +
           "linear-gradient(0deg, rgba(22, 78, 99, .3), rgba(255, 255, 255, 1) 100%)",
-      }}
-    >
+      }}>
       <div className="max-w-[120rem] mx-auto w-full">
         <h1 className="absolute top-[4rem] w-full mx-auto md:text-xl font-semibold text-cyan-800 opacity-60 px-4 md:px-8">
           Pricing
         </h1>
         <h2
           ref={ref}
-          className="w-fit mx-auto text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider"
-        >
+          className="w-fit mx-auto text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
           {text.split("").map((letter, index) => (
             <motion.span
               key={index}
@@ -39,16 +37,14 @@ export default function GetAQuote() {
               transition={{
                 duration: TYPING_SPEED,
                 delay: index * TYPING_SPEED + 0.5,
-              }}
-            >
+              }}>
               {letter}
             </motion.span>
           ))}
         </h2>
         <h2
           ref={ref}
-          className="w-fit mx-auto text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider"
-        >
+          className="w-fit mx-auto text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
           {subheader.split("").map((subheader, index) => (
             <motion.span
               key={index}
@@ -57,8 +53,7 @@ export default function GetAQuote() {
               transition={{
                 duration: TYPING_SPEED,
                 delay: index * TYPING_SPEED + text.length * TYPING_SPEED + 0.5,
-              }}
-            >
+              }}>
               {subheader}
             </motion.span>
           ))}
@@ -66,8 +61,7 @@ export default function GetAQuote() {
         <div className="mt-4 w-full flex items-center justify-center">
           <Link
             className="md:max-w-[35rem] text-cyan-800/80 text-center font-medium md:text-xl underline underline-offset-8 capitalize"
-            href="/contact"
-          >
+            href="/contact">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -77,8 +71,7 @@ export default function GetAQuote() {
                   text.length * TYPING_SPEED +
                   subheader.length * TYPING_SPEED +
                   0.5,
-              }}
-            >
+              }}>
               Get a quote
             </motion.h3>
           </Link>

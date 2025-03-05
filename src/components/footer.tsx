@@ -7,7 +7,11 @@ export default function Footer() {
     <footer className="">
       <div className="w-full pt-0 flex flex-col items-center justify-center">
         {/* Logo */}
-        <div className="w-16 h-16 bg-cyan-900" />
+        <span
+          className="text-[4rem] text-cyan-900"
+          style={{ fontFamily: "Zilap" }}>
+          E
+        </span>
 
         {/* Footer Menu */}
         <ul className="container mt-20 md:px-20 text-cyan-800 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 text-main font-normal text-xs sm:text-sm md:text-md tracking-widest">
@@ -23,7 +27,7 @@ export default function Footer() {
                 <span>H2N 2H8</span>
               </div> */}
               <a href="tel:+1 (514) 844-8885">+1 (514) 497-9261</a>
-              <a href="mailto:info@edbattah.com">tarek.gohar@mail.mcgill.ca</a>
+              <a href="mailto:tarekgohar@outlook.com">tarekgohar@outlook.com</a>
             </div>
           </li>
 
@@ -56,7 +60,7 @@ export default function Footer() {
       </div>
       {/* Copyright */}
       <p className="mt-12 text-gray-500 text-center py-2 text-[8px] font-extralight">
-        © {year} Tarek Gohar. All Rights Reserved.
+        © {year} Netra. All Rights Reserved.
       </p>
     </footer>
   );
