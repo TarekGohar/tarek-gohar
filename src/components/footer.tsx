@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="">
+    <footer className="overflow-hidden">
       <div className="w-full pt-0 flex flex-col items-center justify-center">
         {/* Logo */}
         <span
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Where to Buy */}
           <li className="w-fit md:px-0 md:w-full text-center px-12 font-semibold uppercase">
-            <Link href="/webapps">Web Apps</Link>
+            <Link href="/apps">Applications</Link>
           </li>
 
           {/* Where to Buy */}

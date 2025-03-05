@@ -62,7 +62,7 @@ export default function Page() {
       <section className="h-[50rem] flex items-center justify-center">
         <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start justify-center space-y-4 px-4 md:px-8">
           <h1 className="w-full md:text-xl font-medium text-neutral-400 opacity-70 capitalize">
-            Why Custom Web Apps?
+            Why Custom Apps?
           </h1>
           <h2 className="max-w-[70rem] w-full text-neutral-900/100 text-left font-medium text-4xl md:text-5xl tracking-wider uppercase">
             Prebuilt software has limitations.

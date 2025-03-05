@@ -76,19 +76,16 @@ export default function FlipCard({ index, section }: SectionDataProps) {
     <button
       className="flip-card w-full h-full"
       onMouseOver={handleFlip}
-      onMouseLeave={handleMouseLeave}
-    >
+      onMouseLeave={handleMouseLeave}>
       <motion.div
         className="flip-card-inner w-full h-full"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.2, animationDirection: "normal" }}
-        onAnimationComplete={() => setIsAnimating(false)}
-      >
+        onAnimationComplete={() => setIsAnimating(false)}>
         {/* Front Side */}
         <div
-          className={`rounded-xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 bg-gradient-to-br ${frontColor.bg} border-2 border-opacity-20 border-white`}
-        >
+          className={`rounded-xl overflow-hidden flip-card-front w-full h-full flex flex-col items-center justify-center space-y-1 md:space-y-1 lg:space-y-2 bg-gradient-to-br ${frontColor.bg} border-2 border-opacity-20 border-white`}>
           <Image
             src={section.src}
             alt={section.title}
@@ -97,19 +94,16 @@ export default function FlipCard({ index, section }: SectionDataProps) {
             className={`p-1 md:p-2 w-[32%] lg:w-[34%] opacity-100 mix-blend-screen ${frontColor.text}`}
           />
           <h3
-            className={`w-[90%] md:text-xl lg:text-2xl font-medium tracking-wider ${frontColor.text}`}
-          >
+            className={`w-[90%] md:text-xl lg:text-2xl font-medium tracking-wider ${frontColor.text}`}>
             {section.title}
           </h3>
         </div>
 
         {/* Back Side */}
         <div
-          className={`rounded-xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center bg-gradient-to-tl ${frontColor.bg}`}
-        >
+          className={`rounded-xl overflow-hidden flip-card-back w-full h-full p-3 flex items-center justify-center bg-gradient-to-tl ${frontColor.bg}`}>
           <span
-            className={`text-md lg:text-xl font-medium tracking-wider ${frontColor.text}`}
-          >
+            className={`text-sm lg:text-xl font-medium tracking-wider ${frontColor.text}`}>
             {section.content}
           </span>
         </div>

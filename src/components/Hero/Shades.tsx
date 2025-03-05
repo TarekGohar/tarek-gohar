@@ -26,7 +26,7 @@ export default function Shades() {
         // Stagger the start of animation for each div
         // Top divs start earlier, bottom divs start later
         const startProgress = 0.5 + index * 0.03;
-        const endProgress = 0.8 + index * 0.03;
+        const endProgress = 0.75 + index * 0.03;
 
         const height = useTransform(
           scrollYProgress,

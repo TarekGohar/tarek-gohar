@@ -52,9 +52,9 @@ export default function Navbar() {
             <Link
               // onMouseEnter={() => setHoveredItem("apps")}
               // onMouseLeave={() => setHoveredItem(null)}
-              href="/webapps"
+              href="/apps"
               className={`font-medium tracking-wider duration-200 ${TEXT_COLOR}`}>
-              Web Apps
+              Applications
             </Link>
             <Link
               // onMouseEnter={() => setHoveredItem("sites")}
@@ -129,9 +129,9 @@ export default function Navbar() {
             <Link
               // onMouseEnter={() => setHoveredItem("apps")}
               // onMouseLeave={() => setHoveredItem(null)}
-              href="/webapps"
+              href="/apps"
               className={`font-medium tracking-wider duration-200 ${TEXT_COLOR}`}>
-              Web Apps
+              Applications
             </Link>
           </motion.div>
           <motion.div

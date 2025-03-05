@@ -16,7 +16,7 @@ export default function Page() {
         className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 `}>
         <div className="z-20  max-w-[90rem] mx-auto w-fit space-y-[2rem] text-left px-4 md:px-8">
           <h1 className="w-fit text-cyan-800/90 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
-            We Build Websites.
+            We Build Apps.
           </h1>
           <h1 className="w-fit text-cyan-800/90 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
             You Build Your Business.

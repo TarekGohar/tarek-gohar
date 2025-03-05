@@ -35,10 +35,11 @@ export default function IntegrationSection() {
               Seamless integration with your favourite providers
             </h2>
             <p className="md:max-w-[60rem] text-cyan-800/60 text-left font- md:text-xl">
-              Our web apps are designed to work effortlessly with your favorite
-              tools and services, ensuring a smooth and connected experience.
-              Whether it's payment gateways, CRM systems, or third-party APIs,
-              we integrate seamlessly to enhance functionality and efficiency.
+              Our applications are designed to work effortlessly with your
+              favorite tools and services, ensuring a smooth and connected
+              experience. Whether it's payment gateways, CRM systems, or
+              third-party APIs, we integrate seamlessly to enhance functionality
+              and efficiency.
             </p>
           </div>
 
@@ -51,8 +52,7 @@ export default function IntegrationSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "-100%" }}
                 transition={{ duration: 1, ease: "easeInOut" }}
-                className="absolute flex items-center justify-center w-1/2 h-full"
-              >
+                className="absolute flex items-center justify-center w-1/2 h-full">
                 <Image
                   width={500}
                   height={500}

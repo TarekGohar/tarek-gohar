@@ -116,7 +116,7 @@ export default function SquigglyPathSection() {
       title: "Cross-Platform",
       src: "/icons/cross.svg",
       content:
-        "Web apps designed to perform flawlessly across all devices and platforms.",
+        "Applications designed to perform flawlessly across all devices and platforms.",
     },
   ];
 
