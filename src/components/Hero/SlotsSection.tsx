@@ -58,33 +58,34 @@ export default function SlotsSection() {
   );
 
   return (
-    <section className="w-full md:h-[40rem] px-4 flex flex-col justify-center items-center overflow-hidden">
+    <section className="w-full md:h-[40rem] px-4 flex flex-col justify-center items-center overflow-hidden bg-neutral-50">
       <div
         ref={targetRef}
         className="px-2 gap-x-6 py-[4rem] max-w-[100rem] w-fit mx-auto flex items-center justify-between">
-        <h1 className="text-4xl md:text-7xl text-cyan-800 font-semibold w-[65%] md:w-[50%] uppercase tracking-wider">
-          Full-stack apps from the ground up.
+        <h1 className="text-4xl md:text-7xl text-neutral-900 font-semibold w-[65%] md:w-[50%] uppercase tracking-wider">
+          Full-stack apps from the{" "}
+          <span className="text-neutral-800/80">ground up</span>
         </h1>
         <div className="w-fit text-center flex flex-col space-y-4">
           <motion.div
             style={{ opacity: opacity5, x: xOffset5 }}
-            className="bg-cyan-800/80 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
+            className="bg-neutral-900/20 text-white p-[.85rem] md:p-5 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
             style={{ opacity: opacity4, x: xOffset4 }}
-            className="bg-cyan-800/90 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
+            className="bg-neutral-900/40 text-white p-[.85rem] md:p-5 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
             style={{ opacity: opacity3, x: xOffset3 }}
-            className="bg-cyan-800 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
+            className="bg-neutral-900/60 text-white p-[.85rem] md:p-5 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
             style={{ opacity: opacity2, x: xOffset2 }}
-            className="bg-cyan-900 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
+            className="bg-neutral-900/80 text-white p-[.85rem] md:p-5 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
           <motion.div
             style={{ opacity: opacity1, x: xOffset1 }}
-            className="bg-cyan-950 text-white p-5 md:p-6 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
+            className="bg-neutral-950 text-white p-[.85rem] md:p-5 text-center rounded-2xl w-[7rem] md:w-[14rem] mx-auto"
           />
         </div>
       </div>

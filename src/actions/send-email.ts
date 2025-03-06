@@ -20,7 +20,7 @@ const UserSchema = z
     last_name: z.string().min(2).max(50),
     email: z.string().email(),
     phone: z.string().min(10).max(15),
-    message: z.string().min(5).max(500),
+    message: z.string().min(1).max(1000),
   });
 
 

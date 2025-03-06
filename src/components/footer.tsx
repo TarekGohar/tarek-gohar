@@ -14,7 +14,7 @@ export default function Footer() {
         </span>
 
         {/* Footer Menu */}
-        <ul className="container mt-20 md:px-20 text-cyan-800 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 text-main font-normal text-xs sm:text-sm md:text-md tracking-widest">
+        <ul className="container mt-20 md:px-20 text-cyan-800 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 text-main font-normal text-xs sm:text-sm md:text-base tracking-wider">
           {/* Contact */}
           <li className="px-12 flex justify-start md:justify-center md:px-0  w-full">
             <div className="flex flex-col gap-y-4">
@@ -36,8 +36,8 @@ export default function Footer() {
             <div className="flex flex-col gap-y-4">
               <h3 className="font-semibold uppercase">Hours</h3>
               <div className="flex flex-col gap-y-1">
-                <span>Monday - Sunday</span>
-                <span>9:00 AM - 8:00 PM</span>
+                <span>Monday - Friday</span>
+                <span>9:00 AM - 7:00 PM</span>
               </div>
             </div>
           </li>
@@ -60,7 +60,7 @@ export default function Footer() {
       </div>
       {/* Copyright */}
       <p className="mt-12 text-gray-500 text-center py-2 text-[8px] font-extralight">
-        © {year} Netra. All Rights Reserved.
+        © {year} Vereon. All Rights Reserved.
       </p>
     </footer>
   );

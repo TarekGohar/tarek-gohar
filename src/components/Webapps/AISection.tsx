@@ -70,10 +70,11 @@ export default function AISection() {
           </div>
         </div>
         <p className="md:max-w-[50rem] text-cyan-800/60 text-center md:text-xl">
-          We integrate AI-driven features into our web apps to enhance
-          automation, efficiency, and user experience. Chatbots, predictive
-          analytics, and AI-driven recommendations streamline operations,
-          enhance decision-making, and boost user engagement.
+          Vereon brings the power of AI-driven innovation to your web apps,
+          helping you stay ahead in this new era of intelligent automation. From
+          chatbots to predictive analytics, we boost efficiency, improve
+          decision-making, and create seamless user experiences — giving you the
+          competitive edge in the AI revolution.
         </p>
       </div>
 

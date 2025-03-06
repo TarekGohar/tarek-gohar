@@ -15,14 +15,15 @@ export default function Page() {
       <section
         className={`relative h-screen min-h-[45rem] flex items-center justify-center transition-all ease-in duration-700 overflow-hidden z-10 `}>
         <div className="z-20  max-w-[90rem] mx-auto w-fit space-y-[2rem] text-left px-4 md:px-8">
-          <h1 className="w-fit text-cyan-800/90 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
-            We Build Apps.
+          <h1 className="w-fit text-cyan-800/100 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
+            We shape strategies.
           </h1>
-          <h1 className="w-fit text-cyan-800/90 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
-            You Build Your Business.
+          <h1 className="w-fit text-cyan-800/80 text-[4rem] leading-[4rem] md:text-[8rem] md:leading-[7rem] lg:text-[9rem] lg:leading-[8rem] uppercase font-bold tracking-wider">
+            You shape the future.
           </h1>
-          <p className="md:max-w-[60rem] text-cyan-800/60 text-left text-xl md:text-2xl font-medium">
-            Smart, scalable digital solutions to power your business.
+          <p className="md:max-w-[40rem] text-cyan-800/60 text-left text-xl md:text-2xl font-medium">
+            Consulting and creating smart, scalable digital solutions to drive
+            your business forward
           </p>
         </div>
 
@@ -41,18 +42,18 @@ export default function Page() {
         <Shades />
       </section>
 
-      <section className="h-[25rem] md:h-[40rem] flex items-center justify-center">
+      <section className="h-[35rem] md:h-[40rem] flex items-center justify-center">
         <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-4 px-4">
           <h1 className="md:text-xl font-semibold text-cyan-800/40 opacity-70 capitalize">
             What do we do?
           </h1>
-          <h2 className="w-full md:max-w-[70rem] text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
+          <h2 className="w-full md:max-w-[70rem] text-cyan-800 text-center font-semibold text-4xl md:text-5xl uppercase tracking-wider">
             We help your business <span className="text-cyan-800/80">grow</span>
             , <span className="text-cyan-800/80">innovate</span>, and{" "}
             <span className="text-cyan-800/80">succeed</span>.
           </h2>
           <p className="md:max-w-[35rem] text-cyan-800/60 text-center font- md:text-xl">
-            We design and develop websites and web applications that are
+            We consult, design, and develop software solutions that are
             user-friendly, reliable, and built to support your business goals.
           </p>
         </div>

@@ -9,7 +9,7 @@ export default function GetAQuotePage() {
             <h1 className="w-full lg:text-xl font-semibold text-neutral-400 opacity-70 capitalize">
               Success
             </h1>
-            <h2 className="max-w-[40rem] w-full text-cyan-900/100 text-left font-medium text-4xl lg:text-5xl tracking-wider uppercase">
+            <h2 className="max-w-[40rem] w-full text-cyan-900/100 text-left font-semibold text-4xl lg:text-5xl tracking-wider uppercase">
               We have received your request!
             </h2>
             <p className="w-full lg:max-w-[40rem] text-cyan-800/60 text-left lg:text-xl">

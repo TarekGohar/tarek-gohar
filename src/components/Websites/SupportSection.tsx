@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function SupportSection() {
   return (
-    <section className="min-h-[40.5rem] bg-neutral-100">
+    <section className="min-h-[40.5rem] bg-neutral-50/50">
       <div className="relative py-40 max-w-[120rem] mx-auto w-full h-full flex flex-col items-center justify-center overflow-hidden space-y-[2rem]">
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-neutral-900 text-opacity-90 px-4 md:px-8">
           Support
@@ -10,7 +10,7 @@ export default function SupportSection() {
 
         <div className="max-w-[70rem] mx-auto w-full flex flex-col items-center justify-center space-y-[5rem] px-4">
           <div className="w-full flex flex-col items-center space-y-4">
-            <h2 className="w-full text-neutral-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider max-w-[50rem]">
+            <h2 className="w-full text-neutral-800 text-center font-semibold text-4xl md:text-5xl uppercase tracking-wider max-w-[50rem]">
               Peace of Mind with Ongoing Website Support
             </h2>
             <p className="w-full md:max-w-[36rem] text-neutral-800/50 text-center font- md:text-xl">
@@ -22,12 +22,11 @@ export default function SupportSection() {
 
           <div className="w-full flex flex-col md:flex-row space-y-[3rem] md:space-y-0 justify-between items-center">
             {/* Timely Fixes */}
-            <div className="flex flex-col items-center space-y-4 bg-neutral-50 rounded-xl p-4 min-w-[14rem]">
+            <div className="flex flex-col items-center space-y-4 bg-neutral-100/70 rounded-xl p-4 min-w-[14rem]">
               <svg
                 version="1.1"
                 viewBox="0 0 95.348 95.347"
-                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]"
-              >
+                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]">
                 <path
                   fill="#c4c4c4"
                   d="M56.527,60.122l-4.662-1.033c-0.047-3.138-0.719-6.168-1.996-9.007l3.606-2.92c0.858-0.695,0.99-1.954,0.296-2.813
@@ -81,14 +80,13 @@ export default function SupportSection() {
             </div>
 
             {/* Performance Enheancements */}
-            <div className="flex flex-col items-center space-y-4 bg-neutral-50 rounded-xl p-4 min-w-[14rem]">
+            <div className="flex flex-col items-center space-y-4 bg-neutral-100/70 rounded-xl p-4 min-w-[14rem]">
               <svg
                 fill="#d5d5d5"
                 version="1.1"
                 id="Capa_1"
                 viewBox="0 0 96.258 96.258"
-                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]"
-              >
+                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]">
                 <g>
                   <path
                     d="M75.225,37.515c-0.357-0.616-1.017-0.995-1.729-0.995h-21.03L67.177,2.8c0.271-0.618,0.21-1.331-0.16-1.896
@@ -104,13 +102,12 @@ export default function SupportSection() {
             </div>
 
             {/* Security */}
-            <div className="flex flex-col items-center space-y-4 bg-neutral-50 rounded-xl p-4 min-w-[14rem]">
+            <div className="flex flex-col items-center space-y-4 bg-neutral-100/70 rounded-xl p-4 min-w-[14rem]">
               <svg
                 version="1.1"
                 id="_x32_"
                 viewBox="0 0 512 512"
-                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]"
-              >
+                className="p-4 w-[7rem] h-[7rem] md:h-[13rem] md:w-[13rem]">
                 <path
                   fill="#e5e5e5"
                   d="M493.118,60.602c-40.138,17.719-93.777,20.322-143.881-0.447C324.872,50.055,273.523,25.223,255.999,0

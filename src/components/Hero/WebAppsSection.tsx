@@ -38,7 +38,7 @@ export default function WebAppsSection() {
       <div className="mt-10 md:mt-0 max-w-[120rem] mx-auto w-full px-4 md:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between">
         <div className="w-full flex flex-col items-start space-y-[1rem] md:space-y-[2rem] justify-between text-left">
           <h1 className="md:text-xl font-semibold opacity-80">Web Apps</h1>
-          <h2 className="w-full md:max-w-[80rem] text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
+          <h2 className="w-full md:max-w-[80rem] text-cyan-800 text-left font-semibold text-4xl md:text-5xl uppercase tracking-wider">
             Your Ideas, Transformed into Powerful Web Applications.
           </h2>
           <Link

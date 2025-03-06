@@ -28,7 +28,7 @@ export default function GetAQuote() {
         </h1>
         <h2
           ref={ref}
-          className="w-fit mx-auto text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
+          className="w-fit mx-auto text-cyan-800 text-left font-semibold text-4xl md:text-5xl uppercase tracking-wider">
           {text.split("").map((letter, index) => (
             <motion.span
               key={index}
@@ -44,7 +44,7 @@ export default function GetAQuote() {
         </h2>
         <h2
           ref={ref}
-          className="w-fit mx-auto text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
+          className="w-fit mx-auto text-cyan-800 text-center font-semibold text-4xl md:text-5xl uppercase tracking-wider">
           {subheader.split("").map((subheader, index) => (
             <motion.span
               key={index}

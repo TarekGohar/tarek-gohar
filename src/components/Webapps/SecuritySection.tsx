@@ -31,8 +31,8 @@ export default function SecuritySection() {
 
         <p className="w-full mx-auto lg:max-w-[40rem] text-neutral-800/70 text-left font- md:text-xl">
           We prioritize security in every web app we create, ensuring your
-          business and customer data remain protected. A secure web app builds
-          trust and keeps you compliant with industry regulations.
+          business and customer data remain protected. By staying ahead of
+          potential threats, we help keep your systems safe and resilient.
         </p>
       </div>
     </section>

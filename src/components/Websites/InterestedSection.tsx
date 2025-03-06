@@ -10,8 +10,8 @@ export default function InterestedSection() {
 
   return (
     <section className="mt-[2.5rem] h-[17.5rem] md:mt-[10rem] md:h-[25rem] flex items-start justify-center">
-      <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-1 p-5 pt-6 bg-cyan-800">
-        <h1 className="text-xl font-semibold text-neutral-200/90 capitalize">
+      <div className=" max-w-[120rem] mx-auto flex flex-col items-center justify-center space-y-1 py-2 px-4 pt-4 bg-cyan-800">
+        <h1 className="text-base md:text-lg font-semibold text-neutral-200/90 capitalize">
           Interested in working with us?
         </h1>
         {/* <h2 className="max-w-[50rem] text-cyan-800/90 text-center font-bold text-4xl md:text-6xl tracking-tighter capitalize">
@@ -20,7 +20,7 @@ export default function InterestedSection() {
 
         <Link
           ref={ref}
-          className=" max-w-[20rem] md:max-w-[32rem] text-white text-center font-semibold text-3xl tracking-tighter header-underline capitalize"
+          className=" max-w-[20rem] md:max-w-[32rem] text-white text-center font-semibold md:text-xl tracking-tighter header-underline capitalize"
           href="/get-a-quote">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}

@@ -8,9 +8,9 @@ export default function PerformanceSection() {
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-700 opacity-70 px-4 md:px-8">
           Performance
         </h1>
-        <div className="max-w-[100rem] w-full flex flex-col items-start justify-center space-y-[5rem] md:space-y-[10rem]">
+        <div className="max-w-[120rem] w-full flex flex-col items-start justify-center space-y-[5rem] md:space-y-[10rem]">
           <div className="w-full flex flex-col lg:flex-row items-start justify-between space-y-[2rem] lg:space-y-0 lg:space-x-[5rem]">
-            <h2 className="w-full mx-auto lg:mx-0 lg:max-w-[30rem] text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
+            <h2 className="w-full mx-auto lg:mx-0 lg:max-w-[30rem] text-cyan-800 text-left font-semibold text-4xl md:text-5xl uppercase tracking-wider">
               Built for speed. Designed for search.
             </h2>
             <p className="w-full mx-auto lg:max-w-[40rem] text-cyan-800/70 text-left font- md:text-xl">

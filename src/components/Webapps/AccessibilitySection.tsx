@@ -14,7 +14,7 @@ export default function AccessibilitySection() {
 
         <div className="w-full flex flex-col items-center justify-center space-y-[2.5rem]">
           <div className="flex flex-col items-center justify-center space-y-[.5rem]">
-            <h2 className=" text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
+            <h2 className=" text-cyan-800 text-center font-semibold text-4xl md:text-5xl uppercase tracking-wider">
               Our Web App <span className="text-cyan-800/60">Solutions</span>
             </h2>
             <p className="md:max-w-[35rem] text-cyan-800/60 text-center font- md:text-xl">

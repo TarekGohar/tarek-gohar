@@ -129,7 +129,7 @@ export default function TextScrambleEffect(): JSX.Element {
   }, []);
 
   return (
-    <h2 className="min-h-[8rem] md:min-h-[5rem] w-full mx-auto lg:mx-0 lg:max-w-[40rem] text-neutral-800/80 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
+    <h2 className="min-h-[8rem] md:min-h-[5rem] w-full mx-auto lg:mx-0 lg:max-w-[40rem] text-neutral-800/80 text-left font-semibold text-4xl md:text-5xl uppercase tracking-wider">
       We'll make sure your data is{" "}
       <span ref={textRef} className="text-neutral-900" />
     </h2>

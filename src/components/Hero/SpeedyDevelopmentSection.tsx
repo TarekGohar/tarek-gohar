@@ -131,21 +131,25 @@ export default function SquigglyPathSection() {
         <h1 className="w-full text-left md:text-xl font-semibold opacity-80 text-cyan-950 ">
           Our Services
         </h1>
-        <h2 className="max-w-[80rem] mx-auto w-full text-left text-3xl md:text-5xl font-medium text-cyan-900 capitalize">
-          Why choose us?
+        <h2 className="max-w-[80rem] mx-auto w-full text-left text-3xl md:text-5xl font-semibold text-cyan-900 uppercase tracking-wider">
+          WHAT Vereon HAS TO OFFER
         </h2>
         <div className="max-w-[80rem] mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 h-[80rem] md:h-[55rem]">
-          {sectionGroups.map((group, groupIndex) => (
-            <div key={groupIndex} className="grid gap-2 md:gap-4">
-              {group.map((section, index) => {
-                return (
-                  <div key={index}>
-                    <FlipCard index={index + groupIndex} section={section} />
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+          {(() => {
+            let globalIndex = 0;
+            return sectionGroups.map((group, groupIndex) => (
+              <div key={groupIndex} className="grid gap-2 md:gap-4">
+                {group.map((section) => {
+                  const currentIndex = globalIndex++;
+                  return (
+                    <div key={currentIndex}>
+                      <FlipCard index={currentIndex} section={section} />
+                    </div>
+                  );
+                })}
+              </div>
+            ));
+          })()}
         </div>
       </div>
     </section>

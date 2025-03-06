@@ -29,9 +29,9 @@ export default function IntegrationSection() {
         <h1 className="absolute top-[4rem] w-full md:text-xl font-semibold text-cyan-800/80 px-4 md:px-8">
           Integration
         </h1>
-        <div className="max-w-[100rem] mx-auto w-full flex flex-col lg:flex-row items-center justify-center space-y-[3rem] lg:space-y-[0rem]">
+        <div className="max-w-[120rem] mx-auto w-full flex flex-col lg:flex-row items-center justify-center space-y-[3rem] lg:space-y-[0rem]">
           <div className="w-full flex flex-col items-start space-y-[1rem]">
-            <h2 className="max-w-[40rem] w-full text-cyan-900/100 text-left font-medium text-4xl md:text-5xl tracking-wider uppercase">
+            <h2 className="max-w-[60rem] w-full text-cyan-900/100 text-left font-semibold text-4xl md:text-5xl tracking-wider uppercase">
               Seamless integration with your favourite providers
             </h2>
             <p className="md:max-w-[60rem] text-cyan-800/60 text-left font- md:text-xl">

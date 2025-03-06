@@ -54,7 +54,7 @@ const FloatingParticles: React.FC = () => {
       y: Math.random() * windowSize.height, // Random Y position based on window height
       size: Math.random() * 100 + windowSize.width * 0.2, // Random size
       duration: Math.random() * 6 + 10, // Animation duration
-      delay: Math.random() * 1, // Animation delay
+      delay: Math.random() * 0, // Animation delay
     }));
     setParticles(newParticles);
   }, [windowSize]); // Re-run when window size updates

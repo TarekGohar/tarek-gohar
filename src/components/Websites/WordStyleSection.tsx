@@ -102,7 +102,7 @@ export default function WordFlip() {
           </motion.span>
           {/* </div> */}
         </div>
-        <h2 className="absolute top-[70%] max-w-[30rem] md:max-w-[40rem] text-neutral-800 text-center font-medium tracking-wider text-xl md:text-2xl">
+        <h2 className="absolute top-[70%] max-w-[30rem] md:max-w-[40rem] text-neutral-800 text-center font-semibold uppercase tracking-wider text-xl md:text-2xl">
           No matter the mood, we can style your website to perfectly suit you.
         </h2>
       </div>

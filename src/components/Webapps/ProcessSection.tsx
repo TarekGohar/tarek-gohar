@@ -60,8 +60,9 @@ export default function Home() {
         Our Process
       </h1>
       <div className="flex flex-col items-center justify-center space-y-[.5rem] mt-[5rem] md:mt-[10rem] md:mb-[-5rem] px-4 md:px-8">
-        <h2 className="max-w-[35rem] text-cyan-800 text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
-          How We Build <span className="text-cyan-800/60">Your Web App</span>
+        <h2 className="max-w-[35rem] text-cyan-800 text-center font-semibold text-4xl md:text-5xl uppercase tracking-wider">
+          How Vereon Builds{" "}
+          <span className="text-cyan-800/60">Your Web App</span>
         </h2>
         <p className="md:max-w-[30rem] text-cyan-800/60 text-center font- md:text-xl">
           A seamless journey from idea to launch.

@@ -16,10 +16,30 @@ export default function Navbar() {
     setMenu(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if screen width exceeds medium breakpoint (typically 768px)
+      if (window.innerWidth >= 768) {
+        setMenu(false);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call once on mount to handle initial size
+    handleResize();
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <motion.nav
-        className={`fixed inset-0 top-[1rem] text-sm md:text-md w-full mx-auto unselectable h-[3.25rem] md:h-[3.5rem] px-[1rem] md:px-[2rem]`}
+        className={`fixed inset-0 top-[1rem] text-sm md:text-[.97rem] w-full mx-auto unselectable h-[3.25rem] md:h-[3.5rem] px-[1rem]`}
         style={{ zIndex: 1000, backgroundBlendMode: "" }}>
         <ul
           className="h-full grid grid-cols-2 md:grid-cols-5 max-w-[90rem] md:gap-x-4 mx-auto font-medium bg-opacity-80 p-[.2rem] rounded-2xl"
@@ -34,9 +54,9 @@ export default function Navbar() {
           <li className="flex items-center">
             <Link
               href="/"
-              className=" block min-w-[4rem] px-[1rem] duration-300 hover:opacity-90 md:text-2xl tracking-widest text-cyan-950"
+              className=" block min-w-[4rem] px-[1rem] duration-300 hover:opacity-90 text-[1.2rem] md:text-2xl tracking-widest text-cyan-950"
               style={{ fontFamily: "Zilap" }}>
-              NETRA
+              netreon
             </Link>
           </li>
 
@@ -88,11 +108,11 @@ export default function Navbar() {
       </motion.nav>
 
       {/* Mobile Drop Down Menu */}
-      <div className="top-[1rem] fixed inset-0 px-[1rem] md:px-[2rem] w-screen z-50 h-fit">
+      <div className="top-[1rem] fixed inset-0 px-[1rem] md:px-[2rem] w-screen z-50 h-fit overflow-hidden">
         <motion.div
           className="pt-[3rem] max-w-[90rem] rounded-2xl flex flex-col items-end justify-center gap-y-[2rem] px-[1rem]"
           style={{
-            background: "rgba(240,240,240, 0.3)",
+            background: "rgba(240,240,240, 0.5)",
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
             backgroundBlendMode: "overlay",

@@ -24,13 +24,12 @@ export default function WebSitesSection() {
         <BoxesContainer />
 
         <div className="w-full max-w-[120rem] px-4 md:px-8 flex flex-col items-center space-y-[1rem] md:space-y-[2rem] justify-between text-cente z-20">
-          <h2 className="w-full md:max-w-[80rem] text-white text-center font-medium text-4xl md:text-5xl uppercase tracking-wider">
+          <h2 className="w-full md:max-w-[80rem] text-white text-center font-semibold text-4xl md:text-5xl uppercase tracking-wider">
             Modern, Responsive, and High-Performance Websites.
           </h2>
           <Link
             className="md:max-w-[35rem] text-white/80 text-center font-medium md:text-xl header-underline-light"
-            href="/websites"
-          >
+            href="/websites">
             Learn More
           </Link>
         </div>

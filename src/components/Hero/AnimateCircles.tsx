@@ -105,10 +105,11 @@ export default function AnimatedCircles() {
   }, [initialCircles, jiggledCircles, isMobile]);
 
   return (
-    <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center">
-      <div className="h-full w-[30rem] text-center flex justify-center items-center relative">
-        <h1 className="text-3xl md:text-5xl font-medium absolute top-[18%] md:top-[43%] bg-neutral-50 p-4 text-cyan-950 rounded-2xl tracking-wider">
-          Using the latest tech for the best results.
+    <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center px-4">
+      <div className="h-full max-w-[30rem] w-full text-center flex justify-center items-center relative">
+        <h1 className="text-2xl md:text-4xl font-semibold uppercase absolute top-[20%] md:top-[43%] bg-neutral-50 px-[.8rem] py-[.7rem] text-cyan-950 rounded-2xl tracking-wider">
+          We consult, design, and develop with the best tech for optimal
+          results.
         </h1>
 
         {jiggledCircles.map((pos, i) => (
@@ -125,7 +126,7 @@ export default function AnimatedCircles() {
               background: images[i % images.length].color,
               backdropFilter: "blur(10px)",
             }}
-            className="absolute rounded-full flex justify-center items-center top-[50%] md:top-[45%]">
+            className="absolute rounded-full flex justify-center items-center top-[55%] md:top-[45%]">
             <div className="relative w-3/4 h-3/4">
               <Image
                 alt={`${i} lang logo`}

@@ -45,7 +45,7 @@ export default function Page() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "url(/noise2.png)",
+            background: "url(/noise2.webp)",
             backgroundRepeat: "repeat",
             backgroundSize: "150px 150px",
             opacity: 0.1,
@@ -87,12 +87,12 @@ export default function Page() {
 
       {/* About Our Services */}
       <section className="h-[40rem] md:h-[30rem] my-[5rem] md:my-[10rem] flex items-center justify-center bg-white">
-        <div className="relative max-w-[100rem] mx-auto w-full h-[100%] md:h-[70%] flex flex-col md:flex-row items-center justify-center px-4 md:px-8 space-y-[4rem] md:space-x-[2rem]">
+        <div className="relative max-w-[120rem] mx-auto w-full h-[100%] md:h-[70%] flex flex-col md:flex-row items-center justify-center px-4 md:px-8 space-y-[4rem] md:space-x-[2rem]">
           <div className="md:w-[60%] flex flex-col lg:flex-col items-start justify-start space-y-[1rem]">
             <h1 className="w-full md:text-xl font-semibold text-cyan-800/40 capitalize">
               Websites that impress
             </h1>
-            <h2 className="w-full md:max-w-[70rem] text-cyan-800 text-left font-medium text-4xl md:text-5xl uppercase tracking-wider">
+            <h2 className="w-full md:max-w-[70rem] text-cyan-800 text-left font-semibold text-4xl md:text-5xl uppercase tracking-wider">
               We deliver sleek, high-speed websites designed to fuel your
               business growth
             </h2>
@@ -107,33 +107,33 @@ export default function Page() {
       </section>
 
       {/* Time */}
-      <section className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-y-[8rem] md:space-y-0 py-[5rem] md:py-[10rem] bg-cyan-800/70">
+      <section className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-y-[8rem] md:space-y-0 py-[5rem] md:py-[10rem] bg-neutral-400/10">
         {/* Time */}
         <div className="px-4 w-full flex flex-col items-center justify-center space-y-[2rem] md:space-y-[4rem] max-w-[50%] md:max-w-[20rem] z-10">
           {/* Number */}
           <div className="w-fit flex items-end justify-start font-number">
             <span
-              className={`-mt-[5rem] inline-block md:w-[18rem] text-left font-extrabold text-[20rem] leading-[18.5rem] md:text-[40rem] md:leading-[36rem] uppercase tracking-tight duration-500 transition-opacity mix-blend-lighten text-neutral-50`}>
+              className={`-mt-[5rem] inline-block md:w-[18rem] text-left font-extrabold text-[20rem] leading-[18.5rem] md:text-[40rem] md:leading-[36rem] uppercase tracking-tight duration-500 transition-opacity mix-blend-lighten text-neutral-300/20`}>
               50
             </span>
             <span
-              className={`inline-block font-medium tracking-wider text-left text-xl md:text-[2rem] text-neutral-100`}>
+              className={`inline-block font-medium tracking-wider text-left text-xl md:text-[2rem] text-neutral-300`}>
               ms
             </span>
           </div>
 
-          <p className="w-full overflow-hidden text-neutral-100/30 text-left font md:text-xl lg:text-xl leading-[1.2rem] md:leading-[1.4rem] lg:leading-[1.5rem] tracking">
+          <p className="w-full overflow-hidden text-neutral-500/20 text-left font md:text-xl lg:text-xl leading-[1.2rem] md:leading-[1.4rem] lg:leading-[1.5rem] tracking">
             Time it takes for someone to form an opinion about your website.
           </p>
         </div>
 
         {/* Text */}
         <div className="px-4 md:w-[37rem] flex flex-col items-center justify-center space-y-[2rem]">
-          <p className="w-full md:w-[70%] text-white text-left font-medium text-2xl md:text-4xl tracking">
+          <p className="w-full md:w-[70%] text-cyan-900/50 text-left font-medium text-2xl md:text-4xl tracking">
             People decide fast, and options are endless. If your website doesn’t
             make an impact immediately, they move on.
           </p>
-          <p className="w-full md:w-[70%] text-cyan-950/100 text-left font-semibold text-2xl md:text-4xl tracking">
+          <p className="w-full md:w-[70%] text-cyan-800/100 text-left font-semibold text-2xl md:text-4xl tracking">
             You don’t get a second chance at a first impression.
           </p>
         </div>
