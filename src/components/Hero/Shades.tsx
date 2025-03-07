@@ -34,7 +34,7 @@ export default function Shades({ color = "#FFF" }: ShadesProps) {
       ref={ref}
       className="absolute top-0 left-0 w-full"
       style={{
-        zIndex: 60,
+        zIndex: 2,
         height: "100vh",
         display: "flex",
         flexDirection: "column",

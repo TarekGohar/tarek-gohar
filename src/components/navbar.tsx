@@ -56,7 +56,7 @@ export default function Navbar() {
               href="/"
               className=" block min-w-[4rem] px-[1rem] duration-300 hover:opacity-90 text-[1.2rem] md:text-2xl tracking-widest text-cyan-950"
               style={{ fontFamily: "Zilap" }}>
-              netreon
+              tecta
             </Link>
           </li>
 

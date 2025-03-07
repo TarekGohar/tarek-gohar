@@ -364,7 +364,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Adjust opacity for darkness */
+  background: rgba(0, 0, 0, 0.4); /* Adjust opacity for darkness */
   z-index: 1;
 }
 
@@ -382,7 +382,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(0, 0, 0, 0.2); Adjust opacity for darkness */
+  background: rgba(0, 0, 0, 0.2); /* Adjust opacity for darkness */
   z-index: 1;
 }
 
@@ -411,4 +411,55 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+
+#portfolio-montrium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Adjust opacity for darkness */
+  z-index: 1;
+}
+
+#portfolio-connexio {
+  position: relative;
+  background: rgb(166, 61, 40) url('/connexio.webp') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#portfolio-connexio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Adjust opacity for darkness */
+  z-index: 1;
+}
+
+#portfolio-mnp {
+  position: relative;
+  background: #002015 url('/mnp.webp') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#portfolio-mnp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust opacity for darkness */
+  z-index: 1;
 }
