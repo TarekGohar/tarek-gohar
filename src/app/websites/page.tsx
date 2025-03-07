@@ -1,19 +1,17 @@
-"use client";
-
 import AnimatedSection from "@/components/Websites/AnimatedSection";
 import InterestedSection from "@/components/Websites/InterestedSection";
 import PerformanceSection from "@/components/Websites/PerformanceSection";
 import SupportSection from "@/components/Websites/SupportSection";
 import WordStyleSection from "@/components/Websites/WordStyleSection";
-import { motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import * as motion from "motion/react-client";
+
 import IntegrationSection from "@/components/Websites/IntegrationSection";
 
 export default function Page() {
   return (
     <>
       <motion.div
-        className="bg-cyan-50 relative overflow-hidden"
+        className="h-screen relative overflow-hidden"
         initial={{
           background:
             "linear-gradient(0deg, #062a33 0%, #0f3c4f 10%, #067e99 40%, #0496b5 55%, #99c1d3 100%)",
@@ -41,29 +39,18 @@ export default function Page() {
           backgroundSize: "400% 400%",
           backgroundPosition: "0% 50%",
         }}>
-        {/* Noise Overlay covering everything */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "url(/noise2.webp)",
-            backgroundRepeat: "repeat",
-            backgroundSize: "150px 150px",
-            opacity: 0.1,
-            backgroundBlendMode: "overlay",
-            zIndex: 1, // Ensure it overlays everything
-          }}
-        />
+        {/* Noise Effect */}
+        <div className="noisecontainer absolute inset-0 overflow-hidden" />
 
         {/* Crossed Lines in the Top Right */}
         <div className="absolute top-[15%] right-[15%] w-fit h-fit opacity-50 overflow-visible mix-blend-plus-lighter">
           {/* Horizontal Line */}
           <span className="absolute w-[clamp(8rem, 15vw, 16rem)] min-w-[6rem] h-[0.2rem] bg-white -translate-x-[2rem]" />
-
           {/* Vertical Line */}
           <span className="absolute w-[clamp(8rem, 15vw, 16rem)] min-w-[6rem] h-[0.2rem] bg-white rotate-90 translate-y-[2rem]" />
         </div>
 
-        <section className="h-screen max-h-[100rem] min-h-[50rem]">
+        <section className="h-screen max-h-[100rem] min-h-[50rem] overflow-hidden">
           <div className="flex flex-col items-start justify-end text-white relative h-[90%] lg:space-y-[.75rem] ">
             <div className="max-w-[120rem] mx-auto w-full flex flex-col items-start opacity-80 text-neutral-300 mix-blend-plus-lighter z-50 px-4 md:px-8">
               <h1 className="-ml-[.1rem] md:-ml-[.5rem] tracking-wider font-medium text-[3rem] md:text-[5.4rem] lg:text-[6rem] leading-[3rem] md:leading-[5rem] lg:leading-[5.5rem] uppercase">

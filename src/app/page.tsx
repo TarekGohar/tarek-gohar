@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import SlotsSection from "@/components/Hero/SlotsSection";
 import AnimatedCirclesSection from "@/components/Hero/AnimateCircles";
 import SpeedyDevelopmentSection from "@/components/Hero/SpeedyDevelopmentSection";
@@ -6,7 +5,6 @@ import ParticlesBackground from "@/components/Hero/GradientBackground";
 import WebAppsSection from "../components/Hero/WebAppsSection";
 import WebSitesSection from "@/components/Hero/WebSitesSection";
 import GetAQuote from "@/components/Hero/GetAQuoteSection";
-import Shades from "@/components/Hero/Shades";
 
 export default function Page() {
   return (
@@ -38,8 +36,6 @@ export default function Page() {
               "linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0.35) 80%, rgba(255, 255, 255, 0.65) 90%, rgba(255, 255, 255, 1) 100%)",
           }}
         />
-
-        <Shades />
       </section>
 
       <section className="h-[35rem] md:h-[40rem] flex items-center justify-center">

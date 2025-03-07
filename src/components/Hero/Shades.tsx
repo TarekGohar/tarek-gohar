@@ -1,8 +1,13 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-export default function Shades() {
+interface ShadesProps {
+  color?: string;
+}
+
+export default function Shades({ color = "#FFF" }: ShadesProps) {
   const ref = useRef(null);
   const [segHeight, setSegHeight] = useState(0);
 
@@ -29,7 +34,7 @@ export default function Shades() {
       ref={ref}
       className="absolute top-0 left-0 w-full"
       style={{
-        zIndex: 50,
+        zIndex: 60,
         height: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -39,7 +44,7 @@ export default function Shades() {
         // Stagger the start of animation for each div
         // Top divs start earlier, bottom divs start later
         const startProgress = 0.5 + index * 0.03;
-        const endProgress = 0.75 + index * 0.03;
+        const endProgress = 0.8 + index * 0.03;
 
         const height = useTransform(
           scrollYProgress,
@@ -50,8 +55,9 @@ export default function Shades() {
         return (
           <motion.div
             key={index}
-            className={`w-full bg-white`}
+            className={`w-full`}
             style={{
+              backgroundColor: color,
               height: height,
               minHeight: 0,
               position: "absolute",

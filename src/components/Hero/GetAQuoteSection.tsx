@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { motion, useInView } from "framer-motion";
-import { linearGradient, section } from "framer-motion/client";
+import * as motion from "motion/react-client";
+import { useInView } from "framer-motion";
 import Link from "next/link";
 
 const TYPING_SPEED = 0.05;

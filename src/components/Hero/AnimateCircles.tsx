@@ -10,17 +10,17 @@ interface Position {
 }
 
 const images = [
-  { src: "/langImages/aws.png", color: "rgb(251, 193, 104)" },
-  { src: "/langImages/c.png", color: "rgb(124,172,219)" },
-  { src: "/langImages/c++.png", color: "rgb(31, 117, 182)" },
-  { src: "/langImages/next.png", color: "rgb(245, 245, 245)" },
+  { src: "/langImages/aws.webp", color: "rgb(251, 193, 104)" },
+  { src: "/langImages/c.webp", color: "rgb(124,172,219)" },
+  { src: "/langImages/c++.webp", color: "rgb(31, 117, 182)" },
+  { src: "/langImages/next.webp", color: "rgb(245, 245, 245)" },
   { src: "/langImages/pandas.svg", color: "rgb(28, 20, 105)" },
-  { src: "/langImages/postgresql.png", color: "rgb(143,171,196)" },
-  { src: "/langImages/python.png", color: "rgb(70, 70, 70)" },
-  { src: "/langImages/react.png", color: "rgb(48, 164, 206)" },
-  { src: "/langImages/ts.png", color: "rgb(137,175,223)" },
+  { src: "/langImages/postgresql.webp", color: "rgb(143,171,196)" },
+  { src: "/langImages/python.webp", color: "rgb(70, 70, 70)" },
+  { src: "/langImages/react.webp", color: "rgb(48, 164, 206)" },
+  { src: "/langImages/ts.webp", color: "rgb(137,175,223)" },
   { src: "/langImages/prisma.svg", color: "rgb(50, 50, 60)" },
-  { src: "/langImages/azure.png", color: "rgb(0, 120, 212)" },
+  { src: "/langImages/azure.webp", color: "rgb(0, 120, 212)" },
 ];
 
 export default function AnimatedCircles() {
@@ -107,7 +107,7 @@ export default function AnimatedCircles() {
   return (
     <section className="h-[40rem] md:h-[60rem] w-full flex justify-center items-center px-4">
       <div className="h-full max-w-[30rem] w-full text-center flex justify-center items-center relative">
-        <h1 className="text-2xl md:text-4xl font-semibold uppercase absolute top-[20%] md:top-[43%] bg-neutral-50 px-[.8rem] py-[.7rem] text-cyan-950 rounded-2xl tracking-wider">
+        <h1 className="text-2xl md:text-3xl font-semibold uppercase absolute top-[20%] md:top-[43%] bg-neutral-50 px-[.8rem] py-[.7rem] text-cyan-950 rounded-2xl tracking-wider">
           We consult, design, and develop with the best tech for optimal
           results.
         </h1>
@@ -126,7 +126,7 @@ export default function AnimatedCircles() {
               background: images[i % images.length].color,
               backdropFilter: "blur(10px)",
             }}
-            className="absolute rounded-full flex justify-center items-center top-[55%] md:top-[45%]">
+            className="absolute rounded-full flex justify-center items-center top-[60%] md:top-[45%]">
             <div className="relative w-3/4 h-3/4">
               <Image
                 alt={`${i} lang logo`}

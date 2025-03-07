@@ -1,16 +1,18 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 export default function IntegrationSection() {
   const logos = [
-    "/logos/google.png",
-    "/logos/facebook.png",
+    "/logos/google.webp",
+    "/logos/facebook.webp",
     "/logos/shopify.webp",
-    "/logos/stripe.png",
-    "/logos/openai.png",
-    "/logos/slack.png",
-    "/logos/hubspot.png",
+    "/logos/stripe.webp",
+    "/logos/openai.webp",
+    "/logos/slack.webp",
+    "/logos/hubspot.webp",
   ]; // Replace with your own logo paths
 
   const [currentIndex, setCurrentIndex] = useState(0);

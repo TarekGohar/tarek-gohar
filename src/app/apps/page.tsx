@@ -5,74 +5,25 @@ import AISection from "@/components/Webapps/AISection";
 import ProcessSection from "@/components/Webapps/ProcessSection";
 import InterestedSection from "@/components/Websites/InterestedSection";
 import SecuritySection from "@/components/Webapps/SecuritySection";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  const [textureIndex, setTextureIndex] = useState(0);
-
-  // Array of noise texture paths
-  const noiseTextures = [
-    "/noise2.webp",
-    "/noise3.webp",
-    "/noise4.webp",
-    "/noise5.webp",
-  ];
-
-  useEffect(() => {
-    noiseTextures.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
-
-  // Use requestAnimationFrame instead of setInterval
-  useEffect(() => {
-    let prevTime = 0;
-    let rotationUpdateTime = 0;
-    let textureUpdateTime = 0;
-    let rafId: number;
-
-    interface AnimateParams {
-      time: number;
-    }
-
-    const animate = (time: AnimateParams["time"]) => {
-      if (prevTime === 0) {
-        prevTime = time;
-      }
-
-      const deltaTime = time - prevTime;
-
-      // Update texture every 2000ms
-      if (time - textureUpdateTime > 50) {
-        setTextureIndex((prev) => (prev + 1) % noiseTextures.length);
-        textureUpdateTime = time;
-      }
-
-      prevTime = time;
-      rafId = requestAnimationFrame(animate);
-    };
-
-    rafId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(rafId);
-  }, []);
-
   return (
     <>
       <motion.div
-        className=" relative"
+        className="relative noisecontainer"
         initial={{
           background:
-            "linear-gradient(0deg, #a0a0a0 0%, #d0d0d0 25%, #e8e8e8 50%, #f5f5f5 75%, #ffffff 100%)",
+            "linear-gradient(0deg, #303030 0%, #505050 25%, #707070 50%, #909090 75%, #b0b0b0 100%)",
         }}
         animate={{
           background: [
-            "linear-gradient(0deg, #a0a0a0 0%, #d0d0d0 25%, #e8e8e8 50%, #f5f5f5 75%, #ffffff 100%)",
-            "linear-gradient(90deg, #a0a0a0 0%, #d0d0d0 25%, #e8e8e8 50%, #f5f5f5 75%, #ffffff 100%)",
-            "linear-gradient(180deg, #a0a0a0 0%, #d0d0d0 25%, #e8e8e8 50%, #f5f5f5 75%, #ffffff 100%)",
-            "linear-gradient(270deg, #a0a0a0 0%, #d0d0d0 25%, #e8e8e8 50%, #f5f5f5 75%, #ffffff 100%)",
-            "linear-gradient(360deg, #a0a0a0 0%, #d0d0d0 25%, #e8e8e8 50%, #f5f5f5 75%, #ffffff 100%)",
+            "linear-gradient(0deg, #303030 0%, #505050 25%, #707070 50%, #909090 75%, #b0b0b0 100%)",
+            "linear-gradient(90deg, #303030 0%, #505050 25%, #707070 50%, #909090 75%, #b0b0b0 100%)",
+            "linear-gradient(180deg, #303030 0%, #505050 25%, #707070 50%, #909090 75%, #b0b0b0 100%)",
+            "linear-gradient(270deg, #303030 0%, #505050 25%, #707070 50%, #909090 75%, #b0b0b0 100%)",
+            "linear-gradient(360deg, #303030 0%, #505050 25%, #707070 50%, #909090 75%, #b0b0b0 100%)",
           ],
         }}
         transition={{
@@ -125,19 +76,6 @@ export default function Page() {
             <span className="absolute w-[clamp(8rem, 15vw, 16rem)] min-w-[6rem] h-[0.2rem] bg-white rotate-90 -translate-x-[2rem] " />
           </div>
         </section>
-
-        {/* Noise Overlay covering everything */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `url(${noiseTextures[textureIndex]})`,
-            backgroundRepeat: "repeat",
-            backgroundSize: "225px 225px",
-            opacity: 0.1,
-            backgroundBlendMode: "overlay",
-            zIndex: 1,
-          }}
-        />
       </motion.div>
 
       <section className="h-[40rem] md:h-[50rem] flex items-center justify-center">

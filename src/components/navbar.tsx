@@ -100,8 +100,8 @@ export default function Navbar() {
               aria-label="Mobile Menu Button"
               onClick={() => setMenu(!menu)}
               className="md:hidden h-full w-[3rem] p-2 rounded-xl bg-white flex flex-col items-center justify-center space-y-1">
-              <span className="block w-[80%] h-[.15rem] bg-black" />
-              <span className="block w-[80%] h-[.15rem] bg-black" />
+              <span className="block w-[80%] h-[.15rem] bg-cyan-900" />
+              <span className="block w-[80%] h-[.15rem] bg-cyan-900" />
             </button>
           </div>
         </ul>

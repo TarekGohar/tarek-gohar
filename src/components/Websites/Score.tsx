@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
@@ -51,15 +53,13 @@ export default function NinetyPercentCircle({ delay = 0 }) {
   return (
     <div
       ref={ref}
-      className="relative w-[6.25rem] h-[6rem] md:w-[11.3rem] md:h-[11.3rem] flex items-center justify-center"
-    >
+      className="relative w-[6.25rem] h-[6rem] md:w-[11.3rem] md:h-[11.3rem] flex items-center justify-center">
       {/* Background Gray Circle */}
       <svg
         width={size}
         height={size}
         viewBox="0 0 200 200"
-        className="absolute top-0 left-0"
-      >
+        className="absolute top-0 left-0">
         <motion.circle
           cx="100"
           cy="100"

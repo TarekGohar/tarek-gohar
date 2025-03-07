@@ -105,7 +105,7 @@ const FloatingParticles: React.FC = () => {
       {/* <div
         className="h-screen absolute inset-0 pointer-events-none"
         style={{
-          background: "url(/noise.png)",
+          background: "url(/noise.webp)",
           backgroundRepeat: "repeat", // Tiling the image
           backgroundSize: "100px 100px", // Adjust this value for more density (smaller size increases density)
           opacity: 0.0,
